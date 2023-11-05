@@ -1,0 +1,4 @@
+[submodule "mir"]
+	path = mir
+	url = git@github.com:komplexon3/mir.git
+	branch = longest-chain-consensus

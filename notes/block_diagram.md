@@ -1,11 +1,11 @@
 ```mermaid
-flowchart TB;
+flowchart BT;
 
 subgraph TransactionPoolManager
 direction TB;
 
-nhi[New Head] --> pt([prepare transactions ~random payload~ for next block])
-pt --> bro[Block Request]
+reqnbi[New Block Request] --> pt([prepare transactions ~random payload~ for next block])
+pt --> resnbo[New Block Response]
 end
 
 subgraph BlockchainManager
@@ -25,7 +25,8 @@ end
 subgraph Miner
 direction TB;
 
-bri[Block Request] --> m([abort old mining op, start mining])
+nh[New Head] --> reqnb[New Block Request]
+resnb[New Block Response] --> m([abort old mining op, start mining])
 m --> nbio[New Block]
 end
 
@@ -49,9 +50,10 @@ end
 
 grpc{gRPC Module} --> Communication
 Communication --> grpc
-Miner --> BlockchainManager
-BlockchainManager --> TransactionPoolManager
+Miner --> TransactionPoolManager
 TransactionPoolManager --> Miner
+Miner --> BlockchainManager
+BlockchainManager --> Miner
 Miner --> Communication
 Communication --> BlockchainManager
 BlockchainManager --> Synchronizer

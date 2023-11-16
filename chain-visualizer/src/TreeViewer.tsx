@@ -43,6 +43,23 @@ const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
   return { nodes, edges };
 };
 
+const colorComponent = (component: number) => {
+  const c = 50 + Math.floor((component / 100) * 205);
+  return c.toString(16);
+};
+
+const nodeIdToColor = (nodeId: string) => {
+  const rRaw = +nodeId.substring(0, 2);
+  const gRaw = +nodeId.substring(2, 4);
+  const bRaw = +nodeId.substring(4, 6);
+
+  const c = `#${colorComponent(rRaw)}${colorComponent(gRaw)}${colorComponent(
+    bRaw
+  )}`;
+  console.log(nodeId.substring(0, 6), c);
+  return c;
+};
+
 export default function TreeViewer(props: { port: string }) {
   const { port } = props;
   const { data, status } = useWebsocketListener(
@@ -125,7 +142,13 @@ export default function TreeViewer(props: { port: string }) {
     if (nodes?.length === 0 || edges?.length === 0) {
       return { nodes: [], edges: [] };
     }
-    return getLayoutedElements(nodes, edges);
+    const layouted = getLayoutedElements(nodes, edges);
+    layouted.nodes = layouted.nodes.map((n) => ({
+      ...n,
+      style: { backgroundColor: nodeIdToColor(n.id) },
+    }));
+
+    return layouted;
   }, [nodes, edges]);
 
   return (

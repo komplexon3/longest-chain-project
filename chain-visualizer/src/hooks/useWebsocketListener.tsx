@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import { eventpb } from "../gen/eventpb/eventpb";
 
-export const useWebsocketListener = (url: string, binaryType?: BinaryType) => {
+export const useWebsocketListener = (
+  url: string,
+  messageHandler: (event: eventpb.Event) => void,
+  binaryType?: BinaryType
+) => {
   const connection = useRef<WebSocket | null>(null);
-  const [data, setData] = useState<any>(null);
   const [status, setStatus] = useState("CLOSED");
 
   useEffect(() => {
@@ -25,7 +29,9 @@ export const useWebsocketListener = (url: string, binaryType?: BinaryType) => {
     // Listen for messages
     socket.addEventListener("message", (event) => {
       console.log("Message from server ", event.data);
-      setData(event.data);
+      messageHandler(
+        eventpb.Event.deserializeBinary(new Uint8Array(event.data))
+      );
     });
 
     connection.current = socket;
@@ -33,5 +39,5 @@ export const useWebsocketListener = (url: string, binaryType?: BinaryType) => {
     // return () => connection.close();
   }, []);
 
-  return { data: data, status: status };
+  return { status: status };
 };

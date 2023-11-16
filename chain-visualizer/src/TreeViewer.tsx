@@ -1,13 +1,15 @@
-import useWebSocket, { ReadyState } from "react-use-websocket";
-import { blockchainpb } from "./gen/blockchainpb/blockchainpb";
-import React, { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import ReactFlow from "reactflow";
 import "reactflow/dist/style.css";
 import dagre from "@dagrejs/dagre";
 import { useWebsocketListener } from "./hooks/useWebsocketListener";
+import { interceptorpb } from "./gen/blockchainpb/interceptorpb/interceptorpb";
+import { blockchainpb } from "./gen/blockchainpb/blockchainpb";
 
-const nodeWidth = 160;
-const nodeHeight = 40;
+const nodeWidth = 110;
+const nodeHeight = 30;
+
+type Block = ReturnType<typeof blockchainpb.Block.prototype.toObject>;
 
 // from their docs
 const dagreGraph = new dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
@@ -56,42 +58,43 @@ const nodeIdToColor = (nodeId: string) => {
   const c = `#${colorComponent(rRaw)}${colorComponent(gRaw)}${colorComponent(
     bRaw
   )}`;
-  console.log(nodeId.substring(0, 6), c);
   return c;
 };
 
 export default function TreeViewer(props: { port: string }) {
   const { port } = props;
-  const { data, status } = useWebsocketListener(
+  const [treeState, setTreeState] = useState<
+    ReturnType<typeof interceptorpb.TreeUpdate.prototype.toObject> | undefined
+  >(undefined);
+  const { status } = useWebsocketListener(
     `ws://localhost:${port}/ws`,
+    (event) => {
+      if (event.type !== "bcinterceptor") {
+        console.error("Unexpected event type", event.type);
+        return;
+      }
+      switch (event.bcinterceptor?.type) {
+        case "tree_update":
+          setTreeState(event.bcinterceptor.tree_update);
+          break;
+        default:
+          break;
+      }
+    },
     "arraybuffer"
   );
 
-  // get the return type of blockchainpb.Blocktree.toObject()
-  type Blocktree = ReturnType<typeof blockchainpb.Blocktree.prototype.toObject>;
-  const [treeHistory, setTreeHistory] = useState<Blocktree[]>([]);
-  const [historyIndex, setHistoryIndex] = useState(0);
+  const blockTree = treeState?.tree;
+  const head = treeState?.head_id;
 
-  useEffect(() => {
-    if (!data) {
-      return;
+  const blocks = (blockTree?.blocks ?? []).reduce((acc, node) => {
+    if (!node.block_id) {
+      // should never happen
+      return acc;
     }
-    try {
-      const _tree = blockchainpb.Blocktree.deserializeBinary(
-        new Uint8Array(data)
-      );
-
-      setTreeHistory([...treeHistory, _tree.toObject()]);
-      setHistoryIndex(treeHistory.length);
-    } catch (e) {
-      console.error(e);
-    }
-    // don't want to run on addition to treeHistory
-    // ugly but can be fixed later
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
-
-  const blockTree = treeHistory[historyIndex];
+    acc[node.block_id] = node;
+    return acc;
+  }, {} as { [key: string]: Block });
 
   const nodes = useMemo(() => {
     if (!blockTree || !blockTree.blocks) {
@@ -100,7 +103,7 @@ export default function TreeViewer(props: { port: string }) {
 
     return blockTree.blocks.map((block) => ({
       id: block.block_id?.toString(),
-      data: { label: block.block_id?.toString().substring(0, 5) },
+      data: { label: block.block_id?.toString().substring(0, 6), block },
       position: { x: 0, y: 0 },
     }));
   }, [blockTree]);
@@ -117,27 +120,6 @@ export default function TreeViewer(props: { port: string }) {
     }));
   }, [blockTree]);
 
-  // const nodes = useMemo(
-  //   () => [
-  //     { id: "1", position: { x: 0, y: 0 }, data: { label: "1" } },
-  //     { id: "2", position: { x: 200, y: 200 }, data: { label: "2" } },
-  //     { id: "3", position: { x: 400, y: 400 }, data: { label: "3" } },
-  //     { id: "4", position: { x: 600, y: 600 }, data: { label: "4" } },
-  //     { id: "5", position: { x: 800, y: 800 }, data: { label: "5" } },
-  //   ],
-  //   []
-  // );
-
-  // const edges = useMemo(
-  //   () => [
-  //     { id: "1-2", source: "1", target: "2" },
-  //     { id: "2-3", source: "2", target: "3" },
-  //     { id: "2-4", source: "2", target: "4" },
-  //     { id: "4-5", source: "4", target: "5" },
-  //   ],
-  //   []
-  // );
-
   const { nodes: layoutedNodes, edges: layoutedEdges } = useMemo(() => {
     if (nodes?.length === 0 || edges?.length === 0) {
       return { nodes: [], edges: [] };
@@ -145,7 +127,12 @@ export default function TreeViewer(props: { port: string }) {
     const layouted = getLayoutedElements(nodes, edges);
     layouted.nodes = layouted.nodes.map((n) => ({
       ...n,
-      style: { backgroundColor: nodeIdToColor(n.id) },
+      style: {
+        backgroundColor: nodeIdToColor(n.id),
+        fontSize: "1.5rem",
+        borderColor: n.data.block.block_id === head ? "red" : "gray",
+        borderWidth: "0.25rem",
+      },
     }));
 
     return layouted;
@@ -155,29 +142,13 @@ export default function TreeViewer(props: { port: string }) {
     <div className="h-full w-full">
       <h1 className="text-3xl font-bold underline">Chain Viewer</h1>
       <h2 className="text-xl font-bold">Status: {status}</h2>
-      {/* <h2 className="text-xl font-bold">Last message:</h2> */}
-      <div className="flex gap-2">
-        <button
-          className="px-2 border-2 border-gray-600 bg-gray-400 disabled:opacity-50"
-          disabled={historyIndex <= 0}
-          onClick={() => setHistoryIndex(historyIndex - 1)}
-        >
-          Prev
-        </button>
-        <span>
-          {historyIndex + 1}/ {treeHistory.length}
-        </span>
-        <button
-          className="px-2 border-2 border-gray-600 bg-gray-400 disabled:opacity-50"
-          disabled={historyIndex >= treeHistory.length - 1}
-          onClick={() => setHistoryIndex(historyIndex + 1)}
-        >
-          Next
-        </button>
-      </div>
-      {/* {blockTree && (
-        <pre className="text-sm">{JSON.stringify(blockTree, null, 2)}</pre>
-      )} */}
+      <h3>
+        {head && (
+          <span>
+            {head}, Payload: {blocks[head]?.payload?.text}
+          </span>
+        )}
+      </h3>
       <div className="h-full w-full">
         <ReactFlow nodes={layoutedNodes} edges={layoutedEdges} />
       </div>

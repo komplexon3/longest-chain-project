@@ -5,5 +5,4 @@ protoc \
     --ts_opt=esModuleInterop=true \
     --ts_out="./src/gen" \
     --proto_path="../mir/protos" \
-    mir/codegen_extensions.proto \
-    blockchainpb/blockchainpb.proto
+    $(find ../mir/protos -name '*.proto')

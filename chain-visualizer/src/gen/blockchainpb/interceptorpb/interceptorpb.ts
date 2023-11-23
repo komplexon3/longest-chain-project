@@ -8,13 +8,19 @@ import * as dependency_2 from "./../../mir/codegen_extensions";
 import * as pb_1 from "google-protobuf";
 export namespace interceptorpb {
     export class Event extends pb_1.Message {
-        #one_of_decls: number[][] = [[1, 2]];
+        #one_of_decls: number[][] = [[1, 2, 3]];
         constructor(data?: any[] | ({} & (({
             tree_update?: TreeUpdate;
             new_orphan?: never;
+            app_update?: never;
         } | {
             tree_update?: never;
             new_orphan?: NewOrphan;
+            app_update?: never;
+        } | {
+            tree_update?: never;
+            new_orphan?: never;
+            app_update?: AppUpdate;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -24,6 +30,9 @@ export namespace interceptorpb {
                 }
                 if ("new_orphan" in data && data.new_orphan != undefined) {
                     this.new_orphan = data.new_orphan;
+                }
+                if ("app_update" in data && data.app_update != undefined) {
+                    this.app_update = data.app_update;
                 }
             }
         }
@@ -45,19 +54,30 @@ export namespace interceptorpb {
         get has_new_orphan() {
             return pb_1.Message.getField(this, 2) != null;
         }
+        get app_update() {
+            return pb_1.Message.getWrapperField(this, AppUpdate, 3) as AppUpdate;
+        }
+        set app_update(value: AppUpdate) {
+            pb_1.Message.setOneofWrapperField(this, 3, this.#one_of_decls[0], value);
+        }
+        get has_app_update() {
+            return pb_1.Message.getField(this, 3) != null;
+        }
         get type() {
             const cases: {
-                [index: number]: "none" | "tree_update" | "new_orphan";
+                [index: number]: "none" | "tree_update" | "new_orphan" | "app_update";
             } = {
                 0: "none",
                 1: "tree_update",
-                2: "new_orphan"
+                2: "new_orphan",
+                3: "app_update"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [1, 2])];
+            return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3])];
         }
         static fromObject(data: {
             tree_update?: ReturnType<typeof TreeUpdate.prototype.toObject>;
             new_orphan?: ReturnType<typeof NewOrphan.prototype.toObject>;
+            app_update?: ReturnType<typeof AppUpdate.prototype.toObject>;
         }): Event {
             const message = new Event({});
             if (data.tree_update != null) {
@@ -66,18 +86,25 @@ export namespace interceptorpb {
             if (data.new_orphan != null) {
                 message.new_orphan = NewOrphan.fromObject(data.new_orphan);
             }
+            if (data.app_update != null) {
+                message.app_update = AppUpdate.fromObject(data.app_update);
+            }
             return message;
         }
         toObject() {
             const data: {
                 tree_update?: ReturnType<typeof TreeUpdate.prototype.toObject>;
                 new_orphan?: ReturnType<typeof NewOrphan.prototype.toObject>;
+                app_update?: ReturnType<typeof AppUpdate.prototype.toObject>;
             } = {};
             if (this.tree_update != null) {
                 data.tree_update = this.tree_update.toObject();
             }
             if (this.new_orphan != null) {
                 data.new_orphan = this.new_orphan.toObject();
+            }
+            if (this.app_update != null) {
+                data.app_update = this.app_update.toObject();
             }
             return data;
         }
@@ -89,6 +116,8 @@ export namespace interceptorpb {
                 writer.writeMessage(1, this.tree_update, () => this.tree_update.serialize(writer));
             if (this.has_new_orphan)
                 writer.writeMessage(2, this.new_orphan, () => this.new_orphan.serialize(writer));
+            if (this.has_app_update)
+                writer.writeMessage(3, this.app_update, () => this.app_update.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -103,6 +132,9 @@ export namespace interceptorpb {
                         break;
                     case 2:
                         reader.readMessage(message.new_orphan, () => message.new_orphan = NewOrphan.deserialize(reader));
+                        break;
+                    case 3:
+                        reader.readMessage(message.app_update, () => message.app_update = AppUpdate.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -277,6 +309,73 @@ export namespace interceptorpb {
         }
         static deserializeBinary(bytes: Uint8Array): NewOrphan {
             return NewOrphan.deserialize(bytes);
+        }
+    }
+    export class AppUpdate extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            state?: number;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("state" in data && data.state != undefined) {
+                    this.state = data.state;
+                }
+            }
+        }
+        get state() {
+            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        }
+        set state(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        static fromObject(data: {
+            state?: number;
+        }): AppUpdate {
+            const message = new AppUpdate({});
+            if (data.state != null) {
+                message.state = data.state;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                state?: number;
+            } = {};
+            if (this.state != null) {
+                data.state = this.state;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.state != 0)
+                writer.writeInt64(1, this.state);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): AppUpdate {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new AppUpdate();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.state = reader.readInt64();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): AppUpdate {
+            return AppUpdate.deserialize(bytes);
         }
     }
 }

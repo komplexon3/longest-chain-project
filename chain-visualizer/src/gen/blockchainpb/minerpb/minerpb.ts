@@ -4,7 +4,7 @@
  * source: blockchainpb/minerpb/minerpb.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_1 from "./../../mir/codegen_extensions";
-import * as dependency_2 from "./../blockchainpb";
+import * as dependency_2 from "./../payloadpb/payloadpb";
 import * as pb_1 from "google-protobuf";
 export namespace minerpb {
     export class Event extends pb_1.Message {
@@ -120,7 +120,7 @@ export namespace minerpb {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
             head_id?: number;
-            payload?: dependency_2.blockchainpb.Payload;
+            payload?: dependency_2.payloadpb.Payload;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -140,9 +140,9 @@ export namespace minerpb {
             pb_1.Message.setField(this, 1, value);
         }
         get payload() {
-            return pb_1.Message.getWrapperField(this, dependency_2.blockchainpb.Payload, 2) as dependency_2.blockchainpb.Payload;
+            return pb_1.Message.getWrapperField(this, dependency_2.payloadpb.Payload, 2) as dependency_2.payloadpb.Payload;
         }
-        set payload(value: dependency_2.blockchainpb.Payload) {
+        set payload(value: dependency_2.payloadpb.Payload) {
             pb_1.Message.setWrapperField(this, 2, value);
         }
         get has_payload() {
@@ -150,21 +150,21 @@ export namespace minerpb {
         }
         static fromObject(data: {
             head_id?: number;
-            payload?: ReturnType<typeof dependency_2.blockchainpb.Payload.prototype.toObject>;
+            payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
         }): BlockRequest {
             const message = new BlockRequest({});
             if (data.head_id != null) {
                 message.head_id = data.head_id;
             }
             if (data.payload != null) {
-                message.payload = dependency_2.blockchainpb.Payload.fromObject(data.payload);
+                message.payload = dependency_2.payloadpb.Payload.fromObject(data.payload);
             }
             return message;
         }
         toObject() {
             const data: {
                 head_id?: number;
-                payload?: ReturnType<typeof dependency_2.blockchainpb.Payload.prototype.toObject>;
+                payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
             } = {};
             if (this.head_id != null) {
                 data.head_id = this.head_id;
@@ -195,7 +195,7 @@ export namespace minerpb {
                         message.head_id = reader.readUint64();
                         break;
                     case 2:
-                        reader.readMessage(message.payload, () => message.payload = dependency_2.blockchainpb.Payload.deserialize(reader));
+                        reader.readMessage(message.payload, () => message.payload = dependency_2.payloadpb.Payload.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }

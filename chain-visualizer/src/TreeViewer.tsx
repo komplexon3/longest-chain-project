@@ -66,6 +66,10 @@ export default function TreeViewer(props: { port: string }) {
   const [treeState, setTreeState] = useState<
     ReturnType<typeof interceptorpb.TreeUpdate.prototype.toObject> | undefined
   >(undefined);
+
+  const [orphans, setOrphans] = useState<number[]>([]);
+  const [sumState, setSumState] = useState(0);
+
   const { status } = useWebsocketListener(
     `ws://localhost:${port}/ws`,
     (event) => {
@@ -76,6 +80,24 @@ export default function TreeViewer(props: { port: string }) {
       switch (event.bcinterceptor?.type) {
         case "tree_update":
           setTreeState(event.bcinterceptor.tree_update);
+          // remove orphans that are now part of the tree
+          setOrphans((old) =>
+            old.filter(
+              (orphan) =>
+                !(orphan in event.bcinterceptor.tree_update.tree.blocks)
+            )
+          );
+          break;
+        case "app_update":
+          setSumState(event.bcinterceptor.app_update.state);
+          break;
+
+        case "new_orphan":
+          setOrphans((old) =>
+            [...old, event.bcinterceptor.new_orphan.orphan.block_id].filter(
+              (value, index, self) => self.indexOf(value) === index
+            )
+          );
           break;
         default:
           break;
@@ -143,12 +165,19 @@ export default function TreeViewer(props: { port: string }) {
       <h1 className="text-3xl font-bold underline">Chain Viewer</h1>
       <h2 className="text-xl font-bold">Status: {status}</h2>
       <h3>
+        <span>STATE: {sumState}</span>
+      </h3>
+      <h3>
         {head && (
           <span>
-            {head}, Payload: {blocks[head]?.payload?.text}
+            {head.toString().substring(0, 6)}, Payload:{" "}
+            {blocks[head]?.payload?.add_minus}
           </span>
         )}
       </h3>
+      <p>
+        Orphans: {orphans.map((o) => o.toString().substring(0, 6)).join(", ")}
+      </p>
       <div className="h-full w-full">
         <ReactFlow nodes={layoutedNodes} edges={layoutedEdges} />
       </div>

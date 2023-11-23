@@ -27,12 +27,13 @@ import * as dependency_21 from "./../blockchainpb/minerpb/minerpb";
 import * as dependency_22 from "./../blockchainpb/tpmpb/tpmpb";
 import * as dependency_23 from "./../blockchainpb/communicationpb/communicationpb";
 import * as dependency_24 from "./../blockchainpb/synchronizerpb/synchronizerpb";
-import * as dependency_25 from "./../blockchainpb/interceptorpb/interceptorpb";
-import * as dependency_26 from "./../mir/codegen_extensions";
+import * as dependency_25 from "./../blockchainpb/applicationpb/applicationpb";
+import * as dependency_26 from "./../blockchainpb/interceptorpb/interceptorpb";
+import * as dependency_27 from "./../mir/codegen_extensions";
 import * as pb_1 from "google-protobuf";
 export namespace eventpb {
     export class Event extends pb_1.Message {
-        #one_of_decls: number[][] = [[2, 3, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 200, 201, 202, 203, 204, 205, 210, 301, 302, 303]];
+        #one_of_decls: number[][] = [[2, 3, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 200, 201, 202, 203, 204, 205, 206, 210, 301, 302, 303]];
         constructor(data?: any[] | ({
             dest_module?: string;
             next?: Event[];
@@ -61,6 +62,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -90,6 +92,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -119,6 +122,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -148,6 +152,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -177,6 +182,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -206,6 +212,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -235,6 +242,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -264,6 +272,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -293,6 +302,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -322,6 +332,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -351,6 +362,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -380,6 +392,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -409,6 +422,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -438,6 +452,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -467,6 +482,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -496,6 +512,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -525,6 +542,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -554,6 +572,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -583,6 +602,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -612,6 +632,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -641,6 +662,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -670,6 +692,7 @@ export namespace eventpb {
             tpm?: dependency_22.tpmpb.Event;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -699,6 +722,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: dependency_23.communicationpb.Event;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -728,6 +752,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: dependency_24.synchronizerpb.Event;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -757,7 +782,8 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
-            bcinterceptor?: dependency_25.interceptorpb.Event;
+            application?: dependency_25.applicationpb.Event;
+            bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
             tester?: never;
@@ -786,6 +812,37 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
+            bcinterceptor?: dependency_26.interceptorpb.Event;
+            testingString?: never;
+            testingUint?: never;
+            tester?: never;
+        } | {
+            init?: never;
+            timer?: never;
+            hasher?: never;
+            bcb?: never;
+            mempool?: never;
+            availability?: never;
+            batch_db?: never;
+            batch_fetcher?: never;
+            thresh_crypto?: never;
+            checkpoint?: never;
+            factory?: never;
+            iss?: never;
+            orderer?: never;
+            crypto?: never;
+            app?: never;
+            transport?: never;
+            chkp_validator?: never;
+            pprep_valiadtor?: never;
+            ping_pong?: never;
+            bcm?: never;
+            miner?: never;
+            tpm?: never;
+            communication?: never;
+            synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: dependency_3.google.protobuf.StringValue;
             testingUint?: never;
@@ -815,6 +872,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: dependency_3.google.protobuf.UInt64Value;
@@ -844,6 +902,7 @@ export namespace eventpb {
             tpm?: never;
             communication?: never;
             synchronizer?: never;
+            application?: never;
             bcinterceptor?: never;
             testingString?: never;
             testingUint?: never;
@@ -926,6 +985,9 @@ export namespace eventpb {
                 }
                 if ("synchronizer" in data && data.synchronizer != undefined) {
                     this.synchronizer = data.synchronizer;
+                }
+                if ("application" in data && data.application != undefined) {
+                    this.application = data.application;
                 }
                 if ("bcinterceptor" in data && data.bcinterceptor != undefined) {
                     this.bcinterceptor = data.bcinterceptor;
@@ -1166,10 +1228,19 @@ export namespace eventpb {
         get has_synchronizer() {
             return pb_1.Message.getField(this, 205) != null;
         }
-        get bcinterceptor() {
-            return pb_1.Message.getWrapperField(this, dependency_25.interceptorpb.Event, 210) as dependency_25.interceptorpb.Event;
+        get application() {
+            return pb_1.Message.getWrapperField(this, dependency_25.applicationpb.Event, 206) as dependency_25.applicationpb.Event;
         }
-        set bcinterceptor(value: dependency_25.interceptorpb.Event) {
+        set application(value: dependency_25.applicationpb.Event) {
+            pb_1.Message.setOneofWrapperField(this, 206, this.#one_of_decls[0], value);
+        }
+        get has_application() {
+            return pb_1.Message.getField(this, 206) != null;
+        }
+        get bcinterceptor() {
+            return pb_1.Message.getWrapperField(this, dependency_26.interceptorpb.Event, 210) as dependency_26.interceptorpb.Event;
+        }
+        set bcinterceptor(value: dependency_26.interceptorpb.Event) {
             pb_1.Message.setOneofWrapperField(this, 210, this.#one_of_decls[0], value);
         }
         get has_bcinterceptor() {
@@ -1210,7 +1281,7 @@ export namespace eventpb {
         }
         get type() {
             const cases: {
-                [index: number]: "none" | "init" | "timer" | "hasher" | "bcb" | "mempool" | "availability" | "batch_db" | "batch_fetcher" | "thresh_crypto" | "checkpoint" | "factory" | "iss" | "orderer" | "crypto" | "app" | "transport" | "chkp_validator" | "pprep_valiadtor" | "ping_pong" | "bcm" | "miner" | "tpm" | "communication" | "synchronizer" | "bcinterceptor" | "testingString" | "testingUint" | "tester";
+                [index: number]: "none" | "init" | "timer" | "hasher" | "bcb" | "mempool" | "availability" | "batch_db" | "batch_fetcher" | "thresh_crypto" | "checkpoint" | "factory" | "iss" | "orderer" | "crypto" | "app" | "transport" | "chkp_validator" | "pprep_valiadtor" | "ping_pong" | "bcm" | "miner" | "tpm" | "communication" | "synchronizer" | "application" | "bcinterceptor" | "testingString" | "testingUint" | "tester";
             } = {
                 0: "none",
                 2: "init",
@@ -1237,12 +1308,13 @@ export namespace eventpb {
                 203: "tpm",
                 204: "communication",
                 205: "synchronizer",
+                206: "application",
                 210: "bcinterceptor",
                 301: "testingString",
                 302: "testingUint",
                 303: "tester"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [2, 3, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 200, 201, 202, 203, 204, 205, 210, 301, 302, 303])];
+            return cases[pb_1.Message.computeOneofCase(this, [2, 3, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 200, 201, 202, 203, 204, 205, 206, 210, 301, 302, 303])];
         }
         static fromObject(data: {
             dest_module?: string;
@@ -1270,7 +1342,8 @@ export namespace eventpb {
             tpm?: ReturnType<typeof dependency_22.tpmpb.Event.prototype.toObject>;
             communication?: ReturnType<typeof dependency_23.communicationpb.Event.prototype.toObject>;
             synchronizer?: ReturnType<typeof dependency_24.synchronizerpb.Event.prototype.toObject>;
-            bcinterceptor?: ReturnType<typeof dependency_25.interceptorpb.Event.prototype.toObject>;
+            application?: ReturnType<typeof dependency_25.applicationpb.Event.prototype.toObject>;
+            bcinterceptor?: ReturnType<typeof dependency_26.interceptorpb.Event.prototype.toObject>;
             testingString?: ReturnType<typeof dependency_3.google.protobuf.StringValue.prototype.toObject>;
             testingUint?: ReturnType<typeof dependency_3.google.protobuf.UInt64Value.prototype.toObject>;
             tester?: ReturnType<typeof dependency_19.testerpb.Tester.prototype.toObject>;
@@ -1352,8 +1425,11 @@ export namespace eventpb {
             if (data.synchronizer != null) {
                 message.synchronizer = dependency_24.synchronizerpb.Event.fromObject(data.synchronizer);
             }
+            if (data.application != null) {
+                message.application = dependency_25.applicationpb.Event.fromObject(data.application);
+            }
             if (data.bcinterceptor != null) {
-                message.bcinterceptor = dependency_25.interceptorpb.Event.fromObject(data.bcinterceptor);
+                message.bcinterceptor = dependency_26.interceptorpb.Event.fromObject(data.bcinterceptor);
             }
             if (data.testingString != null) {
                 message.testingString = dependency_3.google.protobuf.StringValue.fromObject(data.testingString);
@@ -1396,7 +1472,8 @@ export namespace eventpb {
                 tpm?: ReturnType<typeof dependency_22.tpmpb.Event.prototype.toObject>;
                 communication?: ReturnType<typeof dependency_23.communicationpb.Event.prototype.toObject>;
                 synchronizer?: ReturnType<typeof dependency_24.synchronizerpb.Event.prototype.toObject>;
-                bcinterceptor?: ReturnType<typeof dependency_25.interceptorpb.Event.prototype.toObject>;
+                application?: ReturnType<typeof dependency_25.applicationpb.Event.prototype.toObject>;
+                bcinterceptor?: ReturnType<typeof dependency_26.interceptorpb.Event.prototype.toObject>;
                 testingString?: ReturnType<typeof dependency_3.google.protobuf.StringValue.prototype.toObject>;
                 testingUint?: ReturnType<typeof dependency_3.google.protobuf.UInt64Value.prototype.toObject>;
                 tester?: ReturnType<typeof dependency_19.testerpb.Tester.prototype.toObject>;
@@ -1477,6 +1554,9 @@ export namespace eventpb {
             if (this.synchronizer != null) {
                 data.synchronizer = this.synchronizer.toObject();
             }
+            if (this.application != null) {
+                data.application = this.application.toObject();
+            }
             if (this.bcinterceptor != null) {
                 data.bcinterceptor = this.bcinterceptor.toObject();
             }
@@ -1548,6 +1628,8 @@ export namespace eventpb {
                 writer.writeMessage(204, this.communication, () => this.communication.serialize(writer));
             if (this.has_synchronizer)
                 writer.writeMessage(205, this.synchronizer, () => this.synchronizer.serialize(writer));
+            if (this.has_application)
+                writer.writeMessage(206, this.application, () => this.application.serialize(writer));
             if (this.has_bcinterceptor)
                 writer.writeMessage(210, this.bcinterceptor, () => this.bcinterceptor.serialize(writer));
             if (this.has_testingString)
@@ -1642,8 +1724,11 @@ export namespace eventpb {
                     case 205:
                         reader.readMessage(message.synchronizer, () => message.synchronizer = dependency_24.synchronizerpb.Event.deserialize(reader));
                         break;
+                    case 206:
+                        reader.readMessage(message.application, () => message.application = dependency_25.applicationpb.Event.deserialize(reader));
+                        break;
                     case 210:
-                        reader.readMessage(message.bcinterceptor, () => message.bcinterceptor = dependency_25.interceptorpb.Event.deserialize(reader));
+                        reader.readMessage(message.bcinterceptor, () => message.bcinterceptor = dependency_26.interceptorpb.Event.deserialize(reader));
                         break;
                     case 301:
                         reader.readMessage(message.testingString, () => message.testingString = dependency_3.google.protobuf.StringValue.deserialize(reader));

@@ -4,7 +4,8 @@
  * source: blockchainpb/interceptorpb/interceptorpb.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_1 from "./../blockchainpb";
-import * as dependency_2 from "./../../mir/codegen_extensions";
+import * as dependency_2 from "./../statepb/statepb";
+import * as dependency_3 from "./../../mir/codegen_extensions";
 import * as pb_1 from "google-protobuf";
 export namespace interceptorpb {
     export class Event extends pb_1.Message {
@@ -314,7 +315,7 @@ export namespace interceptorpb {
     export class AppUpdate extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            state?: number;
+            state?: dependency_2.statepb.State;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -325,26 +326,29 @@ export namespace interceptorpb {
             }
         }
         get state() {
-            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+            return pb_1.Message.getWrapperField(this, dependency_2.statepb.State, 1) as dependency_2.statepb.State;
         }
-        set state(value: number) {
-            pb_1.Message.setField(this, 1, value);
+        set state(value: dependency_2.statepb.State) {
+            pb_1.Message.setWrapperField(this, 1, value);
+        }
+        get has_state() {
+            return pb_1.Message.getField(this, 1) != null;
         }
         static fromObject(data: {
-            state?: number;
+            state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
         }): AppUpdate {
             const message = new AppUpdate({});
             if (data.state != null) {
-                message.state = data.state;
+                message.state = dependency_2.statepb.State.fromObject(data.state);
             }
             return message;
         }
         toObject() {
             const data: {
-                state?: number;
+                state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
             } = {};
             if (this.state != null) {
-                data.state = this.state;
+                data.state = this.state.toObject();
             }
             return data;
         }
@@ -352,8 +356,8 @@ export namespace interceptorpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.state != 0)
-                writer.writeInt64(1, this.state);
+            if (this.has_state)
+                writer.writeMessage(1, this.state, () => this.state.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -364,7 +368,7 @@ export namespace interceptorpb {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.state = reader.readInt64();
+                        reader.readMessage(message.state, () => message.state = dependency_2.statepb.State.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }

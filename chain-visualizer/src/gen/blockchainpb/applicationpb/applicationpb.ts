@@ -4,30 +4,66 @@
  * source: blockchainpb/applicationpb/applicationpb.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_1 from "./../../mir/codegen_extensions";
-import * as dependency_2 from "./../blockchainpb";
-import * as dependency_3 from "./../payloadpb/payloadpb";
+import * as dependency_2 from "./../payloadpb/payloadpb";
+import * as dependency_3 from "./../blockchainpb";
 import * as pb_1 from "google-protobuf";
 export namespace applicationpb {
     export class Event extends pb_1.Message {
-        #one_of_decls: number[][] = [[1, 2, 3]];
+        #one_of_decls: number[][] = [[10, 11, 12, 20, 21, 22]];
         constructor(data?: any[] | ({} & (({
-            new_longest_chain?: NewLongestChain;
+            new_head?: NewHead;
+            verify_block_request?: never;
+            verify_block_response?: never;
             payload_request?: never;
             payload_response?: never;
+            fork_update?: never;
         } | {
-            new_longest_chain?: never;
+            new_head?: never;
+            verify_block_request?: VerifyBlockRequest;
+            verify_block_response?: never;
+            payload_request?: never;
+            payload_response?: never;
+            fork_update?: never;
+        } | {
+            new_head?: never;
+            verify_block_request?: never;
+            verify_block_response?: VerifyBlockResponse;
+            payload_request?: never;
+            payload_response?: never;
+            fork_update?: never;
+        } | {
+            new_head?: never;
+            verify_block_request?: never;
+            verify_block_response?: never;
             payload_request?: PayloadRequest;
             payload_response?: never;
+            fork_update?: never;
         } | {
-            new_longest_chain?: never;
+            new_head?: never;
+            verify_block_request?: never;
+            verify_block_response?: never;
             payload_request?: never;
             payload_response?: PayloadResponse;
+            fork_update?: never;
+        } | {
+            new_head?: never;
+            verify_block_request?: never;
+            verify_block_response?: never;
+            payload_request?: never;
+            payload_response?: never;
+            fork_update?: ForkUpdate;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("new_longest_chain" in data && data.new_longest_chain != undefined) {
-                    this.new_longest_chain = data.new_longest_chain;
+                if ("new_head" in data && data.new_head != undefined) {
+                    this.new_head = data.new_head;
+                }
+                if ("verify_block_request" in data && data.verify_block_request != undefined) {
+                    this.verify_block_request = data.verify_block_request;
+                }
+                if ("verify_block_response" in data && data.verify_block_response != undefined) {
+                    this.verify_block_response = data.verify_block_response;
                 }
                 if ("payload_request" in data && data.payload_request != undefined) {
                     this.payload_request = data.payload_request;
@@ -35,54 +71,96 @@ export namespace applicationpb {
                 if ("payload_response" in data && data.payload_response != undefined) {
                     this.payload_response = data.payload_response;
                 }
+                if ("fork_update" in data && data.fork_update != undefined) {
+                    this.fork_update = data.fork_update;
+                }
             }
         }
-        get new_longest_chain() {
-            return pb_1.Message.getWrapperField(this, NewLongestChain, 1) as NewLongestChain;
+        get new_head() {
+            return pb_1.Message.getWrapperField(this, NewHead, 10) as NewHead;
         }
-        set new_longest_chain(value: NewLongestChain) {
-            pb_1.Message.setOneofWrapperField(this, 1, this.#one_of_decls[0], value);
+        set new_head(value: NewHead) {
+            pb_1.Message.setOneofWrapperField(this, 10, this.#one_of_decls[0], value);
         }
-        get has_new_longest_chain() {
-            return pb_1.Message.getField(this, 1) != null;
+        get has_new_head() {
+            return pb_1.Message.getField(this, 10) != null;
+        }
+        get verify_block_request() {
+            return pb_1.Message.getWrapperField(this, VerifyBlockRequest, 11) as VerifyBlockRequest;
+        }
+        set verify_block_request(value: VerifyBlockRequest) {
+            pb_1.Message.setOneofWrapperField(this, 11, this.#one_of_decls[0], value);
+        }
+        get has_verify_block_request() {
+            return pb_1.Message.getField(this, 11) != null;
+        }
+        get verify_block_response() {
+            return pb_1.Message.getWrapperField(this, VerifyBlockResponse, 12) as VerifyBlockResponse;
+        }
+        set verify_block_response(value: VerifyBlockResponse) {
+            pb_1.Message.setOneofWrapperField(this, 12, this.#one_of_decls[0], value);
+        }
+        get has_verify_block_response() {
+            return pb_1.Message.getField(this, 12) != null;
         }
         get payload_request() {
-            return pb_1.Message.getWrapperField(this, PayloadRequest, 2) as PayloadRequest;
+            return pb_1.Message.getWrapperField(this, PayloadRequest, 20) as PayloadRequest;
         }
         set payload_request(value: PayloadRequest) {
-            pb_1.Message.setOneofWrapperField(this, 2, this.#one_of_decls[0], value);
+            pb_1.Message.setOneofWrapperField(this, 20, this.#one_of_decls[0], value);
         }
         get has_payload_request() {
-            return pb_1.Message.getField(this, 2) != null;
+            return pb_1.Message.getField(this, 20) != null;
         }
         get payload_response() {
-            return pb_1.Message.getWrapperField(this, PayloadResponse, 3) as PayloadResponse;
+            return pb_1.Message.getWrapperField(this, PayloadResponse, 21) as PayloadResponse;
         }
         set payload_response(value: PayloadResponse) {
-            pb_1.Message.setOneofWrapperField(this, 3, this.#one_of_decls[0], value);
+            pb_1.Message.setOneofWrapperField(this, 21, this.#one_of_decls[0], value);
         }
         get has_payload_response() {
-            return pb_1.Message.getField(this, 3) != null;
+            return pb_1.Message.getField(this, 21) != null;
+        }
+        get fork_update() {
+            return pb_1.Message.getWrapperField(this, ForkUpdate, 22) as ForkUpdate;
+        }
+        set fork_update(value: ForkUpdate) {
+            pb_1.Message.setOneofWrapperField(this, 22, this.#one_of_decls[0], value);
+        }
+        get has_fork_update() {
+            return pb_1.Message.getField(this, 22) != null;
         }
         get type() {
             const cases: {
-                [index: number]: "none" | "new_longest_chain" | "payload_request" | "payload_response";
+                [index: number]: "none" | "new_head" | "verify_block_request" | "verify_block_response" | "payload_request" | "payload_response" | "fork_update";
             } = {
                 0: "none",
-                1: "new_longest_chain",
-                2: "payload_request",
-                3: "payload_response"
+                10: "new_head",
+                11: "verify_block_request",
+                12: "verify_block_response",
+                20: "payload_request",
+                21: "payload_response",
+                22: "fork_update"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3])];
+            return cases[pb_1.Message.computeOneofCase(this, [10, 11, 12, 20, 21, 22])];
         }
         static fromObject(data: {
-            new_longest_chain?: ReturnType<typeof NewLongestChain.prototype.toObject>;
+            new_head?: ReturnType<typeof NewHead.prototype.toObject>;
+            verify_block_request?: ReturnType<typeof VerifyBlockRequest.prototype.toObject>;
+            verify_block_response?: ReturnType<typeof VerifyBlockResponse.prototype.toObject>;
             payload_request?: ReturnType<typeof PayloadRequest.prototype.toObject>;
             payload_response?: ReturnType<typeof PayloadResponse.prototype.toObject>;
+            fork_update?: ReturnType<typeof ForkUpdate.prototype.toObject>;
         }): Event {
             const message = new Event({});
-            if (data.new_longest_chain != null) {
-                message.new_longest_chain = NewLongestChain.fromObject(data.new_longest_chain);
+            if (data.new_head != null) {
+                message.new_head = NewHead.fromObject(data.new_head);
+            }
+            if (data.verify_block_request != null) {
+                message.verify_block_request = VerifyBlockRequest.fromObject(data.verify_block_request);
+            }
+            if (data.verify_block_response != null) {
+                message.verify_block_response = VerifyBlockResponse.fromObject(data.verify_block_response);
             }
             if (data.payload_request != null) {
                 message.payload_request = PayloadRequest.fromObject(data.payload_request);
@@ -90,16 +168,28 @@ export namespace applicationpb {
             if (data.payload_response != null) {
                 message.payload_response = PayloadResponse.fromObject(data.payload_response);
             }
+            if (data.fork_update != null) {
+                message.fork_update = ForkUpdate.fromObject(data.fork_update);
+            }
             return message;
         }
         toObject() {
             const data: {
-                new_longest_chain?: ReturnType<typeof NewLongestChain.prototype.toObject>;
+                new_head?: ReturnType<typeof NewHead.prototype.toObject>;
+                verify_block_request?: ReturnType<typeof VerifyBlockRequest.prototype.toObject>;
+                verify_block_response?: ReturnType<typeof VerifyBlockResponse.prototype.toObject>;
                 payload_request?: ReturnType<typeof PayloadRequest.prototype.toObject>;
                 payload_response?: ReturnType<typeof PayloadResponse.prototype.toObject>;
+                fork_update?: ReturnType<typeof ForkUpdate.prototype.toObject>;
             } = {};
-            if (this.new_longest_chain != null) {
-                data.new_longest_chain = this.new_longest_chain.toObject();
+            if (this.new_head != null) {
+                data.new_head = this.new_head.toObject();
+            }
+            if (this.verify_block_request != null) {
+                data.verify_block_request = this.verify_block_request.toObject();
+            }
+            if (this.verify_block_response != null) {
+                data.verify_block_response = this.verify_block_response.toObject();
             }
             if (this.payload_request != null) {
                 data.payload_request = this.payload_request.toObject();
@@ -107,18 +197,27 @@ export namespace applicationpb {
             if (this.payload_response != null) {
                 data.payload_response = this.payload_response.toObject();
             }
+            if (this.fork_update != null) {
+                data.fork_update = this.fork_update.toObject();
+            }
             return data;
         }
         serialize(): Uint8Array;
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.has_new_longest_chain)
-                writer.writeMessage(1, this.new_longest_chain, () => this.new_longest_chain.serialize(writer));
+            if (this.has_new_head)
+                writer.writeMessage(10, this.new_head, () => this.new_head.serialize(writer));
+            if (this.has_verify_block_request)
+                writer.writeMessage(11, this.verify_block_request, () => this.verify_block_request.serialize(writer));
+            if (this.has_verify_block_response)
+                writer.writeMessage(12, this.verify_block_response, () => this.verify_block_response.serialize(writer));
             if (this.has_payload_request)
-                writer.writeMessage(2, this.payload_request, () => this.payload_request.serialize(writer));
+                writer.writeMessage(20, this.payload_request, () => this.payload_request.serialize(writer));
             if (this.has_payload_response)
-                writer.writeMessage(3, this.payload_response, () => this.payload_response.serialize(writer));
+                writer.writeMessage(21, this.payload_response, () => this.payload_response.serialize(writer));
+            if (this.has_fork_update)
+                writer.writeMessage(22, this.fork_update, () => this.fork_update.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -128,14 +227,23 @@ export namespace applicationpb {
                 if (reader.isEndGroup())
                     break;
                 switch (reader.getFieldNumber()) {
-                    case 1:
-                        reader.readMessage(message.new_longest_chain, () => message.new_longest_chain = NewLongestChain.deserialize(reader));
+                    case 10:
+                        reader.readMessage(message.new_head, () => message.new_head = NewHead.deserialize(reader));
                         break;
-                    case 2:
+                    case 11:
+                        reader.readMessage(message.verify_block_request, () => message.verify_block_request = VerifyBlockRequest.deserialize(reader));
+                        break;
+                    case 12:
+                        reader.readMessage(message.verify_block_response, () => message.verify_block_response = VerifyBlockResponse.deserialize(reader));
+                        break;
+                    case 20:
                         reader.readMessage(message.payload_request, () => message.payload_request = PayloadRequest.deserialize(reader));
                         break;
-                    case 3:
+                    case 21:
                         reader.readMessage(message.payload_response, () => message.payload_response = PayloadResponse.deserialize(reader));
+                        break;
+                    case 22:
+                        reader.readMessage(message.fork_update, () => message.fork_update = ForkUpdate.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -149,43 +257,40 @@ export namespace applicationpb {
             return Event.deserialize(bytes);
         }
     }
-    export class NewLongestChain extends pb_1.Message {
+    export class NewHead extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            head?: dependency_2.blockchainpb.Block;
+            head_id?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("head" in data && data.head != undefined) {
-                    this.head = data.head;
+                if ("head_id" in data && data.head_id != undefined) {
+                    this.head_id = data.head_id;
                 }
             }
         }
-        get head() {
-            return pb_1.Message.getWrapperField(this, dependency_2.blockchainpb.Block, 1) as dependency_2.blockchainpb.Block;
+        get head_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
         }
-        set head(value: dependency_2.blockchainpb.Block) {
-            pb_1.Message.setWrapperField(this, 1, value);
-        }
-        get has_head() {
-            return pb_1.Message.getField(this, 1) != null;
+        set head_id(value: number) {
+            pb_1.Message.setField(this, 1, value);
         }
         static fromObject(data: {
-            head?: ReturnType<typeof dependency_2.blockchainpb.Block.prototype.toObject>;
-        }): NewLongestChain {
-            const message = new NewLongestChain({});
-            if (data.head != null) {
-                message.head = dependency_2.blockchainpb.Block.fromObject(data.head);
+            head_id?: number;
+        }): NewHead {
+            const message = new NewHead({});
+            if (data.head_id != null) {
+                message.head_id = data.head_id;
             }
             return message;
         }
         toObject() {
             const data: {
-                head?: ReturnType<typeof dependency_2.blockchainpb.Block.prototype.toObject>;
+                head_id?: number;
             } = {};
-            if (this.head != null) {
-                data.head = this.head.toObject();
+            if (this.head_id != null) {
+                data.head_id = this.head_id;
             }
             return data;
         }
@@ -193,19 +298,19 @@ export namespace applicationpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.has_head)
-                writer.writeMessage(1, this.head, () => this.head.serialize(writer));
+            if (this.head_id != 0)
+                writer.writeUint64(1, this.head_id);
             if (!w)
                 return writer.getResultBuffer();
         }
-        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): NewLongestChain {
-            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new NewLongestChain();
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): NewHead {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new NewHead();
             while (reader.nextField()) {
                 if (reader.isEndGroup())
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        reader.readMessage(message.head, () => message.head = dependency_2.blockchainpb.Block.deserialize(reader));
+                        message.head_id = reader.readUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -215,8 +320,287 @@ export namespace applicationpb {
         serializeBinary(): Uint8Array {
             return this.serialize();
         }
-        static deserializeBinary(bytes: Uint8Array): NewLongestChain {
-            return NewLongestChain.deserialize(bytes);
+        static deserializeBinary(bytes: Uint8Array): NewHead {
+            return NewHead.deserialize(bytes);
+        }
+    }
+    export class VerifyBlockRequest extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            request_id?: number;
+            block?: dependency_3.blockchainpb.Block;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
+                }
+                if ("block" in data && data.block != undefined) {
+                    this.block = data.block;
+                }
+            }
+        }
+        get request_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        }
+        set request_id(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get block() {
+            return pb_1.Message.getWrapperField(this, dependency_3.blockchainpb.Block, 2) as dependency_3.blockchainpb.Block;
+        }
+        set block(value: dependency_3.blockchainpb.Block) {
+            pb_1.Message.setWrapperField(this, 2, value);
+        }
+        get has_block() {
+            return pb_1.Message.getField(this, 2) != null;
+        }
+        static fromObject(data: {
+            request_id?: number;
+            block?: ReturnType<typeof dependency_3.blockchainpb.Block.prototype.toObject>;
+        }): VerifyBlockRequest {
+            const message = new VerifyBlockRequest({});
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
+            }
+            if (data.block != null) {
+                message.block = dependency_3.blockchainpb.Block.fromObject(data.block);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                request_id?: number;
+                block?: ReturnType<typeof dependency_3.blockchainpb.Block.prototype.toObject>;
+            } = {};
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
+            }
+            if (this.block != null) {
+                data.block = this.block.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.request_id != 0)
+                writer.writeUint64(1, this.request_id);
+            if (this.has_block)
+                writer.writeMessage(2, this.block, () => this.block.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): VerifyBlockRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new VerifyBlockRequest();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.request_id = reader.readUint64();
+                        break;
+                    case 2:
+                        reader.readMessage(message.block, () => message.block = dependency_3.blockchainpb.Block.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): VerifyBlockRequest {
+            return VerifyBlockRequest.deserialize(bytes);
+        }
+    }
+    export class VerifyBlockResponse extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            request_id?: number;
+            ok?: boolean;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
+                }
+                if ("ok" in data && data.ok != undefined) {
+                    this.ok = data.ok;
+                }
+            }
+        }
+        get request_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        }
+        set request_id(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get ok() {
+            return pb_1.Message.getFieldWithDefault(this, 2, false) as boolean;
+        }
+        set ok(value: boolean) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        static fromObject(data: {
+            request_id?: number;
+            ok?: boolean;
+        }): VerifyBlockResponse {
+            const message = new VerifyBlockResponse({});
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
+            }
+            if (data.ok != null) {
+                message.ok = data.ok;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                request_id?: number;
+                ok?: boolean;
+            } = {};
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
+            }
+            if (this.ok != null) {
+                data.ok = this.ok;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.request_id != 0)
+                writer.writeUint64(1, this.request_id);
+            if (this.ok != false)
+                writer.writeBool(2, this.ok);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): VerifyBlockResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new VerifyBlockResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.request_id = reader.readUint64();
+                        break;
+                    case 2:
+                        message.ok = reader.readBool();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): VerifyBlockResponse {
+            return VerifyBlockResponse.deserialize(bytes);
+        }
+    }
+    export class ForkUpdate extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            removed_chain?: dependency_3.blockchainpb.Blockchain;
+            added_chain?: dependency_3.blockchainpb.Blockchain;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("removed_chain" in data && data.removed_chain != undefined) {
+                    this.removed_chain = data.removed_chain;
+                }
+                if ("added_chain" in data && data.added_chain != undefined) {
+                    this.added_chain = data.added_chain;
+                }
+            }
+        }
+        get removed_chain() {
+            return pb_1.Message.getWrapperField(this, dependency_3.blockchainpb.Blockchain, 1) as dependency_3.blockchainpb.Blockchain;
+        }
+        set removed_chain(value: dependency_3.blockchainpb.Blockchain) {
+            pb_1.Message.setWrapperField(this, 1, value);
+        }
+        get has_removed_chain() {
+            return pb_1.Message.getField(this, 1) != null;
+        }
+        get added_chain() {
+            return pb_1.Message.getWrapperField(this, dependency_3.blockchainpb.Blockchain, 2) as dependency_3.blockchainpb.Blockchain;
+        }
+        set added_chain(value: dependency_3.blockchainpb.Blockchain) {
+            pb_1.Message.setWrapperField(this, 2, value);
+        }
+        get has_added_chain() {
+            return pb_1.Message.getField(this, 2) != null;
+        }
+        static fromObject(data: {
+            removed_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
+            added_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
+        }): ForkUpdate {
+            const message = new ForkUpdate({});
+            if (data.removed_chain != null) {
+                message.removed_chain = dependency_3.blockchainpb.Blockchain.fromObject(data.removed_chain);
+            }
+            if (data.added_chain != null) {
+                message.added_chain = dependency_3.blockchainpb.Blockchain.fromObject(data.added_chain);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                removed_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
+                added_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
+            } = {};
+            if (this.removed_chain != null) {
+                data.removed_chain = this.removed_chain.toObject();
+            }
+            if (this.added_chain != null) {
+                data.added_chain = this.added_chain.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.has_removed_chain)
+                writer.writeMessage(1, this.removed_chain, () => this.removed_chain.serialize(writer));
+            if (this.has_added_chain)
+                writer.writeMessage(2, this.added_chain, () => this.added_chain.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): ForkUpdate {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new ForkUpdate();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.removed_chain, () => message.removed_chain = dependency_3.blockchainpb.Blockchain.deserialize(reader));
+                        break;
+                    case 2:
+                        reader.readMessage(message.added_chain, () => message.added_chain = dependency_3.blockchainpb.Blockchain.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): ForkUpdate {
+            return ForkUpdate.deserialize(bytes);
         }
     }
     export class PayloadRequest extends pb_1.Message {
@@ -290,7 +674,7 @@ export namespace applicationpb {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
             head_id?: number;
-            payload?: dependency_3.payloadpb.Payload;
+            payload?: dependency_2.payloadpb.Payload;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -310,9 +694,9 @@ export namespace applicationpb {
             pb_1.Message.setField(this, 1, value);
         }
         get payload() {
-            return pb_1.Message.getWrapperField(this, dependency_3.payloadpb.Payload, 2) as dependency_3.payloadpb.Payload;
+            return pb_1.Message.getWrapperField(this, dependency_2.payloadpb.Payload, 2) as dependency_2.payloadpb.Payload;
         }
-        set payload(value: dependency_3.payloadpb.Payload) {
+        set payload(value: dependency_2.payloadpb.Payload) {
             pb_1.Message.setWrapperField(this, 2, value);
         }
         get has_payload() {
@@ -320,21 +704,21 @@ export namespace applicationpb {
         }
         static fromObject(data: {
             head_id?: number;
-            payload?: ReturnType<typeof dependency_3.payloadpb.Payload.prototype.toObject>;
+            payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
         }): PayloadResponse {
             const message = new PayloadResponse({});
             if (data.head_id != null) {
                 message.head_id = data.head_id;
             }
             if (data.payload != null) {
-                message.payload = dependency_3.payloadpb.Payload.fromObject(data.payload);
+                message.payload = dependency_2.payloadpb.Payload.fromObject(data.payload);
             }
             return message;
         }
         toObject() {
             const data: {
                 head_id?: number;
-                payload?: ReturnType<typeof dependency_3.payloadpb.Payload.prototype.toObject>;
+                payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
             } = {};
             if (this.head_id != null) {
                 data.head_id = this.head_id;
@@ -365,7 +749,7 @@ export namespace applicationpb {
                         message.head_id = reader.readUint64();
                         break;
                     case 2:
-                        reader.readMessage(message.payload, () => message.payload = dependency_3.payloadpb.Payload.deserialize(reader));
+                        reader.readMessage(message.payload, () => message.payload = dependency_2.payloadpb.Payload.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }

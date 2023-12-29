@@ -6,11 +6,14 @@ subgraph LongestChainConsensus
     subgraph BlockchainManager
     direction TB;
 
-    nbi[New Block] --> ab([add block])
+    nbi[New Block] --> ab([add block, verification would happen here])
     nci[New Chain] --repeated--> ab
     ab --> clc([compute longest chain])
     ab --parent missing--> sr[Sync Request]
-    clc -->|if new longest chain| nho[New Head]
+    clc --> inlc([if new longest chain])
+    inlc -->  nho[New Head]
+    inlc --> cd([compute delta])
+    cd --> do[Fork Update]
 
     gbi[GetBlock Request] --> pgbr([process GetBlock request, find block])
     pgbr --> gbo[GetBlock Response]
@@ -56,8 +59,9 @@ nhi[New Head] --> aghtcro[Get Head To Checkpoint Request]
 aghtcri[Get Head To Checkpoint Response] --> cs([Compute State])
 cs --> rco[Register Checkpoint]
 
-pri[Payload Request] --> gp([Generate payload])
+pri[Payload Request] --> gp([get transaction or generate new message])
 gp --> pro[Payload Response]
+di[Tree Update] --> utp([Update transaction pool])
 end
 
 grpc --> Communication

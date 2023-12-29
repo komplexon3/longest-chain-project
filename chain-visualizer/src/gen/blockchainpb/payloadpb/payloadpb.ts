@@ -8,37 +8,55 @@ export namespace payloadpb {
     export class Payload extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            add_minus?: number;
+            message?: string;
+            timestamp?: number;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("add_minus" in data && data.add_minus != undefined) {
-                    this.add_minus = data.add_minus;
+                if ("message" in data && data.message != undefined) {
+                    this.message = data.message;
+                }
+                if ("timestamp" in data && data.timestamp != undefined) {
+                    this.timestamp = data.timestamp;
                 }
             }
         }
-        get add_minus() {
-            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        get message() {
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set add_minus(value: number) {
+        set message(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
+        get timestamp() {
+            return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
+        }
+        set timestamp(value: number) {
+            pb_1.Message.setField(this, 2, value);
+        }
         static fromObject(data: {
-            add_minus?: number;
+            message?: string;
+            timestamp?: number;
         }): Payload {
             const message = new Payload({});
-            if (data.add_minus != null) {
-                message.add_minus = data.add_minus;
+            if (data.message != null) {
+                message.message = data.message;
+            }
+            if (data.timestamp != null) {
+                message.timestamp = data.timestamp;
             }
             return message;
         }
         toObject() {
             const data: {
-                add_minus?: number;
+                message?: string;
+                timestamp?: number;
             } = {};
-            if (this.add_minus != null) {
-                data.add_minus = this.add_minus;
+            if (this.message != null) {
+                data.message = this.message;
+            }
+            if (this.timestamp != null) {
+                data.timestamp = this.timestamp;
             }
             return data;
         }
@@ -46,8 +64,10 @@ export namespace payloadpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.add_minus != 0)
-                writer.writeInt64(1, this.add_minus);
+            if (this.message.length)
+                writer.writeString(1, this.message);
+            if (this.timestamp != 0)
+                writer.writeInt64(2, this.timestamp);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -58,7 +78,10 @@ export namespace payloadpb {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.add_minus = reader.readInt64();
+                        message.message = reader.readString();
+                        break;
+                    case 2:
+                        message.timestamp = reader.readInt64();
                         break;
                     default: reader.skipField();
                 }

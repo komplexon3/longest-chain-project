@@ -68,7 +68,7 @@ export default function TreeViewer(props: { port: string }) {
   >(undefined);
 
   const [orphans, setOrphans] = useState<number[]>([]);
-  const [sumState, setSumState] = useState(0);
+  const [state, setState] = useState<string[]>([]);
 
   const { status } = useWebsocketListener(
     `ws://localhost:${port}/ws`,
@@ -89,7 +89,7 @@ export default function TreeViewer(props: { port: string }) {
           );
           break;
         case "app_update":
-          setSumState(event.bcinterceptor.app_update.state);
+          setState(event.bcinterceptor.app_update.state.message_history);
           break;
 
         case "new_orphan":
@@ -164,14 +164,17 @@ export default function TreeViewer(props: { port: string }) {
     <div className="h-full w-full">
       <h1 className="text-3xl font-bold underline">Chain Viewer</h1>
       <h2 className="text-xl font-bold">Status: {status}</h2>
-      <h3>
-        <span>STATE: {sumState}</span>
-      </h3>
+      <h3>STATE</h3>
+      <div className="h-36 overflow-y-scroll border-2 px-2">
+        {state.map((msg) => (
+          <p>{msg}</p>
+        ))}
+      </div>
       <h3>
         {head && (
           <span>
-            {head.toString().substring(0, 6)}, Payload:{" "}
-            {blocks[head]?.payload?.add_minus}
+            HEAD: {head.toString().substring(0, 6)}, Payload:{" "}
+            {blocks[head]?.payload?.message}
           </span>
         )}
       </h3>

@@ -4,6 +4,7 @@
  * source: blockchainpb/blockchainpb.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_1 from "./payloadpb/payloadpb";
+import * as dependency_2 from "./statepb/statepb";
 import * as pb_1 from "google-protobuf";
 export namespace blockchainpb {
     export class Blocktree extends pb_1.Message {
@@ -300,6 +301,102 @@ export namespace blockchainpb {
         }
         static deserializeBinary(bytes: Uint8Array): Block {
             return Block.deserialize(bytes);
+        }
+    }
+    export class BlockInternal extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            block?: Block;
+            state?: dependency_2.statepb.State;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("block" in data && data.block != undefined) {
+                    this.block = data.block;
+                }
+                if ("state" in data && data.state != undefined) {
+                    this.state = data.state;
+                }
+            }
+        }
+        get block() {
+            return pb_1.Message.getWrapperField(this, Block, 1) as Block;
+        }
+        set block(value: Block) {
+            pb_1.Message.setWrapperField(this, 1, value);
+        }
+        get has_block() {
+            return pb_1.Message.getField(this, 1) != null;
+        }
+        get state() {
+            return pb_1.Message.getWrapperField(this, dependency_2.statepb.State, 2) as dependency_2.statepb.State;
+        }
+        set state(value: dependency_2.statepb.State) {
+            pb_1.Message.setWrapperField(this, 2, value);
+        }
+        get has_state() {
+            return pb_1.Message.getField(this, 2) != null;
+        }
+        static fromObject(data: {
+            block?: ReturnType<typeof Block.prototype.toObject>;
+            state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
+        }): BlockInternal {
+            const message = new BlockInternal({});
+            if (data.block != null) {
+                message.block = Block.fromObject(data.block);
+            }
+            if (data.state != null) {
+                message.state = dependency_2.statepb.State.fromObject(data.state);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                block?: ReturnType<typeof Block.prototype.toObject>;
+                state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
+            } = {};
+            if (this.block != null) {
+                data.block = this.block.toObject();
+            }
+            if (this.state != null) {
+                data.state = this.state.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.has_block)
+                writer.writeMessage(1, this.block, () => this.block.serialize(writer));
+            if (this.has_state)
+                writer.writeMessage(2, this.state, () => this.state.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): BlockInternal {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new BlockInternal();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        reader.readMessage(message.block, () => message.block = Block.deserialize(reader));
+                        break;
+                    case 2:
+                        reader.readMessage(message.state, () => message.state = dependency_2.statepb.State.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): BlockInternal {
+            return BlockInternal.deserialize(bytes);
         }
     }
 }

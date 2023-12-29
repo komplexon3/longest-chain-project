@@ -4,31 +4,102 @@
  * source: blockchainpb/bcmpb/bcmpb.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_1 from "./../blockchainpb";
-import * as dependency_2 from "./../../mir/codegen_extensions";
+import * as dependency_2 from "./../statepb/statepb";
+import * as dependency_3 from "./../../mir/codegen_extensions";
 import * as pb_1 from "google-protobuf";
 export namespace bcmpb {
     export class Event extends pb_1.Message {
-        #one_of_decls: number[][] = [[1, 2, 3, 4]];
+        #one_of_decls: number[][] = [[1, 2, 3, 4, 5, 6, 7, 8, 9]];
         constructor(data?: any[] | ({} & (({
             new_block?: NewBlock;
             new_chain?: never;
             get_block_request?: never;
             get_block_response?: never;
+            get_chain_request?: never;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: never;
         } | {
             new_block?: never;
             new_chain?: NewChain;
             get_block_request?: never;
             get_block_response?: never;
+            get_chain_request?: never;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: never;
         } | {
             new_block?: never;
             new_chain?: never;
             get_block_request?: GetBlockRequest;
             get_block_response?: never;
+            get_chain_request?: never;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: never;
         } | {
             new_block?: never;
             new_chain?: never;
             get_block_request?: never;
             get_block_response?: GetBlockResponse;
+            get_chain_request?: never;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: never;
+        } | {
+            new_block?: never;
+            new_chain?: never;
+            get_block_request?: never;
+            get_block_response?: never;
+            get_chain_request?: GetChainRequest;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: never;
+        } | {
+            new_block?: never;
+            new_chain?: never;
+            get_block_request?: never;
+            get_block_response?: never;
+            get_chain_request?: never;
+            get_chain_response?: GetChainResponse;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: never;
+        } | {
+            new_block?: never;
+            new_chain?: never;
+            get_block_request?: never;
+            get_block_response?: never;
+            get_chain_request?: never;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: GetHeadToCheckpointChainRequest;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: never;
+        } | {
+            new_block?: never;
+            new_chain?: never;
+            get_block_request?: never;
+            get_block_response?: never;
+            get_chain_request?: never;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: GetHeadToCheckpointChainResponse;
+            register_checkpoint?: never;
+        } | {
+            new_block?: never;
+            new_chain?: never;
+            get_block_request?: never;
+            get_block_response?: never;
+            get_chain_request?: never;
+            get_chain_response?: never;
+            get_head_to_checkpoint_chain_request?: never;
+            get_head_to_checkpoint_chain_response?: never;
+            register_checkpoint?: RegisterCheckpoint;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -44,6 +115,21 @@ export namespace bcmpb {
                 }
                 if ("get_block_response" in data && data.get_block_response != undefined) {
                     this.get_block_response = data.get_block_response;
+                }
+                if ("get_chain_request" in data && data.get_chain_request != undefined) {
+                    this.get_chain_request = data.get_chain_request;
+                }
+                if ("get_chain_response" in data && data.get_chain_response != undefined) {
+                    this.get_chain_response = data.get_chain_response;
+                }
+                if ("get_head_to_checkpoint_chain_request" in data && data.get_head_to_checkpoint_chain_request != undefined) {
+                    this.get_head_to_checkpoint_chain_request = data.get_head_to_checkpoint_chain_request;
+                }
+                if ("get_head_to_checkpoint_chain_response" in data && data.get_head_to_checkpoint_chain_response != undefined) {
+                    this.get_head_to_checkpoint_chain_response = data.get_head_to_checkpoint_chain_response;
+                }
+                if ("register_checkpoint" in data && data.register_checkpoint != undefined) {
+                    this.register_checkpoint = data.register_checkpoint;
                 }
             }
         }
@@ -83,23 +169,78 @@ export namespace bcmpb {
         get has_get_block_response() {
             return pb_1.Message.getField(this, 4) != null;
         }
+        get get_chain_request() {
+            return pb_1.Message.getWrapperField(this, GetChainRequest, 5) as GetChainRequest;
+        }
+        set get_chain_request(value: GetChainRequest) {
+            pb_1.Message.setOneofWrapperField(this, 5, this.#one_of_decls[0], value);
+        }
+        get has_get_chain_request() {
+            return pb_1.Message.getField(this, 5) != null;
+        }
+        get get_chain_response() {
+            return pb_1.Message.getWrapperField(this, GetChainResponse, 6) as GetChainResponse;
+        }
+        set get_chain_response(value: GetChainResponse) {
+            pb_1.Message.setOneofWrapperField(this, 6, this.#one_of_decls[0], value);
+        }
+        get has_get_chain_response() {
+            return pb_1.Message.getField(this, 6) != null;
+        }
+        get get_head_to_checkpoint_chain_request() {
+            return pb_1.Message.getWrapperField(this, GetHeadToCheckpointChainRequest, 7) as GetHeadToCheckpointChainRequest;
+        }
+        set get_head_to_checkpoint_chain_request(value: GetHeadToCheckpointChainRequest) {
+            pb_1.Message.setOneofWrapperField(this, 7, this.#one_of_decls[0], value);
+        }
+        get has_get_head_to_checkpoint_chain_request() {
+            return pb_1.Message.getField(this, 7) != null;
+        }
+        get get_head_to_checkpoint_chain_response() {
+            return pb_1.Message.getWrapperField(this, GetHeadToCheckpointChainResponse, 8) as GetHeadToCheckpointChainResponse;
+        }
+        set get_head_to_checkpoint_chain_response(value: GetHeadToCheckpointChainResponse) {
+            pb_1.Message.setOneofWrapperField(this, 8, this.#one_of_decls[0], value);
+        }
+        get has_get_head_to_checkpoint_chain_response() {
+            return pb_1.Message.getField(this, 8) != null;
+        }
+        get register_checkpoint() {
+            return pb_1.Message.getWrapperField(this, RegisterCheckpoint, 9) as RegisterCheckpoint;
+        }
+        set register_checkpoint(value: RegisterCheckpoint) {
+            pb_1.Message.setOneofWrapperField(this, 9, this.#one_of_decls[0], value);
+        }
+        get has_register_checkpoint() {
+            return pb_1.Message.getField(this, 9) != null;
+        }
         get type() {
             const cases: {
-                [index: number]: "none" | "new_block" | "new_chain" | "get_block_request" | "get_block_response";
+                [index: number]: "none" | "new_block" | "new_chain" | "get_block_request" | "get_block_response" | "get_chain_request" | "get_chain_response" | "get_head_to_checkpoint_chain_request" | "get_head_to_checkpoint_chain_response" | "register_checkpoint";
             } = {
                 0: "none",
                 1: "new_block",
                 2: "new_chain",
                 3: "get_block_request",
-                4: "get_block_response"
+                4: "get_block_response",
+                5: "get_chain_request",
+                6: "get_chain_response",
+                7: "get_head_to_checkpoint_chain_request",
+                8: "get_head_to_checkpoint_chain_response",
+                9: "register_checkpoint"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3, 4])];
+            return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3, 4, 5, 6, 7, 8, 9])];
         }
         static fromObject(data: {
             new_block?: ReturnType<typeof NewBlock.prototype.toObject>;
             new_chain?: ReturnType<typeof NewChain.prototype.toObject>;
             get_block_request?: ReturnType<typeof GetBlockRequest.prototype.toObject>;
             get_block_response?: ReturnType<typeof GetBlockResponse.prototype.toObject>;
+            get_chain_request?: ReturnType<typeof GetChainRequest.prototype.toObject>;
+            get_chain_response?: ReturnType<typeof GetChainResponse.prototype.toObject>;
+            get_head_to_checkpoint_chain_request?: ReturnType<typeof GetHeadToCheckpointChainRequest.prototype.toObject>;
+            get_head_to_checkpoint_chain_response?: ReturnType<typeof GetHeadToCheckpointChainResponse.prototype.toObject>;
+            register_checkpoint?: ReturnType<typeof RegisterCheckpoint.prototype.toObject>;
         }): Event {
             const message = new Event({});
             if (data.new_block != null) {
@@ -114,6 +255,21 @@ export namespace bcmpb {
             if (data.get_block_response != null) {
                 message.get_block_response = GetBlockResponse.fromObject(data.get_block_response);
             }
+            if (data.get_chain_request != null) {
+                message.get_chain_request = GetChainRequest.fromObject(data.get_chain_request);
+            }
+            if (data.get_chain_response != null) {
+                message.get_chain_response = GetChainResponse.fromObject(data.get_chain_response);
+            }
+            if (data.get_head_to_checkpoint_chain_request != null) {
+                message.get_head_to_checkpoint_chain_request = GetHeadToCheckpointChainRequest.fromObject(data.get_head_to_checkpoint_chain_request);
+            }
+            if (data.get_head_to_checkpoint_chain_response != null) {
+                message.get_head_to_checkpoint_chain_response = GetHeadToCheckpointChainResponse.fromObject(data.get_head_to_checkpoint_chain_response);
+            }
+            if (data.register_checkpoint != null) {
+                message.register_checkpoint = RegisterCheckpoint.fromObject(data.register_checkpoint);
+            }
             return message;
         }
         toObject() {
@@ -122,6 +278,11 @@ export namespace bcmpb {
                 new_chain?: ReturnType<typeof NewChain.prototype.toObject>;
                 get_block_request?: ReturnType<typeof GetBlockRequest.prototype.toObject>;
                 get_block_response?: ReturnType<typeof GetBlockResponse.prototype.toObject>;
+                get_chain_request?: ReturnType<typeof GetChainRequest.prototype.toObject>;
+                get_chain_response?: ReturnType<typeof GetChainResponse.prototype.toObject>;
+                get_head_to_checkpoint_chain_request?: ReturnType<typeof GetHeadToCheckpointChainRequest.prototype.toObject>;
+                get_head_to_checkpoint_chain_response?: ReturnType<typeof GetHeadToCheckpointChainResponse.prototype.toObject>;
+                register_checkpoint?: ReturnType<typeof RegisterCheckpoint.prototype.toObject>;
             } = {};
             if (this.new_block != null) {
                 data.new_block = this.new_block.toObject();
@@ -134,6 +295,21 @@ export namespace bcmpb {
             }
             if (this.get_block_response != null) {
                 data.get_block_response = this.get_block_response.toObject();
+            }
+            if (this.get_chain_request != null) {
+                data.get_chain_request = this.get_chain_request.toObject();
+            }
+            if (this.get_chain_response != null) {
+                data.get_chain_response = this.get_chain_response.toObject();
+            }
+            if (this.get_head_to_checkpoint_chain_request != null) {
+                data.get_head_to_checkpoint_chain_request = this.get_head_to_checkpoint_chain_request.toObject();
+            }
+            if (this.get_head_to_checkpoint_chain_response != null) {
+                data.get_head_to_checkpoint_chain_response = this.get_head_to_checkpoint_chain_response.toObject();
+            }
+            if (this.register_checkpoint != null) {
+                data.register_checkpoint = this.register_checkpoint.toObject();
             }
             return data;
         }
@@ -149,6 +325,16 @@ export namespace bcmpb {
                 writer.writeMessage(3, this.get_block_request, () => this.get_block_request.serialize(writer));
             if (this.has_get_block_response)
                 writer.writeMessage(4, this.get_block_response, () => this.get_block_response.serialize(writer));
+            if (this.has_get_chain_request)
+                writer.writeMessage(5, this.get_chain_request, () => this.get_chain_request.serialize(writer));
+            if (this.has_get_chain_response)
+                writer.writeMessage(6, this.get_chain_response, () => this.get_chain_response.serialize(writer));
+            if (this.has_get_head_to_checkpoint_chain_request)
+                writer.writeMessage(7, this.get_head_to_checkpoint_chain_request, () => this.get_head_to_checkpoint_chain_request.serialize(writer));
+            if (this.has_get_head_to_checkpoint_chain_response)
+                writer.writeMessage(8, this.get_head_to_checkpoint_chain_response, () => this.get_head_to_checkpoint_chain_response.serialize(writer));
+            if (this.has_register_checkpoint)
+                writer.writeMessage(9, this.register_checkpoint, () => this.register_checkpoint.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -169,6 +355,21 @@ export namespace bcmpb {
                         break;
                     case 4:
                         reader.readMessage(message.get_block_response, () => message.get_block_response = GetBlockResponse.deserialize(reader));
+                        break;
+                    case 5:
+                        reader.readMessage(message.get_chain_request, () => message.get_chain_request = GetChainRequest.deserialize(reader));
+                        break;
+                    case 6:
+                        reader.readMessage(message.get_chain_response, () => message.get_chain_response = GetChainResponse.deserialize(reader));
+                        break;
+                    case 7:
+                        reader.readMessage(message.get_head_to_checkpoint_chain_request, () => message.get_head_to_checkpoint_chain_request = GetHeadToCheckpointChainRequest.deserialize(reader));
+                        break;
+                    case 8:
+                        reader.readMessage(message.get_head_to_checkpoint_chain_response, () => message.get_head_to_checkpoint_chain_response = GetHeadToCheckpointChainResponse.deserialize(reader));
+                        break;
+                    case 9:
+                        reader.readMessage(message.register_checkpoint, () => message.register_checkpoint = RegisterCheckpoint.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -322,7 +523,7 @@ export namespace bcmpb {
     export class GetBlockRequest extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            request_id?: number;
+            request_id?: string;
             source_module?: string;
             block_id?: number;
         }) {
@@ -341,9 +542,9 @@ export namespace bcmpb {
             }
         }
         get request_id() {
-            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set request_id(value: number) {
+        set request_id(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         get source_module() {
@@ -359,7 +560,7 @@ export namespace bcmpb {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
-            request_id?: number;
+            request_id?: string;
             source_module?: string;
             block_id?: number;
         }): GetBlockRequest {
@@ -377,7 +578,7 @@ export namespace bcmpb {
         }
         toObject() {
             const data: {
-                request_id?: number;
+                request_id?: string;
                 source_module?: string;
                 block_id?: number;
             } = {};
@@ -396,8 +597,8 @@ export namespace bcmpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.request_id != 0)
-                writer.writeUint64(1, this.request_id);
+            if (this.request_id.length)
+                writer.writeString(1, this.request_id);
             if (this.source_module.length)
                 writer.writeString(2, this.source_module);
             if (this.block_id != 0)
@@ -412,7 +613,7 @@ export namespace bcmpb {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.request_id = reader.readUint64();
+                        message.request_id = reader.readString();
                         break;
                     case 2:
                         message.source_module = reader.readString();
@@ -435,7 +636,7 @@ export namespace bcmpb {
     export class GetBlockResponse extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            request_id?: number;
+            request_id?: string;
             found?: boolean;
             block?: dependency_1.blockchainpb.Block;
         }) {
@@ -454,9 +655,9 @@ export namespace bcmpb {
             }
         }
         get request_id() {
-            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
         }
-        set request_id(value: number) {
+        set request_id(value: string) {
             pb_1.Message.setField(this, 1, value);
         }
         get found() {
@@ -475,7 +676,7 @@ export namespace bcmpb {
             return pb_1.Message.getField(this, 3) != null;
         }
         static fromObject(data: {
-            request_id?: number;
+            request_id?: string;
             found?: boolean;
             block?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>;
         }): GetBlockResponse {
@@ -493,7 +694,7 @@ export namespace bcmpb {
         }
         toObject() {
             const data: {
-                request_id?: number;
+                request_id?: string;
                 found?: boolean;
                 block?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>;
             } = {};
@@ -512,8 +713,8 @@ export namespace bcmpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.request_id != 0)
-                writer.writeUint64(1, this.request_id);
+            if (this.request_id.length)
+                writer.writeString(1, this.request_id);
             if (this.found != false)
                 writer.writeBool(2, this.found);
             if (this.has_block)
@@ -528,7 +729,7 @@ export namespace bcmpb {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.request_id = reader.readUint64();
+                        message.request_id = reader.readString();
                         break;
                     case 2:
                         message.found = reader.readBool();
@@ -546,6 +747,528 @@ export namespace bcmpb {
         }
         static deserializeBinary(bytes: Uint8Array): GetBlockResponse {
             return GetBlockResponse.deserialize(bytes);
+        }
+    }
+    export class GetChainRequest extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            request_id?: string;
+            source_module?: string;
+            end_block_id?: number;
+            source_block_ids?: number[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [4], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
+                }
+                if ("source_module" in data && data.source_module != undefined) {
+                    this.source_module = data.source_module;
+                }
+                if ("end_block_id" in data && data.end_block_id != undefined) {
+                    this.end_block_id = data.end_block_id;
+                }
+                if ("source_block_ids" in data && data.source_block_ids != undefined) {
+                    this.source_block_ids = data.source_block_ids;
+                }
+            }
+        }
+        get request_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
+        }
+        set request_id(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get source_module() {
+            return pb_1.Message.getFieldWithDefault(this, 2, "") as string;
+        }
+        set source_module(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get end_block_id() {
+            return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
+        }
+        set end_block_id(value: number) {
+            pb_1.Message.setField(this, 3, value);
+        }
+        get source_block_ids() {
+            return pb_1.Message.getFieldWithDefault(this, 4, []) as number[];
+        }
+        set source_block_ids(value: number[]) {
+            pb_1.Message.setField(this, 4, value);
+        }
+        static fromObject(data: {
+            request_id?: string;
+            source_module?: string;
+            end_block_id?: number;
+            source_block_ids?: number[];
+        }): GetChainRequest {
+            const message = new GetChainRequest({});
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
+            }
+            if (data.source_module != null) {
+                message.source_module = data.source_module;
+            }
+            if (data.end_block_id != null) {
+                message.end_block_id = data.end_block_id;
+            }
+            if (data.source_block_ids != null) {
+                message.source_block_ids = data.source_block_ids;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                request_id?: string;
+                source_module?: string;
+                end_block_id?: number;
+                source_block_ids?: number[];
+            } = {};
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
+            }
+            if (this.source_module != null) {
+                data.source_module = this.source_module;
+            }
+            if (this.end_block_id != null) {
+                data.end_block_id = this.end_block_id;
+            }
+            if (this.source_block_ids != null) {
+                data.source_block_ids = this.source_block_ids;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.request_id.length)
+                writer.writeString(1, this.request_id);
+            if (this.source_module.length)
+                writer.writeString(2, this.source_module);
+            if (this.end_block_id != 0)
+                writer.writeUint64(3, this.end_block_id);
+            if (this.source_block_ids.length)
+                writer.writePackedUint64(4, this.source_block_ids);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): GetChainRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new GetChainRequest();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.request_id = reader.readString();
+                        break;
+                    case 2:
+                        message.source_module = reader.readString();
+                        break;
+                    case 3:
+                        message.end_block_id = reader.readUint64();
+                        break;
+                    case 4:
+                        message.source_block_ids = reader.readPackedUint64();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): GetChainRequest {
+            return GetChainRequest.deserialize(bytes);
+        }
+    }
+    export class GetChainResponse extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            request_id?: string;
+            success?: boolean;
+            chain?: dependency_1.blockchainpb.Block[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [3], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
+                }
+                if ("success" in data && data.success != undefined) {
+                    this.success = data.success;
+                }
+                if ("chain" in data && data.chain != undefined) {
+                    this.chain = data.chain;
+                }
+            }
+        }
+        get request_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
+        }
+        set request_id(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get success() {
+            return pb_1.Message.getFieldWithDefault(this, 2, false) as boolean;
+        }
+        set success(value: boolean) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        get chain() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_1.blockchainpb.Block, 3) as dependency_1.blockchainpb.Block[];
+        }
+        set chain(value: dependency_1.blockchainpb.Block[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 3, value);
+        }
+        static fromObject(data: {
+            request_id?: string;
+            success?: boolean;
+            chain?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>[];
+        }): GetChainResponse {
+            const message = new GetChainResponse({});
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
+            }
+            if (data.success != null) {
+                message.success = data.success;
+            }
+            if (data.chain != null) {
+                message.chain = data.chain.map(item => dependency_1.blockchainpb.Block.fromObject(item));
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                request_id?: string;
+                success?: boolean;
+                chain?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>[];
+            } = {};
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
+            }
+            if (this.success != null) {
+                data.success = this.success;
+            }
+            if (this.chain != null) {
+                data.chain = this.chain.map((item: dependency_1.blockchainpb.Block) => item.toObject());
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.request_id.length)
+                writer.writeString(1, this.request_id);
+            if (this.success != false)
+                writer.writeBool(2, this.success);
+            if (this.chain.length)
+                writer.writeRepeatedMessage(3, this.chain, (item: dependency_1.blockchainpb.Block) => item.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): GetChainResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new GetChainResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.request_id = reader.readString();
+                        break;
+                    case 2:
+                        message.success = reader.readBool();
+                        break;
+                    case 3:
+                        reader.readMessage(message.chain, () => pb_1.Message.addToRepeatedWrapperField(message, 3, dependency_1.blockchainpb.Block.deserialize(reader), dependency_1.blockchainpb.Block));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): GetChainResponse {
+            return GetChainResponse.deserialize(bytes);
+        }
+    }
+    export class GetHeadToCheckpointChainRequest extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            request_id?: string;
+            source_module?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
+                }
+                if ("source_module" in data && data.source_module != undefined) {
+                    this.source_module = data.source_module;
+                }
+            }
+        }
+        get request_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
+        }
+        set request_id(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get source_module() {
+            return pb_1.Message.getFieldWithDefault(this, 2, "") as string;
+        }
+        set source_module(value: string) {
+            pb_1.Message.setField(this, 2, value);
+        }
+        static fromObject(data: {
+            request_id?: string;
+            source_module?: string;
+        }): GetHeadToCheckpointChainRequest {
+            const message = new GetHeadToCheckpointChainRequest({});
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
+            }
+            if (data.source_module != null) {
+                message.source_module = data.source_module;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                request_id?: string;
+                source_module?: string;
+            } = {};
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
+            }
+            if (this.source_module != null) {
+                data.source_module = this.source_module;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.request_id.length)
+                writer.writeString(1, this.request_id);
+            if (this.source_module.length)
+                writer.writeString(2, this.source_module);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): GetHeadToCheckpointChainRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new GetHeadToCheckpointChainRequest();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.request_id = reader.readString();
+                        break;
+                    case 2:
+                        message.source_module = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): GetHeadToCheckpointChainRequest {
+            return GetHeadToCheckpointChainRequest.deserialize(bytes);
+        }
+    }
+    export class GetHeadToCheckpointChainResponse extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            request_id?: string;
+            chain?: dependency_1.blockchainpb.BlockInternal[];
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [3], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("request_id" in data && data.request_id != undefined) {
+                    this.request_id = data.request_id;
+                }
+                if ("chain" in data && data.chain != undefined) {
+                    this.chain = data.chain;
+                }
+            }
+        }
+        get request_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
+        }
+        set request_id(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get chain() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_1.blockchainpb.BlockInternal, 3) as dependency_1.blockchainpb.BlockInternal[];
+        }
+        set chain(value: dependency_1.blockchainpb.BlockInternal[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 3, value);
+        }
+        static fromObject(data: {
+            request_id?: string;
+            chain?: ReturnType<typeof dependency_1.blockchainpb.BlockInternal.prototype.toObject>[];
+        }): GetHeadToCheckpointChainResponse {
+            const message = new GetHeadToCheckpointChainResponse({});
+            if (data.request_id != null) {
+                message.request_id = data.request_id;
+            }
+            if (data.chain != null) {
+                message.chain = data.chain.map(item => dependency_1.blockchainpb.BlockInternal.fromObject(item));
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                request_id?: string;
+                chain?: ReturnType<typeof dependency_1.blockchainpb.BlockInternal.prototype.toObject>[];
+            } = {};
+            if (this.request_id != null) {
+                data.request_id = this.request_id;
+            }
+            if (this.chain != null) {
+                data.chain = this.chain.map((item: dependency_1.blockchainpb.BlockInternal) => item.toObject());
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.request_id.length)
+                writer.writeString(1, this.request_id);
+            if (this.chain.length)
+                writer.writeRepeatedMessage(3, this.chain, (item: dependency_1.blockchainpb.BlockInternal) => item.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): GetHeadToCheckpointChainResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new GetHeadToCheckpointChainResponse();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.request_id = reader.readString();
+                        break;
+                    case 3:
+                        reader.readMessage(message.chain, () => pb_1.Message.addToRepeatedWrapperField(message, 3, dependency_1.blockchainpb.BlockInternal.deserialize(reader), dependency_1.blockchainpb.BlockInternal));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): GetHeadToCheckpointChainResponse {
+            return GetHeadToCheckpointChainResponse.deserialize(bytes);
+        }
+    }
+    export class RegisterCheckpoint extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            block_id?: number;
+            state?: dependency_2.statepb.State;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("block_id" in data && data.block_id != undefined) {
+                    this.block_id = data.block_id;
+                }
+                if ("state" in data && data.state != undefined) {
+                    this.state = data.state;
+                }
+            }
+        }
+        get block_id() {
+            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        }
+        set block_id(value: number) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        get state() {
+            return pb_1.Message.getWrapperField(this, dependency_2.statepb.State, 2) as dependency_2.statepb.State;
+        }
+        set state(value: dependency_2.statepb.State) {
+            pb_1.Message.setWrapperField(this, 2, value);
+        }
+        get has_state() {
+            return pb_1.Message.getField(this, 2) != null;
+        }
+        static fromObject(data: {
+            block_id?: number;
+            state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
+        }): RegisterCheckpoint {
+            const message = new RegisterCheckpoint({});
+            if (data.block_id != null) {
+                message.block_id = data.block_id;
+            }
+            if (data.state != null) {
+                message.state = dependency_2.statepb.State.fromObject(data.state);
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                block_id?: number;
+                state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
+            } = {};
+            if (this.block_id != null) {
+                data.block_id = this.block_id;
+            }
+            if (this.state != null) {
+                data.state = this.state.toObject();
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.block_id != 0)
+                writer.writeUint64(1, this.block_id);
+            if (this.has_state)
+                writer.writeMessage(2, this.state, () => this.state.serialize(writer));
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): RegisterCheckpoint {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new RegisterCheckpoint();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.block_id = reader.readUint64();
+                        break;
+                    case 2:
+                        reader.readMessage(message.state, () => message.state = dependency_2.statepb.State.deserialize(reader));
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): RegisterCheckpoint {
+            return RegisterCheckpoint.deserialize(bytes);
         }
     }
 }

@@ -6,6 +6,9 @@ subgraph LongestChainConsensus
     subgraph BlockchainManager
     direction TB;
 
+    initB[Init Blockchain] -->  ib([initialize blockchain with genesis block and init state])
+    ib --> nho
+
     nbi[New Block] --> ab([add block, verification would happen here])
     nci[New Chain] --repeated--> ab
     ab --> clc([compute longest chain])
@@ -55,6 +58,9 @@ subgraph LongestChainConsensus
 end
 
 subgraph Application
+
+start([start operation]) --> initBo[Init Blockchain]
+
 nhi[New Head] --> aghtcro[Get Head To Checkpoint Request]
 aghtcri[Get Head To Checkpoint Response] --> cs([Compute State])
 cs --> rco[Register Checkpoint]

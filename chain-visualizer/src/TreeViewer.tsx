@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import ReactFlow from "reactflow";
+import ReactFlow, { Node, NodeProps } from "reactflow";
 import "reactflow/dist/style.css";
 import dagre from "@dagrejs/dagre";
 import { useWebsocketListener } from "./hooks/useWebsocketListener";
@@ -61,6 +61,16 @@ const nodeIdToColor = (nodeId: string) => {
   return c;
 };
 
+function BlockNode(props: NodeProps<Block>) {
+  const { block_id, payload } = props.data;
+  return (
+    <div className="text-center px-3 font-mono">
+      <h1 className="text-xl">{block_id?.toString().substring(0, 6)}</h1>
+      <p className="text-lg">{payload?.message || "---"}</p>
+    </div>
+  );
+}
+
 export default function TreeViewer(props: { port: string }) {
   const { port } = props;
   const [treeState, setTreeState] = useState<
@@ -118,14 +128,15 @@ export default function TreeViewer(props: { port: string }) {
     return acc;
   }, {} as { [key: string]: Block });
 
-  const nodes = useMemo(() => {
+  const nodes: Node<Block>[] = useMemo(() => {
     if (!blockTree || !blockTree.blocks) {
       return [];
     }
 
     return blockTree.blocks.map((block) => ({
-      id: block.block_id?.toString(),
-      data: { label: block.block_id?.toString().substring(0, 6), block },
+      id: block.block_id?.toString() ?? "", // should always be defined, just making ts happy
+      type: "blockNode",
+      data: block,
       position: { x: 0, y: 0 },
     }));
   }, [blockTree]);
@@ -147,13 +158,12 @@ export default function TreeViewer(props: { port: string }) {
       return { nodes: [], edges: [] };
     }
     const layouted = getLayoutedElements(nodes, edges);
-    layouted.nodes = layouted.nodes.map((n) => ({
+    layouted.nodes = layouted.nodes.map((n: Node<Block>) => ({
       ...n,
       style: {
         backgroundColor: nodeIdToColor(n.id),
-        fontSize: "1.5rem",
-        borderColor: n.data.block.block_id === head ? "red" : "gray",
-        borderWidth: "0.25rem",
+        borderColor: n.data.block_id === head ? "red" : "gray",
+        borderWidth: "0.125rem",
       },
     }));
 
@@ -182,7 +192,11 @@ export default function TreeViewer(props: { port: string }) {
         Orphans: {orphans.map((o) => o.toString().substring(0, 6)).join(", ")}
       </p>
       <div className="h-full w-full">
-        <ReactFlow nodes={layoutedNodes} edges={layoutedEdges} />
+        <ReactFlow
+          nodes={layoutedNodes}
+          edges={layoutedEdges}
+          nodeTypes={{ blockNode: BlockNode }}
+        />
       </div>
     </div>
   );

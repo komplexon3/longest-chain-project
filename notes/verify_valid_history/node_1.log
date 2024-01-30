@@ -1,0 +1,5406 @@
+Starting blockchain
+Listening for connections on port 10001
+WSInter:	Starting websocker interceptor server
+Mir node running.
+Type in your messages and press 'Enter' to send.
+2024/01/30 22:27:52 Starting servers...
+node process started
+module started ID=bcm
+module started ID=mangler
+module started ID=timer
+module started ID=application
+module started ID=devnull
+module started ID=miner
+module started ID=synchronizer
+module started ID=communication
+module started ID=transport
+BCM:	Initialized blockchain
+App:	Processing payload request headId=148044
+Miner:	New mining operation headId=148044
+2024/01/30 22:27:53 wsConnection
+2024/01/30 22:27:53 wsConnection
+Gimme more
+Comm:	new block received blockId=131293
+BCM:	Adding new block blockId=131293
+App:	Processing verify block request
+BCM:	Adding block... blockId=131293 parentId=148044
+BCM:	Found parend in leaves blockId=131293 parentId=148044
+BCM:	Head changed head=131293
+BCM:	Computing Delta removeHead=14804434706579135401 addHead=13129333457495004618
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+=============
+Enter new message: 
+App:	Processing payload request headId=131293
+Miner:	New mining operation headId=131293
+BCM:	Received register checkpoint blockId=131293
+BCM:	Found block - registering checkpoint blockId=131293
+Miner:	Mining aborted headId=148044
+Gimme more
+Gimme more
+Gimme more
+Gimme more
+Comm:	new block received blockId=536952
+BCM:	Adding new block blockId=536952
+App:	Processing verify block request
+BCM:	Adding block... blockId=536952 parentId=131293
+BCM:	Found parend in leaves blockId=536952 parentId=131293
+BCM:	Head changed head=536952
+BCM:	Computing Delta removeHead=13129333457495004618 addHead=536952216911305068
+App:	Processing fork update poolSize=5
+App:	Pool after fork poolSize=5
+=== STATE ===
+3-1
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=536952
+BCM:	Found block - registering checkpoint blockId=536952
+App:	Processing payload request headId=536952
+Miner:	New mining operation headId=536952
+Miner:	Mining aborted headId=131293
+Gimme more
+Gimme more
+Comm:	new block received blockId=313003
+BCM:	Adding new block blockId=313003
+App:	Processing verify block request
+BCM:	Adding block... blockId=313003 parentId=536952
+BCM:	Found parend in leaves blockId=313003 parentId=536952
+BCM:	Head changed head=313003
+BCM:	Computing Delta removeHead=536952216911305068 addHead=3130031360410677970
+App:	Processing fork update poolSize=7
+App:	Pool after fork poolSize=7
+=== STATE ===
+3-1
+3-2
+=============
+Enter new message: 
+App:	Processing payload request headId=313003
+BCM:	Received register checkpoint blockId=313003
+Miner:	New mining operation headId=313003
+BCM:	Found block - registering checkpoint blockId=313003
+Miner:	Mining aborted headId=536952
+Gimme more
+Gimme more
+Comm:	new block received blockId=746419
+BCM:	Adding new block blockId=746419
+App:	Processing verify block request
+BCM:	Adding block... blockId=746419 parentId=313003
+BCM:	Found parend in leaves blockId=746419 parentId=313003
+BCM:	Head changed head=746419
+BCM:	Computing Delta removeHead=3130031360410677970 addHead=7464193835054039025
+App:	Processing fork update poolSize=9
+App:	Pool after fork poolSize=9
+=== STATE ===
+3-1
+3-2
+3-3
+=============
+Enter new message: 
+App:	Processing payload request headId=746419
+BCM:	Received register checkpoint blockId=746419
+BCM:	Found block - registering checkpoint blockId=746419
+Miner:	New mining operation headId=746419
+Miner:	Mining aborted headId=313003
+Comm:	new block received blockId=124865
+BCM:	Adding new block blockId=124865
+App:	Processing verify block request
+BCM:	Adding block... blockId=124865 parentId=746419
+BCM:	Found parend in leaves blockId=124865 parentId=746419
+BCM:	Head changed head=124865
+BCM:	Computing Delta removeHead=7464193835054039025 addHead=12486500202593342481
+App:	Processing fork update poolSize=9
+App:	Pool after fork poolSize=9
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=124865
+BCM:	Found block - registering checkpoint blockId=124865
+App:	Processing payload request headId=124865
+Miner:	New mining operation headId=124865
+Miner:	Mining aborted headId=746419
+Gimme more
+Gimme more
+Gimme more
+Comm:	new block received blockId=425032
+BCM:	Adding new block blockId=425032
+App:	Processing verify block request
+BCM:	Adding block... blockId=425032 parentId=124865
+BCM:	Found parend in leaves blockId=425032 parentId=124865
+BCM:	Head changed head=425032
+BCM:	Computing Delta removeHead=12486500202593342481 addHead=4250322660761406305
+App:	Processing fork update poolSize=12
+App:	Pool after fork poolSize=12
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+=============
+Enter new message: 
+App:	Processing payload request headId=425032
+Miner:	New mining operation headId=425032
+BCM:	Received register checkpoint blockId=425032
+Miner:	Mining aborted headId=124865
+BCM:	Found block - registering checkpoint blockId=425032
+Comm:	new block received blockId=155622
+BCM:	Adding new block blockId=155622
+App:	Processing verify block request
+BCM:	Adding block... blockId=155622 parentId=425032
+BCM:	Found parend in leaves blockId=155622 parentId=425032
+BCM:	Head changed head=155622
+BCM:	Computing Delta removeHead=4250322660761406305 addHead=15562221831914707998
+App:	Processing fork update poolSize=12
+App:	Pool after fork poolSize=12
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=155622
+BCM:	Found block - registering checkpoint blockId=155622
+App:	Processing payload request headId=155622
+Miner:	New mining operation headId=155622
+Miner:	Mining aborted headId=425032
+Gimme more
+Gimme more
+Gimme more
+Comm:	new block received blockId=265174
+BCM:	Adding new block blockId=265174
+App:	Processing verify block request
+BCM:	Adding block... blockId=265174 parentId=155622
+BCM:	Found parend in leaves blockId=265174 parentId=155622
+BCM:	Head changed head=265174
+BCM:	Computing Delta removeHead=15562221831914707998 addHead=2651745190811565485
+App:	Processing fork update poolSize=15
+App:	Pool after fork poolSize=15
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+=============
+Enter new message: 
+App:	Processing payload request headId=265174
+Miner:	New mining operation headId=265174
+BCM:	Received register checkpoint blockId=265174
+BCM:	Found block - registering checkpoint blockId=265174
+Miner:	Mining aborted headId=155622
+Comm:	new block received blockId=125282
+BCM:	Adding new block blockId=125282
+App:	Processing verify block request
+BCM:	Adding block... blockId=125282 parentId=265174
+BCM:	Found parend in leaves blockId=125282 parentId=265174
+BCM:	Head changed head=125282
+BCM:	Computing Delta removeHead=2651745190811565485 addHead=12528231757784212102
+App:	Processing fork update poolSize=15
+App:	Pool after fork poolSize=15
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=125282
+BCM:	Found block - registering checkpoint blockId=125282
+App:	Processing payload request headId=125282
+Miner:	New mining operation headId=125282
+Miner:	Mining aborted headId=265174
+Comm:	new block received blockId=162773
+BCM:	Adding new block blockId=162773
+App:	Processing verify block request
+BCM:	Adding block... blockId=162773 parentId=125282
+BCM:	Found parend in leaves blockId=162773 parentId=125282
+BCM:	Head changed head=162773
+BCM:	Computing Delta removeHead=12528231757784212102 addHead=16277320104001125207
+App:	Processing fork update poolSize=15
+App:	Pool after fork poolSize=15
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+=============
+Enter new message: 
+App:	Processing payload request headId=162773
+Miner:	New mining operation headId=162773
+Miner:	Mining aborted headId=125282
+BCM:	Received register checkpoint blockId=162773
+BCM:	Found block - registering checkpoint blockId=162773
+Comm:	new block received blockId=721293
+BCM:	Adding new block blockId=721293
+App:	Processing verify block request
+BCM:	Adding block... blockId=721293 parentId=162773
+BCM:	Found parend in leaves blockId=721293 parentId=162773
+BCM:	Head changed head=721293
+BCM:	Computing Delta removeHead=16277320104001125207 addHead=7212933113459228410
+App:	Processing fork update poolSize=15
+App:	Pool after fork poolSize=15
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=721293
+App:	Processing payload request headId=721293
+BCM:	Found block - registering checkpoint blockId=721293
+Miner:	New mining operation headId=721293
+Miner:	Mining aborted headId=162773
+Comm:	new block received blockId=857008
+BCM:	Adding new block blockId=857008
+App:	Processing verify block request
+BCM:	Adding block... blockId=857008 parentId=721293
+BCM:	Found parend in leaves blockId=857008 parentId=721293
+BCM:	Head changed head=857008
+BCM:	Computing Delta removeHead=7212933113459228410 addHead=8570088169087687429
+App:	Processing fork update poolSize=15
+App:	Pool after fork poolSize=15
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=857008
+BCM:	Found block - registering checkpoint blockId=857008
+App:	Processing payload request headId=857008
+Miner:	New mining operation headId=857008
+Miner:	Mining aborted headId=721293
+Miner:	Block mined headId=126281 parentId=857008
+Comm:	broadcasting block blockId=126281 manlge=true
+BCM:	Adding new block blockId=126281
+App:	Processing verify block request
+BCM:	Adding block... blockId=126281 parentId=857008
+BCM:	Found parend in leaves blockId=126281 parentId=857008
+BCM:	Head changed head=126281
+BCM:	Computing Delta removeHead=8570088169087687429 addHead=12628109175820843104
+App:	Processing fork update poolSize=15
+App:	Pool after fork poolSize=14
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+=============
+Enter new message: 
+App:	Processing payload request headId=126281
+BCM:	Received register checkpoint blockId=126281
+BCM:	Found block - registering checkpoint blockId=126281
+Miner:	New mining operation headId=126281
+2024/01/30 22:28:25 wsConnection
+Comm:	new block received blockId=140141
+BCM:	Adding new block blockId=140141
+App:	Processing verify block request
+BCM:	Adding block... blockId=140141 parentId=721293
+BCM:	Found parend in tree blockId=140141 parentId=721293
+Comm:	new block received blockId=435639
+BCM:	Adding new block blockId=435639
+App:	Processing verify block request
+BCM:	Adding block... blockId=435639 parentId=857008
+BCM:	Found parend in tree blockId=435639 parentId=857008
+Comm:	new block received blockId=266869
+BCM:	Adding new block blockId=266869
+App:	Processing verify block request
+BCM:	Adding block... blockId=266869 parentId=126281
+BCM:	Found parend in leaves blockId=266869 parentId=126281
+BCM:	Head changed head=266869
+BCM:	Computing Delta removeHead=12628109175820843104 addHead=2668690761322015593
+App:	Processing fork update poolSize=14
+App:	Pool after fork poolSize=14
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=266869
+BCM:	Found block - registering checkpoint blockId=266869
+App:	Processing payload request headId=266869
+Miner:	New mining operation headId=266869
+Miner:	Mining aborted headId=126281
+Comm:	new block received blockId=402167
+BCM:	Adding new block blockId=402167
+App:	Processing verify block request
+BCM:	Adding block... blockId=402167 parentId=435639
+BCM:	Found parend in leaves blockId=402167 parentId=435639
+Miner:	Block mined headId=193448 parentId=266869
+BCM:	Adding new block blockId=193448
+Comm:	broadcasting block blockId=193448 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=193448 parentId=266869
+BCM:	Found parend in leaves blockId=193448 parentId=266869
+BCM:	Head changed head=193448
+BCM:	Computing Delta removeHead=2668690761322015593 addHead=1934480756314754355
+App:	Processing fork update poolSize=14
+App:	Pool after fork poolSize=13
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+=============
+Enter new message: 
+App:	Processing payload request headId=193448
+Miner:	New mining operation headId=193448
+BCM:	Received register checkpoint blockId=193448
+BCM:	Found block - registering checkpoint blockId=193448
+Comm:	new block received blockId=162770
+BCM:	Adding new block blockId=162770
+App:	Processing verify block request
+BCM:	Adding block... blockId=162770 parentId=402167
+BCM:	Found parend in leaves blockId=162770 parentId=402167
+Comm:	new block received blockId=903896
+BCM:	Adding new block blockId=903896
+App:	Processing verify block request
+BCM:	Adding block... blockId=903896 parentId=193448
+BCM:	Found parend in leaves blockId=903896 parentId=193448
+BCM:	Head changed head=903896
+BCM:	Computing Delta removeHead=1934480756314754355 addHead=9038961306088718496
+App:	Processing fork update poolSize=13
+App:	Pool after fork poolSize=13
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+=============
+Enter new message: 
+App:	Processing payload request headId=903896
+Miner:	New mining operation headId=903896
+Miner:	Mining aborted headId=193448
+BCM:	Received register checkpoint blockId=903896
+BCM:	Found block - registering checkpoint blockId=903896
+BCM:	Received get chain request requestId=9038961306088718496-0 sourceModule=synchronizer endBlockId=903896 sourceBlockIds=162770 140141 148044 
+BCM:	Found block in tree - building chain requestId=9038961306088718496-0
+BCM:	Found link with sourceBlockIds - chain build requestId=9038961306088718496-0
+Sync:	External - Responsing to block request requestId=9038961306088718496-0 found=true mangle=false
+2024/01/30 22:28:41 wsConnection
+Comm:	new block received blockId=933671
+BCM:	Adding new block blockId=933671
+App:	Processing verify block request
+BCM:	Adding block... blockId=933671 parentId=903896
+BCM:	Found parend in leaves blockId=933671 parentId=903896
+BCM:	Head changed head=933671
+BCM:	Computing Delta removeHead=9038961306088718496 addHead=9336715503843603046
+App:	Processing fork update poolSize=13
+App:	Pool after fork poolSize=13
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+=============
+Enter new message: 
+App:	Processing payload request headId=933671
+Miner:	New mining operation headId=933671
+Miner:	Mining aborted headId=903896
+BCM:	Received register checkpoint blockId=933671
+BCM:	Found block - registering checkpoint blockId=933671
+2024/01/30 22:28:51 wsConnection
+Comm:	new block received blockId=127748
+BCM:	Adding new block blockId=127748
+App:	Processing verify block request
+BCM:	Adding block... blockId=127748 parentId=933671
+BCM:	Found parend in leaves blockId=127748 parentId=933671
+BCM:	Head changed head=127748
+BCM:	Computing Delta removeHead=9336715503843603046 addHead=12774802521731907204
+App:	Processing fork update poolSize=13
+App:	Pool after fork poolSize=13
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=127748
+BCM:	Found block - registering checkpoint blockId=127748
+App:	Processing payload request headId=127748
+Miner:	New mining operation headId=127748
+Miner:	Mining aborted headId=933671
+BCM:	Received get chain request requestId=7114780602257250358-0 sourceModule=synchronizer endBlockId=711478 sourceBlockIds=140141 933671 162770 148044 
+BCM:	Block not found - can't build chain requestId=7114780602257250358-0 error=no hit
+Comm:	new block received blockId=711478
+BCM:	Adding new block blockId=711478
+App:	Processing verify block request
+BCM:	Adding block... blockId=711478 parentId=127748
+BCM:	Found parend in leaves blockId=711478 parentId=127748
+BCM:	Head changed head=711478
+BCM:	Computing Delta removeHead=12774802521731907204 addHead=7114780602257250358
+App:	Processing fork update poolSize=13
+App:	Pool after fork poolSize=13
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=711478
+BCM:	Found block - registering checkpoint blockId=711478
+App:	Processing payload request headId=711478
+Miner:	New mining operation headId=711478
+Miner:	Mining aborted headId=127748
+Comm:	new block received blockId=654520
+BCM:	Adding new block blockId=654520
+App:	Processing verify block request
+BCM:	Adding block... blockId=654520 parentId=711478
+BCM:	Found parend in leaves blockId=654520 parentId=711478
+BCM:	Head changed head=654520
+BCM:	Computing Delta removeHead=7114780602257250358 addHead=654520603858090036
+App:	Processing fork update poolSize=13
+App:	Pool after fork poolSize=13
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=654520
+BCM:	Found block - registering checkpoint blockId=654520
+App:	Processing payload request headId=654520
+Miner:	New mining operation headId=654520
+Miner:	Mining aborted headId=711478
+Comm:	new block received blockId=388204
+BCM:	Adding new block blockId=388204
+App:	Processing verify block request
+BCM:	Adding block... blockId=388204 parentId=654520
+BCM:	Found parend in leaves blockId=388204 parentId=654520
+BCM:	Head changed head=388204
+BCM:	Computing Delta removeHead=654520603858090036 addHead=3882045392087634748
+App:	Processing fork update poolSize=13
+App:	Pool after fork poolSize=13
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+=============
+Enter new message: 
+App:	Processing payload request headId=388204
+BCM:	Received register checkpoint blockId=388204
+BCM:	Found block - registering checkpoint blockId=388204
+Miner:	New mining operation headId=388204
+Miner:	Mining aborted headId=654520
+Miner:	Block mined headId=265140 parentId=388204
+Comm:	broadcasting block blockId=265140 manlge=true
+BCM:	Adding new block blockId=265140
+App:	Processing verify block request
+BCM:	Adding block... blockId=265140 parentId=388204
+BCM:	Found parend in leaves blockId=265140 parentId=388204
+BCM:	Head changed head=265140
+BCM:	Computing Delta removeHead=3882045392087634748 addHead=2651408825728737302
+App:	Processing fork update poolSize=13
+App:	Pool after fork poolSize=12
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=265140
+BCM:	Found block - registering checkpoint blockId=265140
+App:	Processing payload request headId=265140
+Miner:	New mining operation headId=265140
+Miner:	Block mined headId=493700 parentId=265140
+Comm:	broadcasting block blockId=493700 manlge=true
+BCM:	Adding new block blockId=493700
+App:	Processing verify block request
+BCM:	Adding block... blockId=493700 parentId=265140
+BCM:	Found parend in leaves blockId=493700 parentId=265140
+BCM:	Head changed head=493700
+BCM:	Computing Delta removeHead=2651408825728737302 addHead=4937004844493379765
+App:	Processing fork update poolSize=12
+App:	Pool after fork poolSize=11
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+=============
+Enter new message: 
+App:	Processing payload request headId=493700
+Miner:	New mining operation headId=493700
+BCM:	Received register checkpoint blockId=493700
+BCM:	Found block - registering checkpoint blockId=493700
+Miner:	Block mined headId=100298 parentId=493700
+Comm:	broadcasting block blockId=100298 manlge=true
+BCM:	Adding new block blockId=100298
+App:	Processing verify block request
+BCM:	Adding block... blockId=100298 parentId=493700
+BCM:	Found parend in leaves blockId=100298 parentId=493700
+BCM:	Head changed head=100298
+BCM:	Computing Delta removeHead=4937004844493379765 addHead=10029868299323708560
+App:	Processing fork update poolSize=11
+App:	Pool after fork poolSize=10
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+=============
+Enter new message: 
+App:	Processing payload request headId=100298
+Miner:	New mining operation headId=100298
+BCM:	Received register checkpoint blockId=100298
+BCM:	Found block - registering checkpoint blockId=100298
+BCM:	Received get chain request requestId=10029868299323708560-2 sourceModule=synchronizer endBlockId=100298 sourceBlockIds=140141 162770 388204 148044 
+BCM:	Found block in tree - building chain requestId=10029868299323708560-2
+BCM:	Found link with sourceBlockIds - chain build requestId=10029868299323708560-2
+Sync:	External - Responsing to block request requestId=10029868299323708560-2 found=true mangle=false
+Comm:	new block received blockId=506053
+BCM:	Adding new block blockId=506053
+App:	Processing verify block request
+BCM:	Adding block... blockId=506053 parentId=388204
+BCM:	Found parend in tree blockId=506053 parentId=388204
+Miner:	Block mined headId=145439 parentId=100298
+Comm:	broadcasting block blockId=145439 manlge=true
+BCM:	Adding new block blockId=145439
+App:	Processing verify block request
+BCM:	Adding block... blockId=145439 parentId=100298
+BCM:	Found parend in leaves blockId=145439 parentId=100298
+BCM:	Head changed head=145439
+BCM:	Computing Delta removeHead=10029868299323708560 addHead=14543935192396404208
+App:	Processing fork update poolSize=10
+App:	Pool after fork poolSize=9
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+1-6
+=============
+Enter new message: 
+App:	Processing payload request headId=145439
+Miner:	New mining operation headId=145439
+BCM:	Received register checkpoint blockId=145439
+BCM:	Found block - registering checkpoint blockId=145439
+Comm:	new block received blockId=517110
+BCM:	Adding new block blockId=517110
+App:	Processing verify block request
+BCM:	Adding block... blockId=517110 parentId=100298
+BCM:	Found parend in tree blockId=517110 parentId=100298
+Comm:	new block received blockId=169476
+BCM:	Adding new block blockId=169476
+App:	Processing verify block request
+BCM:	Adding block... blockId=169476 parentId=517110
+BCM:	Found parend in leaves blockId=169476 parentId=517110
+BCM:	Head changed head=169476
+BCM:	Computing Delta removeHead=14543935192396404208 addHead=16947655157649243831
+App:	Processing fork update poolSize=9
+App:	Pool after fork poolSize=10
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=169476
+BCM:	Found block - registering checkpoint blockId=169476
+App:	Processing payload request headId=169476
+Miner:	New mining operation headId=169476
+Miner:	Mining aborted headId=145439
+Comm:	new block received blockId=931128
+BCM:	Adding new block blockId=931128
+App:	Processing verify block request
+BCM:	Adding block... blockId=931128 parentId=169476
+BCM:	Found parend in leaves blockId=931128 parentId=169476
+BCM:	Head changed head=931128
+BCM:	Computing Delta removeHead=16947655157649243831 addHead=9311281448993134999
+App:	Processing fork update poolSize=10
+App:	Pool after fork poolSize=10
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+=============
+Enter new message: 
+App:	Processing payload request headId=931128
+Miner:	New mining operation headId=931128
+BCM:	Received register checkpoint blockId=931128
+BCM:	Found block - registering checkpoint blockId=931128
+Miner:	Mining aborted headId=169476
+Comm:	new block received blockId=898220
+BCM:	Adding new block blockId=898220
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=898220
+BCM:	Sending sync request blockId=898220 leaves+genesis=506053 931128 145439 140141 162770 148044 
+Sync:	Intern - asking node for block block=898220 node=2 mangle=false
+Comm:	new block received blockId=140899
+BCM:	Adding new block blockId=140899
+App:	Processing verify block request
+BCM:	Adding block... blockId=140899 parentId=931128
+BCM:	Found parend in leaves blockId=140899 parentId=931128
+BCM:	Head changed head=140899
+BCM:	Computing Delta removeHead=9311281448993134999 addHead=14089931398550410891
+App:	Processing fork update poolSize=10
+App:	Pool after fork poolSize=10
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=140899
+BCM:	Found block - registering checkpoint blockId=140899
+App:	Processing payload request headId=140899
+Miner:	New mining operation headId=140899
+Miner:	Mining aborted headId=931128
+Comm:	new block received blockId=129268
+BCM:	Adding new block blockId=129268
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=129268
+BCM:	Sending sync request blockId=129268 leaves+genesis=162770 506053 140899 145439 140141 148044 
+Sync:	Intern - asking node for block block=129268 node=2 mangle=false
+BCM:	Received chain from synchronizer
+BCM:	Adding new chain chain=898220 129268 
+App:	Processing verify block request
+BCM:	Adding block... blockId=898220 parentId=140899
+BCM:	Found parend in leaves blockId=898220 parentId=140899
+BCM:	Adding block... blockId=129268 parentId=898220
+BCM:	Found parend in leaves blockId=129268 parentId=898220
+BCM:	Head changed head=129268
+BCM:	Computing Delta removeHead=14089931398550410891 addHead=12926844977686643326
+App:	Processing fork update poolSize=10
+App:	Pool after fork poolSize=9
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=129268
+BCM:	Found block - registering checkpoint blockId=129268
+App:	Processing payload request headId=129268
+Miner:	New mining operation headId=129268
+Miner:	Mining aborted headId=140899
+Miner:	Block mined headId=113273 parentId=129268
+BCM:	Adding new block blockId=113273
+Comm:	broadcasting block blockId=113273 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=113273 parentId=129268
+BCM:	Found parend in leaves blockId=113273 parentId=129268
+BCM:	Head changed head=113273
+BCM:	Computing Delta removeHead=12926844977686643326 addHead=11327330555589070677
+App:	Processing fork update poolSize=9
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+=============
+Enter new message: 
+App:	Processing payload request headId=113273
+Miner:	New mining operation headId=113273
+BCM:	Received register checkpoint blockId=113273
+BCM:	Found block - registering checkpoint blockId=113273
+Comm:	new block received blockId=110988
+BCM:	Adding new block blockId=110988
+App:	Processing verify block request
+BCM:	Adding block... blockId=110988 parentId=113273
+BCM:	Found parend in leaves blockId=110988 parentId=113273
+BCM:	Head changed head=110988
+BCM:	Computing Delta removeHead=11327330555589070677 addHead=11098884317452888213
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+=============
+Enter new message: 
+App:	Processing payload request headId=110988
+Miner:	New mining operation headId=110988
+BCM:	Received register checkpoint blockId=110988
+BCM:	Found block - registering checkpoint blockId=110988
+Miner:	Mining aborted headId=113273
+Comm:	new block received blockId=326005
+BCM:	Adding new block blockId=326005
+App:	Processing verify block request
+BCM:	Adding block... blockId=326005 parentId=110988
+BCM:	Found parend in leaves blockId=326005 parentId=110988
+BCM:	Head changed head=326005
+BCM:	Computing Delta removeHead=11098884317452888213 addHead=3260057284986002447
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+=============
+Enter new message: 
+App:	Processing payload request headId=326005
+Miner:	New mining operation headId=326005
+BCM:	Received register checkpoint blockId=326005
+BCM:	Found block - registering checkpoint blockId=326005
+Miner:	Mining aborted headId=110988
+Comm:	new block received blockId=142364
+BCM:	Adding new block blockId=142364
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=142364
+BCM:	Sending sync request blockId=142364 leaves+genesis=162770 506053 326005 145439 140141 148044 
+Sync:	Intern - asking node for block block=142364 node=3 mangle=false
+BCM:	Received chain from synchronizer
+BCM:	Adding new chain chain=155050 142364 
+App:	Processing verify block request
+BCM:	Adding block... blockId=155050 parentId=326005
+BCM:	Found parend in leaves blockId=155050 parentId=326005
+BCM:	Adding block... blockId=142364 parentId=155050
+BCM:	Found parend in leaves blockId=142364 parentId=155050
+BCM:	Head changed head=142364
+BCM:	Computing Delta removeHead=3260057284986002447 addHead=14236403729155171223
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+=============
+Enter new message: 
+App:	Processing payload request headId=142364
+BCM:	Received register checkpoint blockId=142364
+Miner:	Mining aborted headId=326005
+BCM:	Found block - registering checkpoint blockId=142364
+Miner:	New mining operation headId=142364
+Comm:	new block received blockId=177426
+BCM:	Adding new block blockId=177426
+App:	Processing verify block request
+BCM:	Adding block... blockId=177426 parentId=142364
+BCM:	Found parend in leaves blockId=177426 parentId=142364
+BCM:	Head changed head=177426
+BCM:	Computing Delta removeHead=14236403729155171223 addHead=17742617751558539523
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=177426
+BCM:	Found block - registering checkpoint blockId=177426
+App:	Processing payload request headId=177426
+Miner:	New mining operation headId=177426
+Miner:	Mining aborted headId=142364
+Comm:	new block received blockId=871420
+BCM:	Adding new block blockId=871420
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=871420
+BCM:	Sending sync request blockId=871420 leaves+genesis=506053 177426 145439 140141 162770 148044 
+Sync:	Intern - asking node for block block=871420 node=2 mangle=false
+Comm:	new block received blockId=243887
+BCM:	Adding new block blockId=243887
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=243887
+BCM:	Sending sync request blockId=243887 leaves+genesis=140141 162770 506053 177426 145439 148044 
+Sync:	Intern - asking node for block block=243887 node=2 mangle=false
+BCM:	Received chain from synchronizer
+BCM:	Adding new chain chain=297725 243887 
+App:	Processing verify block request
+BCM:	Adding block... blockId=297725 parentId=177426
+BCM:	Found parend in leaves blockId=297725 parentId=177426
+BCM:	Adding block... blockId=243887 parentId=297725
+BCM:	Found parend in leaves blockId=243887 parentId=297725
+BCM:	Head changed head=243887
+BCM:	Computing Delta removeHead=17742617751558539523 addHead=2438878030200077374
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+2-6
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=243887
+BCM:	Found block - registering checkpoint blockId=243887
+App:	Processing payload request headId=243887
+Miner:	New mining operation headId=243887
+Miner:	Mining aborted headId=177426
+Comm:	new block received blockId=135647
+BCM:	Adding new block blockId=135647
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=135647
+BCM:	Sending sync request blockId=135647 leaves+genesis=145439 140141 162770 506053 243887 148044 
+Sync:	Intern - asking node for block block=135647 node=2 mangle=false
+Comm:	new block received blockId=973125
+BCM:	Adding new block blockId=973125
+App:	Processing verify block request
+BCM:	Adding block... blockId=973125 parentId=243887
+BCM:	Found parend in leaves blockId=973125 parentId=243887
+BCM:	Head changed head=973125
+BCM:	Computing Delta removeHead=2438878030200077374 addHead=9731250678421556044
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+2-6
+2-7
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=973125
+BCM:	Found block - registering checkpoint blockId=973125
+App:	Processing payload request headId=973125
+Miner:	New mining operation headId=973125
+Miner:	Mining aborted headId=243887
+Comm:	new block received blockId=174482
+BCM:	Adding new block blockId=174482
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=174482
+BCM:	Sending sync request blockId=174482 leaves+genesis=145439 140141 162770 506053 973125 148044 
+Sync:	Intern - asking node for block block=174482 node=0 mangle=false
+BCM:	Received chain from synchronizer
+BCM:	Adding new chain chain=131293 536952 313003 746419 124865 425032 155622 265174 125282 162773 721293 857008 126281 266869 193448 903896 933671 127748 711478 654520 388204 265140 493700 100298 517110 169476 931128 140899 898220 129268 113273 110988 326005 155050 142364 177426 297725 871420 135647 174482 
+App:	Processing verify block request
+BCM:	Adding block... blockId=131293 parentId=148044
+BCM:	Block already in tree blockId=131293
+BCM:	Couldn't find parent blockId=131293 error=node already in tree
+BCM:	Block already in tree - ignore blockId=131293
+BCM:	Adding block... blockId=536952 parentId=131293
+BCM:	Block already in tree blockId=536952
+BCM:	Couldn't find parent blockId=536952 error=node already in tree
+BCM:	Block already in tree - ignore blockId=536952
+BCM:	Adding block... blockId=313003 parentId=536952
+BCM:	Block already in tree blockId=313003
+BCM:	Couldn't find parent blockId=313003 error=node already in tree
+BCM:	Block already in tree - ignore blockId=313003
+BCM:	Adding block... blockId=746419 parentId=313003
+BCM:	Block already in tree blockId=746419
+BCM:	Couldn't find parent blockId=746419 error=node already in tree
+BCM:	Block already in tree - ignore blockId=746419
+BCM:	Adding block... blockId=124865 parentId=746419
+BCM:	Block already in tree blockId=124865
+BCM:	Couldn't find parent blockId=124865 error=node already in tree
+BCM:	Block already in tree - ignore blockId=124865
+BCM:	Adding block... blockId=425032 parentId=124865
+BCM:	Block already in tree blockId=425032
+BCM:	Couldn't find parent blockId=425032 error=node already in tree
+BCM:	Block already in tree - ignore blockId=425032
+BCM:	Adding block... blockId=155622 parentId=425032
+BCM:	Block already in tree blockId=155622
+BCM:	Couldn't find parent blockId=155622 error=node already in tree
+BCM:	Block already in tree - ignore blockId=155622
+BCM:	Adding block... blockId=265174 parentId=155622
+BCM:	Block already in tree blockId=265174
+BCM:	Couldn't find parent blockId=265174 error=node already in tree
+BCM:	Block already in tree - ignore blockId=265174
+BCM:	Adding block... blockId=125282 parentId=265174
+BCM:	Block already in tree blockId=125282
+BCM:	Couldn't find parent blockId=125282 error=node already in tree
+BCM:	Block already in tree - ignore blockId=125282
+BCM:	Adding block... blockId=162773 parentId=125282
+BCM:	Block already in tree blockId=162773
+BCM:	Couldn't find parent blockId=162773 error=node already in tree
+BCM:	Block already in tree - ignore blockId=162773
+BCM:	Adding block... blockId=721293 parentId=162773
+BCM:	Block already in tree blockId=721293
+BCM:	Couldn't find parent blockId=721293 error=node already in tree
+BCM:	Block already in tree - ignore blockId=721293
+BCM:	Adding block... blockId=857008 parentId=721293
+BCM:	Found parend in tree blockId=857008 parentId=721293
+BCM:	Adding block... blockId=126281 parentId=857008
+BCM:	Found parend in leaves blockId=126281 parentId=857008
+BCM:	Adding block... blockId=266869 parentId=126281
+BCM:	Found parend in leaves blockId=266869 parentId=126281
+BCM:	Adding block... blockId=193448 parentId=266869
+BCM:	Found parend in leaves blockId=193448 parentId=266869
+BCM:	Adding block... blockId=903896 parentId=193448
+BCM:	Found parend in leaves blockId=903896 parentId=193448
+BCM:	Adding block... blockId=933671 parentId=903896
+BCM:	Found parend in leaves blockId=933671 parentId=903896
+BCM:	Adding block... blockId=127748 parentId=933671
+BCM:	Found parend in leaves blockId=127748 parentId=933671
+BCM:	Adding block... blockId=711478 parentId=127748
+BCM:	Found parend in leaves blockId=711478 parentId=127748
+BCM:	Adding block... blockId=654520 parentId=711478
+BCM:	Found parend in leaves blockId=654520 parentId=711478
+BCM:	Adding block... blockId=388204 parentId=654520
+BCM:	Found parend in leaves blockId=388204 parentId=654520
+BCM:	Adding block... blockId=265140 parentId=388204
+BCM:	Found parend in leaves blockId=265140 parentId=388204
+BCM:	Adding block... blockId=493700 parentId=265140
+BCM:	Found parend in leaves blockId=493700 parentId=265140
+BCM:	Adding block... blockId=100298 parentId=493700
+BCM:	Found parend in leaves blockId=100298 parentId=493700
+BCM:	Adding block... blockId=517110 parentId=100298
+BCM:	Found parend in leaves blockId=517110 parentId=100298
+BCM:	Adding block... blockId=169476 parentId=517110
+BCM:	Found parend in leaves blockId=169476 parentId=517110
+BCM:	Adding block... blockId=931128 parentId=169476
+BCM:	Found parend in leaves blockId=931128 parentId=169476
+BCM:	Adding block... blockId=140899 parentId=931128
+BCM:	Found parend in leaves blockId=140899 parentId=931128
+BCM:	Adding block... blockId=898220 parentId=140899
+BCM:	Found parend in leaves blockId=898220 parentId=140899
+BCM:	Adding block... blockId=129268 parentId=898220
+BCM:	Found parend in leaves blockId=129268 parentId=898220
+BCM:	Adding block... blockId=113273 parentId=129268
+BCM:	Found parend in leaves blockId=113273 parentId=129268
+BCM:	Adding block... blockId=110988 parentId=113273
+BCM:	Found parend in leaves blockId=110988 parentId=113273
+BCM:	Adding block... blockId=326005 parentId=110988
+BCM:	Found parend in leaves blockId=326005 parentId=110988
+BCM:	Adding block... blockId=155050 parentId=326005
+BCM:	Found parend in leaves blockId=155050 parentId=326005
+BCM:	Adding block... blockId=142364 parentId=155050
+BCM:	Found parend in leaves blockId=142364 parentId=155050
+BCM:	Adding block... blockId=177426 parentId=142364
+BCM:	Found parend in leaves blockId=177426 parentId=142364
+BCM:	Adding block... blockId=297725 parentId=177426
+BCM:	Found parend in leaves blockId=297725 parentId=177426
+BCM:	Adding block... blockId=871420 parentId=297725
+BCM:	Found parend in leaves blockId=871420 parentId=297725
+BCM:	Adding block... blockId=135647 parentId=871420
+BCM:	Found parend in leaves blockId=135647 parentId=871420
+BCM:	Adding block... blockId=174482 parentId=135647
+BCM:	Found parend in leaves blockId=174482 parentId=135647
+BCM:	Head changed head=174482
+BCM:	Computing Delta removeHead=9731250678421556044 addHead=17448293050462586872
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=10
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=174482
+BCM:	Found block - registering checkpoint blockId=174482
+App:	Processing payload request headId=174482
+Miner:	New mining operation headId=174482
+Miner:	Mining aborted headId=973125
+Comm:	new block received blockId=658007
+BCM:	Adding new block blockId=658007
+App:	Processing verify block request
+BCM:	Adding block... blockId=658007 parentId=174482
+BCM:	Found parend in leaves blockId=658007 parentId=174482
+BCM:	Head changed head=658007
+BCM:	Computing Delta removeHead=17448293050462586872 addHead=6580078669601817310
+App:	Processing fork update poolSize=10
+App:	Pool after fork poolSize=10
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=658007
+BCM:	Found block - registering checkpoint blockId=658007
+App:	Processing payload request headId=658007
+Miner:	New mining operation headId=658007
+Miner:	Mining aborted headId=174482
+Comm:	new block received blockId=558503
+BCM:	Adding new block blockId=558503
+App:	Processing verify block request
+BCM:	Adding block... blockId=558503 parentId=658007
+BCM:	Found parend in leaves blockId=558503 parentId=658007
+BCM:	Head changed head=558503
+BCM:	Computing Delta removeHead=6580078669601817310 addHead=5585033486370965109
+App:	Processing fork update poolSize=10
+App:	Pool after fork poolSize=9
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=558503
+BCM:	Found block - registering checkpoint blockId=558503
+App:	Processing payload request headId=558503
+Miner:	New mining operation headId=558503
+Miner:	Mining aborted headId=658007
+Comm:	new block received blockId=156510
+BCM:	Adding new block blockId=156510
+App:	Processing verify block request
+BCM:	Adding block... blockId=156510 parentId=558503
+BCM:	Found parend in leaves blockId=156510 parentId=558503
+BCM:	Head changed head=156510
+BCM:	Computing Delta removeHead=5585033486370965109 addHead=15651031072450037898
+App:	Processing fork update poolSize=9
+App:	Pool after fork poolSize=9
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=156510
+BCM:	Found block - registering checkpoint blockId=156510
+App:	Processing payload request headId=156510
+Miner:	New mining operation headId=156510
+Miner:	Mining aborted headId=558503
+Comm:	new block received blockId=134387
+BCM:	Adding new block blockId=134387
+App:	Processing verify block request
+BCM:	Adding block... blockId=134387 parentId=156510
+BCM:	Found parend in leaves blockId=134387 parentId=156510
+BCM:	Head changed head=134387
+BCM:	Computing Delta removeHead=15651031072450037898 addHead=13438786457973560275
+App:	Processing fork update poolSize=9
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=134387
+BCM:	Found block - registering checkpoint blockId=134387
+App:	Processing payload request headId=134387
+Miner:	New mining operation headId=134387
+Miner:	Mining aborted headId=156510
+Comm:	new block received blockId=988260
+BCM:	Adding new block blockId=988260
+App:	Processing verify block request
+BCM:	Adding block... blockId=988260 parentId=134387
+BCM:	Found parend in leaves blockId=988260 parentId=134387
+BCM:	Head changed head=988260
+BCM:	Computing Delta removeHead=13438786457973560275 addHead=988260288516986216
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=988260
+BCM:	Found block - registering checkpoint blockId=988260
+App:	Processing payload request headId=988260
+Miner:	New mining operation headId=988260
+Miner:	Mining aborted headId=134387
+Comm:	new block received blockId=960057
+BCM:	Adding new block blockId=960057
+App:	Processing verify block request
+BCM:	Adding block... blockId=960057 parentId=988260
+BCM:	Found parend in leaves blockId=960057 parentId=988260
+BCM:	Head changed head=960057
+BCM:	Computing Delta removeHead=988260288516986216 addHead=9600573508574595398
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=960057
+BCM:	Found block - registering checkpoint blockId=960057
+App:	Processing payload request headId=960057
+Miner:	New mining operation headId=960057
+Miner:	Mining aborted headId=988260
+Comm:	new block received blockId=548973
+BCM:	Adding new block blockId=548973
+App:	Processing verify block request
+BCM:	Adding block... blockId=548973 parentId=960057
+BCM:	Found parend in leaves blockId=548973 parentId=960057
+BCM:	Head changed head=548973
+BCM:	Computing Delta removeHead=9600573508574595398 addHead=5489736806456600056
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=548973
+BCM:	Found block - registering checkpoint blockId=548973
+App:	Processing payload request headId=548973
+Miner:	New mining operation headId=548973
+Miner:	Mining aborted headId=960057
+Comm:	new block received blockId=896691
+BCM:	Adding new block blockId=896691
+App:	Processing verify block request
+BCM:	Adding block... blockId=896691 parentId=548973
+BCM:	Found parend in leaves blockId=896691 parentId=548973
+BCM:	Head changed head=896691
+BCM:	Computing Delta removeHead=5489736806456600056 addHead=8966912801448703424
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=896691
+BCM:	Found block - registering checkpoint blockId=896691
+App:	Processing payload request headId=896691
+Miner:	New mining operation headId=896691
+Miner:	Mining aborted headId=548973
+Comm:	new block received blockId=175744
+BCM:	Adding new block blockId=175744
+App:	Processing verify block request
+BCM:	Adding block... blockId=175744 parentId=896691
+BCM:	Found parend in leaves blockId=175744 parentId=896691
+BCM:	Head changed head=175744
+BCM:	Computing Delta removeHead=8966912801448703424 addHead=17574486450857934308
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=175744
+BCM:	Found block - registering checkpoint blockId=175744
+App:	Processing payload request headId=175744
+Miner:	New mining operation headId=175744
+Miner:	Mining aborted headId=896691
+Comm:	new block received blockId=789276
+BCM:	Adding new block blockId=789276
+App:	Processing verify block request
+BCM:	Adding block... blockId=789276 parentId=175744
+BCM:	Found parend in leaves blockId=789276 parentId=175744
+BCM:	Head changed head=789276
+BCM:	Computing Delta removeHead=17574486450857934308 addHead=7892768770341411063
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+=============
+Enter new message: 
+App:	Processing payload request headId=789276
+Miner:	New mining operation headId=789276
+BCM:	Received register checkpoint blockId=789276
+BCM:	Found block - registering checkpoint blockId=789276
+Miner:	Mining aborted headId=175744
+Comm:	new block received blockId=132453
+BCM:	Adding new block blockId=132453
+App:	Processing verify block request
+BCM:	Adding block... blockId=132453 parentId=789276
+BCM:	Found parend in leaves blockId=132453 parentId=789276
+BCM:	Head changed head=132453
+BCM:	Computing Delta removeHead=7892768770341411063 addHead=13245341083677611298
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=132453
+BCM:	Found block - registering checkpoint blockId=132453
+App:	Processing payload request headId=132453
+Miner:	New mining operation headId=132453
+Miner:	Mining aborted headId=789276
+Comm:	new block received blockId=406527
+BCM:	Adding new block blockId=406527
+App:	Processing verify block request
+BCM:	Adding block... blockId=406527 parentId=132453
+BCM:	Found parend in leaves blockId=406527 parentId=132453
+BCM:	Head changed head=406527
+BCM:	Computing Delta removeHead=13245341083677611298 addHead=4065273084114974772
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=8
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+=============
+Enter new message: 
+App:	Processing payload request headId=406527
+Miner:	New mining operation headId=406527
+BCM:	Received register checkpoint blockId=406527
+Miner:	Mining aborted headId=132453
+BCM:	Found block - registering checkpoint blockId=406527
+Miner:	Block mined headId=142841 parentId=406527
+Comm:	broadcasting block blockId=142841 manlge=true
+BCM:	Adding new block blockId=142841
+App:	Processing verify block request
+BCM:	Adding block... blockId=142841 parentId=406527
+BCM:	Found parend in leaves blockId=142841 parentId=406527
+BCM:	Head changed head=142841
+BCM:	Computing Delta removeHead=4065273084114974772 addHead=14284136506554258323
+App:	Processing fork update poolSize=8
+App:	Pool after fork poolSize=7
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+=============
+Enter new message: 
+App:	Processing payload request headId=142841
+BCM:	Received register checkpoint blockId=142841
+Miner:	New mining operation headId=142841
+BCM:	Found block - registering checkpoint blockId=142841
+2024/01/30 22:30:49 wsConnection
+Comm:	new block received blockId=901148
+BCM:	Adding new block blockId=901148
+App:	Processing verify block request
+BCM:	Adding block... blockId=901148 parentId=132453
+BCM:	Found parend in tree blockId=901148 parentId=132453
+2024/01/30 22:30:51 wsConnection
+Comm:	new block received blockId=129112
+BCM:	Adding new block blockId=129112
+App:	Processing verify block request
+BCM:	Adding block... blockId=129112 parentId=901148
+BCM:	Found parend in leaves blockId=129112 parentId=901148
+Comm:	new block received blockId=633698
+BCM:	Adding new block blockId=633698
+App:	Processing verify block request
+BCM:	Adding block... blockId=633698 parentId=142841
+BCM:	Found parend in leaves blockId=633698 parentId=142841
+BCM:	Head changed head=633698
+BCM:	Computing Delta removeHead=14284136506554258323 addHead=6336989531743217583
+App:	Processing fork update poolSize=7
+App:	Pool after fork poolSize=7
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+=============
+Enter new message: 
+App:	Processing payload request headId=633698
+Miner:	New mining operation headId=633698
+BCM:	Received register checkpoint blockId=633698
+BCM:	Found block - registering checkpoint blockId=633698
+Miner:	Mining aborted headId=142841
+Miner:	Block mined headId=112712 parentId=633698
+Comm:	broadcasting block blockId=112712 manlge=true
+BCM:	Adding new block blockId=112712
+App:	Processing verify block request
+BCM:	Adding block... blockId=112712 parentId=633698
+BCM:	Found parend in leaves blockId=112712 parentId=633698
+BCM:	Head changed head=112712
+BCM:	Computing Delta removeHead=6336989531743217583 addHead=11271267244956800565
+App:	Processing fork update poolSize=7
+App:	Pool after fork poolSize=6
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+=============
+Enter new message: 
+App:	Processing payload request headId=112712
+Miner:	New mining operation headId=112712
+BCM:	Received register checkpoint blockId=112712
+BCM:	Found block - registering checkpoint blockId=112712
+Comm:	new block received blockId=986530
+BCM:	Adding new block blockId=986530
+App:	Processing verify block request
+BCM:	Adding block... blockId=986530 parentId=112712
+BCM:	Found parend in leaves blockId=986530 parentId=112712
+BCM:	Head changed head=986530
+BCM:	Computing Delta removeHead=11271267244956800565 addHead=9865303732194581687
+App:	Processing fork update poolSize=6
+App:	Pool after fork poolSize=6
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+=============
+Enter new message: 
+App:	Processing payload request headId=986530
+BCM:	Received register checkpoint blockId=986530
+Miner:	Mining aborted headId=112712
+BCM:	Found block - registering checkpoint blockId=986530
+Miner:	New mining operation headId=986530
+Comm:	new block received blockId=335465
+BCM:	Adding new block blockId=335465
+App:	Processing verify block request
+BCM:	Adding block... blockId=335465 parentId=986530
+BCM:	Found parend in leaves blockId=335465 parentId=986530
+BCM:	Head changed head=335465
+BCM:	Computing Delta removeHead=9865303732194581687 addHead=3354657117455120063
+App:	Processing fork update poolSize=6
+App:	Pool after fork poolSize=6
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+=============
+Enter new message: 
+App:	Processing payload request headId=335465
+Miner:	New mining operation headId=335465
+BCM:	Received register checkpoint blockId=335465
+BCM:	Found block - registering checkpoint blockId=335465
+Miner:	Mining aborted headId=986530
+Comm:	new block received blockId=169087
+BCM:	Adding new block blockId=169087
+App:	Processing verify block request
+BCM:	Adding block... blockId=169087 parentId=335465
+BCM:	Found parend in leaves blockId=169087 parentId=335465
+BCM:	Head changed head=169087
+BCM:	Computing Delta removeHead=3354657117455120063 addHead=16908722553585871174
+App:	Processing fork update poolSize=6
+App:	Pool after fork poolSize=6
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=169087
+BCM:	Found block - registering checkpoint blockId=169087
+App:	Processing payload request headId=169087
+Miner:	New mining operation headId=169087
+Miner:	Mining aborted headId=335465
+Comm:	new block received blockId=565460
+BCM:	Adding new block blockId=565460
+App:	Processing verify block request
+BCM:	Adding block... blockId=565460 parentId=169087
+BCM:	Found parend in leaves blockId=565460 parentId=169087
+BCM:	Head changed head=565460
+BCM:	Computing Delta removeHead=16908722553585871174 addHead=5654606333267558009
+App:	Processing fork update poolSize=6
+App:	Pool after fork poolSize=6
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+=============
+Enter new message: 
+App:	Processing payload request headId=565460
+Miner:	New mining operation headId=565460
+BCM:	Received register checkpoint blockId=565460
+BCM:	Found block - registering checkpoint blockId=565460
+Miner:	Mining aborted headId=169087
+Miner:	Block mined headId=137273 parentId=565460
+Comm:	broadcasting block blockId=137273 manlge=true
+BCM:	Adding new block blockId=137273
+App:	Processing verify block request
+BCM:	Adding block... blockId=137273 parentId=565460
+BCM:	Found parend in leaves blockId=137273 parentId=565460
+BCM:	Head changed head=137273
+BCM:	Computing Delta removeHead=5654606333267558009 addHead=13727353491812059803
+App:	Processing fork update poolSize=6
+App:	Pool after fork poolSize=5
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=137273
+BCM:	Found block - registering checkpoint blockId=137273
+App:	Processing payload request headId=137273
+Miner:	New mining operation headId=137273
+BCM:	Received get chain request requestId=16846003491091577458-2 sourceModule=synchronizer endBlockId=168460 sourceBlockIds=145439 973125 565460 129112 140141 162770 506053 148044 
+BCM:	Block not found - can't build chain requestId=16846003491091577458-2 error=no hit
+Comm:	new block received blockId=168460
+BCM:	Adding new block blockId=168460
+App:	Processing verify block request
+BCM:	Adding block... blockId=168460 parentId=137273
+BCM:	Found parend in leaves blockId=168460 parentId=137273
+BCM:	Head changed head=168460
+BCM:	Computing Delta removeHead=13727353491812059803 addHead=16846003491091577458
+App:	Processing fork update poolSize=5
+App:	Pool after fork poolSize=5
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+=============
+Enter new message: 
+App:	Processing payload request headId=168460
+Miner:	New mining operation headId=168460
+BCM:	Received register checkpoint blockId=168460
+BCM:	Found block - registering checkpoint blockId=168460
+Miner:	Mining aborted headId=137273
+Comm:	new block received blockId=212299
+BCM:	Adding new block blockId=212299
+App:	Processing verify block request
+BCM:	Adding block... blockId=212299 parentId=565460
+BCM:	Found parend in tree blockId=212299 parentId=565460
+Comm:	new block received blockId=309477
+BCM:	Adding new block blockId=309477
+App:	Processing verify block request
+BCM:	Adding block... blockId=309477 parentId=168460
+BCM:	Found parend in leaves blockId=309477 parentId=168460
+BCM:	Head changed head=309477
+BCM:	Computing Delta removeHead=16846003491091577458 addHead=3094775893608297817
+App:	Processing fork update poolSize=5
+App:	Pool after fork poolSize=5
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=309477
+BCM:	Found block - registering checkpoint blockId=309477
+App:	Processing payload request headId=309477
+Miner:	New mining operation headId=309477
+Miner:	Mining aborted headId=168460
+Miner:	Block mined headId=415665 parentId=309477
+Comm:	broadcasting block blockId=415665 manlge=true
+BCM:	Adding new block blockId=415665
+App:	Processing verify block request
+BCM:	Adding block... blockId=415665 parentId=309477
+BCM:	Found parend in leaves blockId=415665 parentId=309477
+BCM:	Head changed head=415665
+BCM:	Computing Delta removeHead=3094775893608297817 addHead=4156659568427928882
+App:	Processing fork update poolSize=5
+App:	Pool after fork poolSize=4
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=415665
+BCM:	Found block - registering checkpoint blockId=415665
+App:	Processing payload request headId=415665
+Miner:	New mining operation headId=415665
+Comm:	new block received blockId=156010
+BCM:	Adding new block blockId=156010
+App:	Processing verify block request
+BCM:	Adding block... blockId=156010 parentId=212299
+BCM:	Found parend in leaves blockId=156010 parentId=212299
+Comm:	new block received blockId=938762
+BCM:	Adding new block blockId=938762
+App:	Processing verify block request
+BCM:	Adding block... blockId=938762 parentId=415665
+BCM:	Found parend in leaves blockId=938762 parentId=415665
+BCM:	Head changed head=938762
+BCM:	Computing Delta removeHead=4156659568427928882 addHead=9387629216890123371
+App:	Processing fork update poolSize=4
+App:	Pool after fork poolSize=4
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=938762
+App:	Processing payload request headId=938762
+Miner:	New mining operation headId=938762
+BCM:	Found block - registering checkpoint blockId=938762
+Miner:	Mining aborted headId=415665
+Comm:	new block received blockId=592385
+BCM:	Adding new block blockId=592385
+App:	Processing verify block request
+BCM:	Adding block... blockId=592385 parentId=938762
+BCM:	Found parend in leaves blockId=592385 parentId=938762
+BCM:	Head changed head=592385
+BCM:	Computing Delta removeHead=9387629216890123371 addHead=5923852856135628137
+App:	Processing fork update poolSize=4
+App:	Pool after fork poolSize=4
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=592385
+BCM:	Found block - registering checkpoint blockId=592385
+App:	Processing payload request headId=592385
+Miner:	New mining operation headId=592385
+Miner:	Mining aborted headId=938762
+Comm:	new block received blockId=721918
+BCM:	Adding new block blockId=721918
+App:	Processing verify block request
+BCM:	Adding block... blockId=721918 parentId=938762
+BCM:	Found parend in tree blockId=721918 parentId=938762
+Miner:	Block mined headId=392530 parentId=592385
+BCM:	Adding new block blockId=392530
+Comm:	broadcasting block blockId=392530 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=392530 parentId=592385
+BCM:	Found parend in leaves blockId=392530 parentId=592385
+BCM:	Head changed head=392530
+BCM:	Computing Delta removeHead=5923852856135628137 addHead=3925301949040299319
+App:	Processing fork update poolSize=4
+App:	Pool after fork poolSize=3
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=392530
+App:	Processing payload request headId=392530
+Miner:	New mining operation headId=392530
+BCM:	Found block - registering checkpoint blockId=392530
+Miner:	Block mined headId=493320 parentId=392530
+BCM:	Adding new block blockId=493320
+Comm:	broadcasting block blockId=493320 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=493320 parentId=392530
+BCM:	Found parend in leaves blockId=493320 parentId=392530
+BCM:	Head changed head=493320
+BCM:	Computing Delta removeHead=3925301949040299319 addHead=4933208492209376686
+App:	Processing fork update poolSize=3
+App:	Pool after fork poolSize=2
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=493320
+BCM:	Found block - registering checkpoint blockId=493320
+App:	Processing payload request headId=493320
+Miner:	New mining operation headId=493320
+Miner:	Block mined headId=115460 parentId=493320
+BCM:	Adding new block blockId=115460
+Comm:	broadcasting block blockId=115460 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=115460 parentId=493320
+BCM:	Found parend in leaves blockId=115460 parentId=493320
+BCM:	Head changed head=115460
+BCM:	Computing Delta removeHead=4933208492209376686 addHead=11546017141205960515
+App:	Processing fork update poolSize=2
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+App:	Processing payload request headId=115460
+Miner:	New mining operation headId=115460
+BCM:	Received register checkpoint blockId=115460
+BCM:	Found block - registering checkpoint blockId=115460
+Comm:	new block received blockId=127025
+BCM:	Adding new block blockId=127025
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=127025
+BCM:	Sending sync request blockId=127025 leaves+genesis=162770 506053 115460 129112 156010 721918 145439 140141 973125 148044 
+Sync:	Intern - asking node for block block=127025 node=2 mangle=false
+Comm:	new block received blockId=128557
+BCM:	Adding new block blockId=128557
+App:	Processing verify block request
+BCM:	Adding block... blockId=128557 parentId=115460
+BCM:	Found parend in leaves blockId=128557 parentId=115460
+BCM:	Head changed head=128557
+BCM:	Computing Delta removeHead=11546017141205960515 addHead=12855730454675490508
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+App:	Processing payload request headId=128557
+Miner:	New mining operation headId=128557
+BCM:	Received register checkpoint blockId=128557
+BCM:	Found block - registering checkpoint blockId=128557
+Miner:	Mining aborted headId=115460
+BCM:	Received chain from synchronizer
+BCM:	Adding new chain chain=128557 127025 
+App:	Processing verify block request
+BCM:	Adding block... blockId=128557 parentId=115460
+BCM:	Block already in leaves - ignore blockId=128557
+BCM:	Adding block... blockId=127025 parentId=128557
+BCM:	Found parend in leaves blockId=127025 parentId=128557
+BCM:	Head changed head=127025
+BCM:	Computing Delta removeHead=12855730454675490508 addHead=12702559385931639926
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+App:	Processing payload request headId=127025
+Miner:	New mining operation headId=127025
+BCM:	Received register checkpoint blockId=127025
+BCM:	Found block - registering checkpoint blockId=127025
+Miner:	Mining aborted headId=128557
+Comm:	new block received blockId=172500
+BCM:	Adding new block blockId=172500
+App:	Processing verify block request
+BCM:	Adding block... blockId=172500 parentId=127025
+BCM:	Found parend in leaves blockId=172500 parentId=127025
+BCM:	Head changed head=172500
+BCM:	Computing Delta removeHead=12702559385931639926 addHead=17250092461554324192
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+App:	Processing payload request headId=172500
+Miner:	New mining operation headId=172500
+BCM:	Received register checkpoint blockId=172500
+BCM:	Found block - registering checkpoint blockId=172500
+Miner:	Mining aborted headId=127025
+Comm:	new block received blockId=167589
+BCM:	Adding new block blockId=167589
+App:	Processing verify block request
+BCM:	Adding block... blockId=167589 parentId=172500
+BCM:	Found parend in leaves blockId=167589 parentId=172500
+BCM:	Head changed head=167589
+BCM:	Computing Delta removeHead=17250092461554324192 addHead=16758954546649847679
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+App:	Processing payload request headId=167589
+Miner:	New mining operation headId=167589
+BCM:	Received register checkpoint blockId=167589
+BCM:	Found block - registering checkpoint blockId=167589
+Miner:	Mining aborted headId=172500
+Comm:	new block received blockId=497252
+BCM:	Adding new block blockId=497252
+App:	Processing verify block request
+BCM:	Adding block... blockId=497252 parentId=167589
+BCM:	Found parend in leaves blockId=497252 parentId=167589
+BCM:	Head changed head=497252
+BCM:	Computing Delta removeHead=16758954546649847679 addHead=497252421784104700
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=497252
+BCM:	Found block - registering checkpoint blockId=497252
+App:	Processing payload request headId=497252
+Miner:	New mining operation headId=497252
+Miner:	Mining aborted headId=167589
+Comm:	new block received blockId=766817
+BCM:	Adding new block blockId=766817
+App:	Processing verify block request
+BCM:	Adding block... blockId=766817 parentId=497252
+BCM:	Found parend in leaves blockId=766817 parentId=497252
+BCM:	Head changed head=766817
+BCM:	Computing Delta removeHead=497252421784104700 addHead=7668174578042398038
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=766817
+BCM:	Found block - registering checkpoint blockId=766817
+App:	Processing payload request headId=766817
+Miner:	New mining operation headId=766817
+Miner:	Mining aborted headId=497252
+Comm:	new block received blockId=100524
+BCM:	Adding new block blockId=100524
+App:	Processing verify block request
+BCM:	Adding block... blockId=100524 parentId=766817
+BCM:	Found parend in leaves blockId=100524 parentId=766817
+BCM:	Head changed head=100524
+BCM:	Computing Delta removeHead=7668174578042398038 addHead=10052488868392998724
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=100524
+BCM:	Found block - registering checkpoint blockId=100524
+App:	Processing payload request headId=100524
+Miner:	New mining operation headId=100524
+Miner:	Mining aborted headId=766817
+Comm:	new block received blockId=878074
+BCM:	Adding new block blockId=878074
+App:	Processing verify block request
+BCM:	Adding block... blockId=878074 parentId=100524
+BCM:	Found parend in leaves blockId=878074 parentId=100524
+BCM:	Head changed head=878074
+BCM:	Computing Delta removeHead=10052488868392998724 addHead=8780744877726707308
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+App:	Processing payload request headId=878074
+Miner:	New mining operation headId=878074
+BCM:	Received register checkpoint blockId=878074
+BCM:	Found block - registering checkpoint blockId=878074
+Miner:	Mining aborted headId=100524
+Comm:	new block received blockId=560675
+BCM:	Adding new block blockId=560675
+App:	Processing verify block request
+BCM:	Adding block... blockId=560675 parentId=878074
+BCM:	Found parend in leaves blockId=560675 parentId=878074
+BCM:	Head changed head=560675
+BCM:	Computing Delta removeHead=8780744877726707308 addHead=5606757021975776049
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+=============
+Enter new message: 
+App:	Processing payload request headId=560675
+Miner:	New mining operation headId=560675
+BCM:	Received register checkpoint blockId=560675
+BCM:	Found block - registering checkpoint blockId=560675
+Miner:	Mining aborted headId=878074
+Comm:	new block received blockId=313274
+BCM:	Adding new block blockId=313274
+App:	Processing verify block request
+BCM:	Adding block... blockId=313274 parentId=878074
+BCM:	Found parend in tree blockId=313274 parentId=878074
+Comm:	new block received blockId=152518
+BCM:	Adding new block blockId=152518
+App:	Processing verify block request
+BCM:	Adding block... blockId=152518 parentId=878074
+BCM:	Found parend in tree blockId=152518 parentId=878074
+Miner:	Block mined headId=584125 parentId=560675
+Comm:	broadcasting block blockId=584125 manlge=true
+BCM:	Adding new block blockId=584125
+App:	Processing verify block request
+BCM:	Adding block... blockId=584125 parentId=560675
+BCM:	Found parend in leaves blockId=584125 parentId=560675
+BCM:	Head changed head=584125
+BCM:	Computing Delta removeHead=5606757021975776049 addHead=5841259470601665293
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+App:	Processing payload request headId=584125
+Miner:	New mining operation headId=584125
+BCM:	Received register checkpoint blockId=584125
+BCM:	Found block - registering checkpoint blockId=584125
+Comm:	new block received blockId=177224
+BCM:	Adding new block blockId=177224
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=177224
+BCM:	Sending sync request blockId=177224 leaves+genesis=145439 140141 973125 313274 721918 584125 162770 506053 152518 129112 156010 148044 
+Sync:	Intern - asking node for block block=177224 node=2 mangle=false
+Comm:	new block received blockId=847195
+BCM:	Adding new block blockId=847195
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=847195
+BCM:	Sending sync request blockId=847195 leaves+genesis=152518 129112 156010 721918 584125 162770 506053 973125 313274 145439 140141 148044 
+Sync:	Intern - asking node for block block=847195 node=3 mangle=false
+Miner:	Block mined headId=450829 parentId=584125
+BCM:	Adding new block blockId=450829
+Comm:	broadcasting block blockId=450829 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=450829 parentId=584125
+BCM:	Found parend in leaves blockId=450829 parentId=584125
+BCM:	Head changed head=450829
+BCM:	Computing Delta removeHead=5841259470601665293 addHead=4508298782403871770
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=450829
+BCM:	Found block - registering checkpoint blockId=450829
+App:	Processing payload request headId=450829
+Miner:	New mining operation headId=450829
+Comm:	new block received blockId=180061
+BCM:	Adding new block blockId=180061
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=180061
+BCM:	Sending sync request blockId=180061 leaves+genesis=313274 145439 140141 973125 129112 156010 721918 450829 162770 506053 152518 148044 
+Sync:	Intern - asking node for block block=180061 node=2 mangle=false
+BCM:	Received get chain request requestId=1800612694186312159-2 sourceModule=synchronizer endBlockId=180061 sourceBlockIds=450829 152518 140141 162770 506053 145439 973125 721918 407519 156010 129112 148044 
+BCM:	Block not found - can't build chain requestId=1800612694186312159-2 error=no hit
+Comm:	new block received blockId=528179
+BCM:	Adding new block blockId=528179
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=528179
+BCM:	Sending sync request blockId=528179 leaves+genesis=145439 140141 973125 313274 721918 450829 162770 506053 152518 129112 156010 148044 
+Sync:	Intern - asking node for block block=528179 node=2 mangle=false
+BCM:	Received get chain request requestId=5281790523828994979-2 sourceModule=synchronizer endBlockId=528179 sourceBlockIds=162770 506053 145439 973125 721918 450829 152518 140141 407519 129112 156010 148044 
+BCM:	Block not found - can't build chain requestId=5281790523828994979-2 error=no hit
+Comm:	new block received blockId=637697
+BCM:	Adding new block blockId=637697
+BCM:	Parent not found. Could be invalid chain/block or we are missing a part. Sending sync req to sync end of chain. blockId=637697
+BCM:	Sending sync request blockId=637697 leaves+genesis=145439 140141 973125 313274 162770 506053 152518 129112 156010 721918 450829 148044 
+Sync:	Intern - asking node for block block=637697 node=0 mangle=false
+BCM:	Received chain from synchronizer
+BCM:	Adding new chain chain=407519 177224 847195 180061 528179 637697 
+App:	Processing verify block request
+BCM:	Adding block... blockId=407519 parentId=313274
+BCM:	Found parend in leaves blockId=407519 parentId=313274
+BCM:	Adding block... blockId=177224 parentId=407519
+BCM:	Found parend in leaves blockId=177224 parentId=407519
+BCM:	Adding block... blockId=847195 parentId=177224
+BCM:	Found parend in leaves blockId=847195 parentId=177224
+BCM:	Adding block... blockId=180061 parentId=847195
+BCM:	Found parend in leaves blockId=180061 parentId=847195
+BCM:	Adding block... blockId=528179 parentId=180061
+BCM:	Found parend in leaves blockId=528179 parentId=180061
+BCM:	Adding block... blockId=637697 parentId=528179
+BCM:	Found parend in leaves blockId=637697 parentId=528179
+BCM:	Head changed head=637697
+BCM:	Computing Delta removeHead=4508298782403871770 addHead=6376978521880707929
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=637697
+BCM:	Found block - registering checkpoint blockId=637697
+App:	Processing payload request headId=637697
+Miner:	New mining operation headId=637697
+Miner:	Mining aborted headId=450829
+Comm:	new block received blockId=129340
+BCM:	Adding new block blockId=129340
+App:	Processing verify block request
+BCM:	Adding block... blockId=129340 parentId=637697
+BCM:	Found parend in leaves blockId=129340 parentId=637697
+BCM:	Head changed head=129340
+BCM:	Computing Delta removeHead=6376978521880707929 addHead=12934017208437347634
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+App:	Processing payload request headId=129340
+BCM:	Received register checkpoint blockId=129340
+BCM:	Found block - registering checkpoint blockId=129340
+Miner:	New mining operation headId=129340
+Miner:	Mining aborted headId=637697
+Comm:	new block received blockId=352325
+BCM:	Adding new block blockId=352325
+App:	Processing verify block request
+BCM:	Adding block... blockId=352325 parentId=129340
+BCM:	Found parend in leaves blockId=352325 parentId=129340
+BCM:	Head changed head=352325
+BCM:	Computing Delta removeHead=12934017208437347634 addHead=3523251121126108538
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+App:	Processing payload request headId=352325
+Miner:	New mining operation headId=352325
+BCM:	Received register checkpoint blockId=352325
+BCM:	Found block - registering checkpoint blockId=352325
+Miner:	Mining aborted headId=129340
+BCM:	Received get chain request requestId=9978030252733777993-3 sourceModule=synchronizer endBlockId=997803 sourceBlockIds=129112 156010 152518 450829 140141 162770 506053 145439 973125 721918 129340 148044 
+BCM:	Block not found - can't build chain requestId=9978030252733777993-3 error=no hit
+Comm:	new block received blockId=997803
+BCM:	Adding new block blockId=997803
+App:	Processing verify block request
+BCM:	Adding block... blockId=997803 parentId=352325
+BCM:	Found parend in leaves blockId=997803 parentId=352325
+BCM:	Head changed head=997803
+BCM:	Computing Delta removeHead=3523251121126108538 addHead=9978030252733777993
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=1
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+App:	Processing payload request headId=997803
+Miner:	New mining operation headId=997803
+BCM:	Received register checkpoint blockId=997803
+BCM:	Found block - registering checkpoint blockId=997803
+Miner:	Mining aborted headId=352325
+Miner:	Block mined headId=238257 parentId=997803
+Comm:	broadcasting block blockId=238257 manlge=true
+BCM:	Adding new block blockId=238257
+App:	Processing verify block request
+BCM:	Adding block... blockId=238257 parentId=997803
+BCM:	Found parend in leaves blockId=238257 parentId=997803
+BCM:	Head changed head=238257
+BCM:	Computing Delta removeHead=9978030252733777993 addHead=2382572468454941380
+App:	Processing fork update poolSize=1
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=238257
+BCM:	Found block - registering checkpoint blockId=238257
+App:	Processing payload request headId=238257
+Miner:	New mining operation headId=238257
+BCM:	Received get chain request requestId=2382572468454941380-3 sourceModule=synchronizer endBlockId=238257 sourceBlockIds=145439 973125 721918 129340 450829 140141 162770 506053 152518 129112 156010 148044 
+BCM:	Found block in tree - building chain requestId=2382572468454941380-3
+BCM:	Found link with sourceBlockIds - chain build requestId=2382572468454941380-3
+Sync:	External - Responsing to block request requestId=2382572468454941380-3 found=true mangle=false
+Comm:	new block received blockId=724712
+BCM:	Adding new block blockId=724712
+App:	Processing verify block request
+BCM:	Adding block... blockId=724712 parentId=238257
+BCM:	Found parend in leaves blockId=724712 parentId=238257
+BCM:	Head changed head=724712
+BCM:	Computing Delta removeHead=2382572468454941380 addHead=7247125930499285648
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+App:	Processing payload request headId=724712
+Miner:	New mining operation headId=724712
+BCM:	Received register checkpoint blockId=724712
+BCM:	Found block - registering checkpoint blockId=724712
+Miner:	Mining aborted headId=238257
+Comm:	new block received blockId=141070
+BCM:	Adding new block blockId=141070
+App:	Processing verify block request
+BCM:	Adding block... blockId=141070 parentId=724712
+BCM:	Found parend in leaves blockId=141070 parentId=724712
+BCM:	Head changed head=141070
+BCM:	Computing Delta removeHead=7247125930499285648 addHead=14107003373217428276
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=141070
+BCM:	Found block - registering checkpoint blockId=141070
+App:	Processing payload request headId=141070
+Miner:	New mining operation headId=141070
+Miner:	Mining aborted headId=724712
+Miner:	Block mined headId=959725 parentId=141070
+Comm:	broadcasting block blockId=959725 manlge=true
+BCM:	Adding new block blockId=959725
+App:	Processing verify block request
+BCM:	Adding block... blockId=959725 parentId=141070
+BCM:	Found parend in leaves blockId=959725 parentId=141070
+BCM:	Head changed head=959725
+BCM:	Computing Delta removeHead=14107003373217428276 addHead=9597255204672979738
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=959725
+BCM:	Found block - registering checkpoint blockId=959725
+App:	Processing payload request headId=959725
+Miner:	New mining operation headId=959725
+Comm:	new block received blockId=541920
+BCM:	Adding new block blockId=541920
+App:	Processing verify block request
+BCM:	Adding block... blockId=541920 parentId=959725
+BCM:	Found parend in leaves blockId=541920 parentId=959725
+BCM:	Head changed head=541920
+BCM:	Computing Delta removeHead=9597255204672979738 addHead=5419205155404110339
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+App:	Processing payload request headId=541920
+BCM:	Received register checkpoint blockId=541920
+BCM:	Found block - registering checkpoint blockId=541920
+Miner:	New mining operation headId=541920
+Miner:	Mining aborted headId=959725
+Comm:	new block received blockId=854669
+BCM:	Adding new block blockId=854669
+App:	Processing verify block request
+BCM:	Adding block... blockId=854669 parentId=541920
+BCM:	Found parend in leaves blockId=854669 parentId=541920
+BCM:	Head changed head=854669
+BCM:	Computing Delta removeHead=5419205155404110339 addHead=8546693817962898802
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+App:	Processing payload request headId=854669
+Miner:	New mining operation headId=854669
+BCM:	Received register checkpoint blockId=854669
+BCM:	Found block - registering checkpoint blockId=854669
+Miner:	Mining aborted headId=541920
+Miner:	Block mined headId=139059 parentId=854669
+BCM:	Adding new block blockId=139059
+Comm:	broadcasting block blockId=139059 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=139059 parentId=854669
+BCM:	Found parend in leaves blockId=139059 parentId=854669
+BCM:	Head changed head=139059
+BCM:	Computing Delta removeHead=8546693817962898802 addHead=13905976917781558349
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=139059
+BCM:	Found block - registering checkpoint blockId=139059
+App:	Processing payload request headId=139059
+Miner:	New mining operation headId=139059
+Comm:	new block received blockId=747329
+BCM:	Adding new block blockId=747329
+App:	Processing verify block request
+BCM:	Adding block... blockId=747329 parentId=854669
+BCM:	Found parend in tree blockId=747329 parentId=854669
+Miner:	Block mined headId=559262 parentId=139059
+BCM:	Adding new block blockId=559262
+Comm:	broadcasting block blockId=559262 manlge=true
+App:	Processing verify block request
+BCM:	Adding block... blockId=559262 parentId=139059
+BCM:	Found parend in leaves blockId=559262 parentId=139059
+BCM:	Head changed head=559262
+BCM:	Computing Delta removeHead=13905976917781558349 addHead=5592621392843147074
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=559262
+BCM:	Found block - registering checkpoint blockId=559262
+App:	Processing payload request headId=559262
+Miner:	New mining operation headId=559262
+Comm:	new block received blockId=607123
+BCM:	Adding new block blockId=607123
+App:	Processing verify block request
+BCM:	Adding block... blockId=607123 parentId=559262
+BCM:	Found parend in leaves blockId=607123 parentId=559262
+BCM:	Head changed head=607123
+BCM:	Computing Delta removeHead=5592621392843147074 addHead=6071231274951186237
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=607123
+BCM:	Found block - registering checkpoint blockId=607123
+App:	Processing payload request headId=607123
+Miner:	New mining operation headId=607123
+Miner:	Mining aborted headId=559262
+BCM:	Received get chain request requestId=8002239302598788807-0 sourceModule=synchronizer endBlockId=800223 sourceBlockIds=140141 129112 156010 152518 450829 559262 162770 506053 721918 973125 747329 145439 148044 
+BCM:	Block not found - can't build chain requestId=8002239302598788807-0 error=no hit
+Comm:	new block received blockId=800223
+BCM:	Adding new block blockId=800223
+App:	Processing verify block request
+BCM:	Adding block... blockId=800223 parentId=607123
+BCM:	Found parend in leaves blockId=800223 parentId=607123
+BCM:	Head changed head=800223
+BCM:	Computing Delta removeHead=6071231274951186237 addHead=8002239302598788807
+App:	Processing fork update poolSize=0
+App:	Pool after fork poolSize=0
+=== STATE ===
+3-1
+3-2
+3-3
+0-1
+2-1
+0-2
+0-3
+3-4
+3-5
+2-2
+0-4
+1-1
+3-6
+1-2
+3-7
+3-8
+2-3
+2-4
+3-9
+3-10
+1-3
+1-4
+1-5
+3-11
+3-12
+3-13
+0-5
+0-6
+1-6
+1-7
+0-7
+0-8
+3-14
+2-5
+3-15
+0-9
+0-10
+0-11
+2-6
+0-12
+2-7
+2-8
+2-9
+0-13
+2-10
+0-14
+0-15
+2-11
+1-8
+2-12
+1-9
+2-13
+2-14
+2-15
+1-10
+1-11
+1-12
+1-13
+1-14
+1-15
+=============
+Enter new message: 
+BCM:	Received register checkpoint blockId=800223
+BCM:	Found block - registering checkpoint blockId=800223
+App:	Processing payload request headId=800223
+Miner:	New mining operation headId=800223
+Miner:	Mining aborted headId=607123

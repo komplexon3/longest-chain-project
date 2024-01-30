@@ -6,8 +6,8 @@ import { useWebsocketListener } from "./hooks/useWebsocketListener";
 import { interceptorpb } from "./gen/blockchainpb/interceptorpb/interceptorpb";
 import { blockchainpb } from "./gen/blockchainpb/blockchainpb";
 
-const nodeWidth = 120;
-const nodeHeight = 40;
+const nodeWidth = 160;
+const nodeHeight = 50;
 
 type Block = ReturnType<typeof blockchainpb.Block.prototype.toObject>;
 
@@ -63,21 +63,47 @@ const nodeIdToColor = (nodeId: string) => {
 
 function BlockNode(props: NodeProps<Block>) {
   const { block_id, payload } = props.data;
+  let bgColor = "transparent";
+  switch (payload?.sender) {
+    case "0":
+      bgColor = "red";
+      break;
+    case "1":
+      bgColor = "green";
+      break;
+    case "2":
+      bgColor = "yellow";
+      break;
+    case "3":
+      bgColor = "orange";
+      break;
+  }
+
   return (
-    <div className="text-center px-3 font-mono" key={block_id}>
-      <h1 className="text-xl">{block_id?.toString().substring(0, 6)}</h1>
-      <p className="text-lg">
-        {payload && payload.timestamp
-          ? new Date(
-              payload.timestamp!.seconds! * 1000 +
-                payload.timestamp!.nanos! / 1000000
-            )
-              .toISOString()
-              .split("T")[1]
-              .split("Z")[0]
-          : "---"}
-      </p>
-      <p className="text-lg">{payload?.message || "---"}</p>
+    <div className="flex font-mono " key={block_id}>
+      {payload?.sender && (
+        <div
+          className="px-3 items-center flex text-xl font-bold"
+          style={{ backgroundColor: bgColor }}
+        >
+          {payload?.sender}
+        </div>
+      )}
+      <div className="text-center px-3">
+        <h1 className="text-xl">{block_id?.toString().substring(0, 6)}</h1>
+        <p className="text-lg">
+          {payload && payload.timestamp
+            ? new Date(
+                payload.timestamp!.seconds! * 1000 +
+                  payload.timestamp!.nanos! / 1000000
+              )
+                .toISOString()
+                .split("T")[1]
+                .split("Z")[0]
+            : "---"}
+        </p>
+        <p className="text-lg">{payload?.message || "---"}</p>
+      </div>
     </div>
   );
 }
@@ -174,7 +200,7 @@ export default function TreeViewer(props: { port: string }) {
       style: {
         backgroundColor: nodeIdToColor(n.id),
         borderColor: n.data.block_id === head ? "red" : "gray",
-        borderWidth: "0.125rem",
+        borderWidth: "0.250rem",
       },
     }));
 

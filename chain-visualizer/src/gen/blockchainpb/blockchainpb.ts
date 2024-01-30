@@ -3,8 +3,9 @@
  * compiler version: 4.24.4
  * source: blockchainpb/blockchainpb.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
-import * as dependency_1 from "./payloadpb/payloadpb";
-import * as dependency_2 from "./statepb/statepb";
+import * as dependency_1 from "./../mir/codegen_extensions";
+import * as dependency_2 from "./payloadpb/payloadpb";
+import * as dependency_3 from "./../google/protobuf/timestamp";
 import * as pb_1 from "google-protobuf";
 export namespace blockchainpb {
     export class Blocktree extends pb_1.Message {
@@ -169,8 +170,8 @@ export namespace blockchainpb {
         constructor(data?: any[] | {
             block_id?: number;
             previous_block_id?: number;
-            payload?: dependency_1.payloadpb.Payload;
-            timestamp?: number;
+            payload?: dependency_2.payloadpb.Payload;
+            timestamp?: dependency_3.google.protobuf.Timestamp;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -202,25 +203,28 @@ export namespace blockchainpb {
             pb_1.Message.setField(this, 2, value);
         }
         get payload() {
-            return pb_1.Message.getWrapperField(this, dependency_1.payloadpb.Payload, 3) as dependency_1.payloadpb.Payload;
+            return pb_1.Message.getWrapperField(this, dependency_2.payloadpb.Payload, 3) as dependency_2.payloadpb.Payload;
         }
-        set payload(value: dependency_1.payloadpb.Payload) {
+        set payload(value: dependency_2.payloadpb.Payload) {
             pb_1.Message.setWrapperField(this, 3, value);
         }
         get has_payload() {
             return pb_1.Message.getField(this, 3) != null;
         }
         get timestamp() {
-            return pb_1.Message.getFieldWithDefault(this, 4, 0) as number;
+            return pb_1.Message.getWrapperField(this, dependency_3.google.protobuf.Timestamp, 4) as dependency_3.google.protobuf.Timestamp;
         }
-        set timestamp(value: number) {
-            pb_1.Message.setField(this, 4, value);
+        set timestamp(value: dependency_3.google.protobuf.Timestamp) {
+            pb_1.Message.setWrapperField(this, 4, value);
+        }
+        get has_timestamp() {
+            return pb_1.Message.getField(this, 4) != null;
         }
         static fromObject(data: {
             block_id?: number;
             previous_block_id?: number;
-            payload?: ReturnType<typeof dependency_1.payloadpb.Payload.prototype.toObject>;
-            timestamp?: number;
+            payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
+            timestamp?: ReturnType<typeof dependency_3.google.protobuf.Timestamp.prototype.toObject>;
         }): Block {
             const message = new Block({});
             if (data.block_id != null) {
@@ -230,10 +234,10 @@ export namespace blockchainpb {
                 message.previous_block_id = data.previous_block_id;
             }
             if (data.payload != null) {
-                message.payload = dependency_1.payloadpb.Payload.fromObject(data.payload);
+                message.payload = dependency_2.payloadpb.Payload.fromObject(data.payload);
             }
             if (data.timestamp != null) {
-                message.timestamp = data.timestamp;
+                message.timestamp = dependency_3.google.protobuf.Timestamp.fromObject(data.timestamp);
             }
             return message;
         }
@@ -241,8 +245,8 @@ export namespace blockchainpb {
             const data: {
                 block_id?: number;
                 previous_block_id?: number;
-                payload?: ReturnType<typeof dependency_1.payloadpb.Payload.prototype.toObject>;
-                timestamp?: number;
+                payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
+                timestamp?: ReturnType<typeof dependency_3.google.protobuf.Timestamp.prototype.toObject>;
             } = {};
             if (this.block_id != null) {
                 data.block_id = this.block_id;
@@ -254,7 +258,7 @@ export namespace blockchainpb {
                 data.payload = this.payload.toObject();
             }
             if (this.timestamp != null) {
-                data.timestamp = this.timestamp;
+                data.timestamp = this.timestamp.toObject();
             }
             return data;
         }
@@ -268,8 +272,8 @@ export namespace blockchainpb {
                 writer.writeUint64(2, this.previous_block_id);
             if (this.has_payload)
                 writer.writeMessage(3, this.payload, () => this.payload.serialize(writer));
-            if (this.timestamp != 0)
-                writer.writeInt64(4, this.timestamp);
+            if (this.has_timestamp)
+                writer.writeMessage(4, this.timestamp, () => this.timestamp.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -286,10 +290,10 @@ export namespace blockchainpb {
                         message.previous_block_id = reader.readUint64();
                         break;
                     case 3:
-                        reader.readMessage(message.payload, () => message.payload = dependency_1.payloadpb.Payload.deserialize(reader));
+                        reader.readMessage(message.payload, () => message.payload = dependency_2.payloadpb.Payload.deserialize(reader));
                         break;
                     case 4:
-                        message.timestamp = reader.readInt64();
+                        reader.readMessage(message.timestamp, () => message.timestamp = dependency_3.google.protobuf.Timestamp.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -301,102 +305,6 @@ export namespace blockchainpb {
         }
         static deserializeBinary(bytes: Uint8Array): Block {
             return Block.deserialize(bytes);
-        }
-    }
-    export class BlockInternal extends pb_1.Message {
-        #one_of_decls: number[][] = [];
-        constructor(data?: any[] | {
-            block?: Block;
-            state?: dependency_2.statepb.State;
-        }) {
-            super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
-            if (!Array.isArray(data) && typeof data == "object") {
-                if ("block" in data && data.block != undefined) {
-                    this.block = data.block;
-                }
-                if ("state" in data && data.state != undefined) {
-                    this.state = data.state;
-                }
-            }
-        }
-        get block() {
-            return pb_1.Message.getWrapperField(this, Block, 1) as Block;
-        }
-        set block(value: Block) {
-            pb_1.Message.setWrapperField(this, 1, value);
-        }
-        get has_block() {
-            return pb_1.Message.getField(this, 1) != null;
-        }
-        get state() {
-            return pb_1.Message.getWrapperField(this, dependency_2.statepb.State, 2) as dependency_2.statepb.State;
-        }
-        set state(value: dependency_2.statepb.State) {
-            pb_1.Message.setWrapperField(this, 2, value);
-        }
-        get has_state() {
-            return pb_1.Message.getField(this, 2) != null;
-        }
-        static fromObject(data: {
-            block?: ReturnType<typeof Block.prototype.toObject>;
-            state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
-        }): BlockInternal {
-            const message = new BlockInternal({});
-            if (data.block != null) {
-                message.block = Block.fromObject(data.block);
-            }
-            if (data.state != null) {
-                message.state = dependency_2.statepb.State.fromObject(data.state);
-            }
-            return message;
-        }
-        toObject() {
-            const data: {
-                block?: ReturnType<typeof Block.prototype.toObject>;
-                state?: ReturnType<typeof dependency_2.statepb.State.prototype.toObject>;
-            } = {};
-            if (this.block != null) {
-                data.block = this.block.toObject();
-            }
-            if (this.state != null) {
-                data.state = this.state.toObject();
-            }
-            return data;
-        }
-        serialize(): Uint8Array;
-        serialize(w: pb_1.BinaryWriter): void;
-        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
-            const writer = w || new pb_1.BinaryWriter();
-            if (this.has_block)
-                writer.writeMessage(1, this.block, () => this.block.serialize(writer));
-            if (this.has_state)
-                writer.writeMessage(2, this.state, () => this.state.serialize(writer));
-            if (!w)
-                return writer.getResultBuffer();
-        }
-        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): BlockInternal {
-            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new BlockInternal();
-            while (reader.nextField()) {
-                if (reader.isEndGroup())
-                    break;
-                switch (reader.getFieldNumber()) {
-                    case 1:
-                        reader.readMessage(message.block, () => message.block = Block.deserialize(reader));
-                        break;
-                    case 2:
-                        reader.readMessage(message.state, () => message.state = dependency_2.statepb.State.deserialize(reader));
-                        break;
-                    default: reader.skipField();
-                }
-            }
-            return message;
-        }
-        serializeBinary(): Uint8Array {
-            return this.serialize();
-        }
-        static deserializeBinary(bytes: Uint8Array): BlockInternal {
-            return BlockInternal.deserialize(bytes);
         }
     }
 }

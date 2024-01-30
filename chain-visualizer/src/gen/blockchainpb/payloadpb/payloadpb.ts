@@ -3,13 +3,16 @@
  * compiler version: 4.24.4
  * source: blockchainpb/payloadpb/payloadpb.proto
  * git: https://github.com/thesayyn/protoc-gen-ts */
+import * as dependency_1 from "./../../mir/codegen_extensions";
+import * as dependency_2 from "./../../google/protobuf/timestamp";
 import * as pb_1 from "google-protobuf";
 export namespace payloadpb {
     export class Payload extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
             message?: string;
-            timestamp?: number;
+            timestamp?: dependency_2.google.protobuf.Timestamp;
+            sender?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -20,6 +23,9 @@ export namespace payloadpb {
                 if ("timestamp" in data && data.timestamp != undefined) {
                     this.timestamp = data.timestamp;
                 }
+                if ("sender" in data && data.sender != undefined) {
+                    this.sender = data.sender;
+                }
             }
         }
         get message() {
@@ -29,34 +35,51 @@ export namespace payloadpb {
             pb_1.Message.setField(this, 1, value);
         }
         get timestamp() {
-            return pb_1.Message.getFieldWithDefault(this, 2, 0) as number;
+            return pb_1.Message.getWrapperField(this, dependency_2.google.protobuf.Timestamp, 2) as dependency_2.google.protobuf.Timestamp;
         }
-        set timestamp(value: number) {
-            pb_1.Message.setField(this, 2, value);
+        set timestamp(value: dependency_2.google.protobuf.Timestamp) {
+            pb_1.Message.setWrapperField(this, 2, value);
+        }
+        get has_timestamp() {
+            return pb_1.Message.getField(this, 2) != null;
+        }
+        get sender() {
+            return pb_1.Message.getFieldWithDefault(this, 3, "") as string;
+        }
+        set sender(value: string) {
+            pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
             message?: string;
-            timestamp?: number;
+            timestamp?: ReturnType<typeof dependency_2.google.protobuf.Timestamp.prototype.toObject>;
+            sender?: string;
         }): Payload {
             const message = new Payload({});
             if (data.message != null) {
                 message.message = data.message;
             }
             if (data.timestamp != null) {
-                message.timestamp = data.timestamp;
+                message.timestamp = dependency_2.google.protobuf.Timestamp.fromObject(data.timestamp);
+            }
+            if (data.sender != null) {
+                message.sender = data.sender;
             }
             return message;
         }
         toObject() {
             const data: {
                 message?: string;
-                timestamp?: number;
+                timestamp?: ReturnType<typeof dependency_2.google.protobuf.Timestamp.prototype.toObject>;
+                sender?: string;
             } = {};
             if (this.message != null) {
                 data.message = this.message;
             }
             if (this.timestamp != null) {
-                data.timestamp = this.timestamp;
+                data.timestamp = this.timestamp.toObject();
+            }
+            if (this.sender != null) {
+                data.sender = this.sender;
             }
             return data;
         }
@@ -66,8 +89,10 @@ export namespace payloadpb {
             const writer = w || new pb_1.BinaryWriter();
             if (this.message.length)
                 writer.writeString(1, this.message);
-            if (this.timestamp != 0)
-                writer.writeInt64(2, this.timestamp);
+            if (this.has_timestamp)
+                writer.writeMessage(2, this.timestamp, () => this.timestamp.serialize(writer));
+            if (this.sender.length)
+                writer.writeString(3, this.sender);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -81,7 +106,10 @@ export namespace payloadpb {
                         message.message = reader.readString();
                         break;
                     case 2:
-                        message.timestamp = reader.readInt64();
+                        reader.readMessage(message.timestamp, () => message.timestamp = dependency_2.google.protobuf.Timestamp.deserialize(reader));
+                        break;
+                    case 3:
+                        message.sender = reader.readString();
                         break;
                     default: reader.skipField();
                 }

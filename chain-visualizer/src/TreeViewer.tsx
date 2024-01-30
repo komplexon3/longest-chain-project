@@ -6,8 +6,8 @@ import { useWebsocketListener } from "./hooks/useWebsocketListener";
 import { interceptorpb } from "./gen/blockchainpb/interceptorpb/interceptorpb";
 import { blockchainpb } from "./gen/blockchainpb/blockchainpb";
 
-const nodeWidth = 110;
-const nodeHeight = 30;
+const nodeWidth = 120;
+const nodeHeight = 40;
 
 type Block = ReturnType<typeof blockchainpb.Block.prototype.toObject>;
 
@@ -64,8 +64,19 @@ const nodeIdToColor = (nodeId: string) => {
 function BlockNode(props: NodeProps<Block>) {
   const { block_id, payload } = props.data;
   return (
-    <div className="text-center px-3 font-mono">
+    <div className="text-center px-3 font-mono" key={block_id}>
       <h1 className="text-xl">{block_id?.toString().substring(0, 6)}</h1>
+      <p className="text-lg">
+        {payload && payload.timestamp
+          ? new Date(
+              payload.timestamp!.seconds! * 1000 +
+                payload.timestamp!.nanos! / 1000000
+            )
+              .toISOString()
+              .split("T")[1]
+              .split("Z")[0]
+          : "---"}
+      </p>
       <p className="text-lg">{payload?.message || "---"}</p>
     </div>
   );
@@ -134,7 +145,7 @@ export default function TreeViewer(props: { port: string }) {
     }
 
     return blockTree.blocks.map((block) => ({
-      id: block.block_id?.toString() ?? "", // should always be defined, just making ts happy
+      id: block.block_id!.toString(), // should always be defined
       type: "blockNode",
       data: block,
       position: { x: 0, y: 0 },

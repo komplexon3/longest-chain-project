@@ -5,11 +5,12 @@
  * git: https://github.com/thesayyn/protoc-gen-ts */
 import * as dependency_1 from "./../../mir/codegen_extensions";
 import * as dependency_2 from "./../payloadpb/payloadpb";
-import * as dependency_3 from "./../blockchainpb";
+import * as dependency_3 from "./../statepb/statepb";
+import * as dependency_4 from "./../blockchainpb";
 import * as pb_1 from "google-protobuf";
 export namespace applicationpb {
     export class Event extends pb_1.Message {
-        #one_of_decls: number[][] = [[10, 11, 12, 20, 21, 22]];
+        #one_of_decls: number[][] = [[10, 11, 12, 20, 21, 22, 30]];
         constructor(data?: any[] | ({} & (({
             new_head?: NewHead;
             verify_block_request?: never;
@@ -17,20 +18,23 @@ export namespace applicationpb {
             payload_request?: never;
             payload_response?: never;
             fork_update?: never;
+            message_input?: never;
         } | {
             new_head?: never;
-            verify_block_request?: VerifyBlockRequest;
+            verify_block_request?: VerifyBlocksRequest;
             verify_block_response?: never;
             payload_request?: never;
             payload_response?: never;
             fork_update?: never;
+            message_input?: never;
         } | {
             new_head?: never;
             verify_block_request?: never;
-            verify_block_response?: VerifyBlockResponse;
+            verify_block_response?: VerifyBlocksResponse;
             payload_request?: never;
             payload_response?: never;
             fork_update?: never;
+            message_input?: never;
         } | {
             new_head?: never;
             verify_block_request?: never;
@@ -38,6 +42,7 @@ export namespace applicationpb {
             payload_request?: PayloadRequest;
             payload_response?: never;
             fork_update?: never;
+            message_input?: never;
         } | {
             new_head?: never;
             verify_block_request?: never;
@@ -45,6 +50,7 @@ export namespace applicationpb {
             payload_request?: never;
             payload_response?: PayloadResponse;
             fork_update?: never;
+            message_input?: never;
         } | {
             new_head?: never;
             verify_block_request?: never;
@@ -52,6 +58,15 @@ export namespace applicationpb {
             payload_request?: never;
             payload_response?: never;
             fork_update?: ForkUpdate;
+            message_input?: never;
+        } | {
+            new_head?: never;
+            verify_block_request?: never;
+            verify_block_response?: never;
+            payload_request?: never;
+            payload_response?: never;
+            fork_update?: never;
+            message_input?: MessageInput;
         })))) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -74,6 +89,9 @@ export namespace applicationpb {
                 if ("fork_update" in data && data.fork_update != undefined) {
                     this.fork_update = data.fork_update;
                 }
+                if ("message_input" in data && data.message_input != undefined) {
+                    this.message_input = data.message_input;
+                }
             }
         }
         get new_head() {
@@ -86,18 +104,18 @@ export namespace applicationpb {
             return pb_1.Message.getField(this, 10) != null;
         }
         get verify_block_request() {
-            return pb_1.Message.getWrapperField(this, VerifyBlockRequest, 11) as VerifyBlockRequest;
+            return pb_1.Message.getWrapperField(this, VerifyBlocksRequest, 11) as VerifyBlocksRequest;
         }
-        set verify_block_request(value: VerifyBlockRequest) {
+        set verify_block_request(value: VerifyBlocksRequest) {
             pb_1.Message.setOneofWrapperField(this, 11, this.#one_of_decls[0], value);
         }
         get has_verify_block_request() {
             return pb_1.Message.getField(this, 11) != null;
         }
         get verify_block_response() {
-            return pb_1.Message.getWrapperField(this, VerifyBlockResponse, 12) as VerifyBlockResponse;
+            return pb_1.Message.getWrapperField(this, VerifyBlocksResponse, 12) as VerifyBlocksResponse;
         }
-        set verify_block_response(value: VerifyBlockResponse) {
+        set verify_block_response(value: VerifyBlocksResponse) {
             pb_1.Message.setOneofWrapperField(this, 12, this.#one_of_decls[0], value);
         }
         get has_verify_block_response() {
@@ -130,9 +148,18 @@ export namespace applicationpb {
         get has_fork_update() {
             return pb_1.Message.getField(this, 22) != null;
         }
+        get message_input() {
+            return pb_1.Message.getWrapperField(this, MessageInput, 30) as MessageInput;
+        }
+        set message_input(value: MessageInput) {
+            pb_1.Message.setOneofWrapperField(this, 30, this.#one_of_decls[0], value);
+        }
+        get has_message_input() {
+            return pb_1.Message.getField(this, 30) != null;
+        }
         get type() {
             const cases: {
-                [index: number]: "none" | "new_head" | "verify_block_request" | "verify_block_response" | "payload_request" | "payload_response" | "fork_update";
+                [index: number]: "none" | "new_head" | "verify_block_request" | "verify_block_response" | "payload_request" | "payload_response" | "fork_update" | "message_input";
             } = {
                 0: "none",
                 10: "new_head",
@@ -140,27 +167,29 @@ export namespace applicationpb {
                 12: "verify_block_response",
                 20: "payload_request",
                 21: "payload_response",
-                22: "fork_update"
+                22: "fork_update",
+                30: "message_input"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [10, 11, 12, 20, 21, 22])];
+            return cases[pb_1.Message.computeOneofCase(this, [10, 11, 12, 20, 21, 22, 30])];
         }
         static fromObject(data: {
             new_head?: ReturnType<typeof NewHead.prototype.toObject>;
-            verify_block_request?: ReturnType<typeof VerifyBlockRequest.prototype.toObject>;
-            verify_block_response?: ReturnType<typeof VerifyBlockResponse.prototype.toObject>;
+            verify_block_request?: ReturnType<typeof VerifyBlocksRequest.prototype.toObject>;
+            verify_block_response?: ReturnType<typeof VerifyBlocksResponse.prototype.toObject>;
             payload_request?: ReturnType<typeof PayloadRequest.prototype.toObject>;
             payload_response?: ReturnType<typeof PayloadResponse.prototype.toObject>;
             fork_update?: ReturnType<typeof ForkUpdate.prototype.toObject>;
+            message_input?: ReturnType<typeof MessageInput.prototype.toObject>;
         }): Event {
             const message = new Event({});
             if (data.new_head != null) {
                 message.new_head = NewHead.fromObject(data.new_head);
             }
             if (data.verify_block_request != null) {
-                message.verify_block_request = VerifyBlockRequest.fromObject(data.verify_block_request);
+                message.verify_block_request = VerifyBlocksRequest.fromObject(data.verify_block_request);
             }
             if (data.verify_block_response != null) {
-                message.verify_block_response = VerifyBlockResponse.fromObject(data.verify_block_response);
+                message.verify_block_response = VerifyBlocksResponse.fromObject(data.verify_block_response);
             }
             if (data.payload_request != null) {
                 message.payload_request = PayloadRequest.fromObject(data.payload_request);
@@ -171,16 +200,20 @@ export namespace applicationpb {
             if (data.fork_update != null) {
                 message.fork_update = ForkUpdate.fromObject(data.fork_update);
             }
+            if (data.message_input != null) {
+                message.message_input = MessageInput.fromObject(data.message_input);
+            }
             return message;
         }
         toObject() {
             const data: {
                 new_head?: ReturnType<typeof NewHead.prototype.toObject>;
-                verify_block_request?: ReturnType<typeof VerifyBlockRequest.prototype.toObject>;
-                verify_block_response?: ReturnType<typeof VerifyBlockResponse.prototype.toObject>;
+                verify_block_request?: ReturnType<typeof VerifyBlocksRequest.prototype.toObject>;
+                verify_block_response?: ReturnType<typeof VerifyBlocksResponse.prototype.toObject>;
                 payload_request?: ReturnType<typeof PayloadRequest.prototype.toObject>;
                 payload_response?: ReturnType<typeof PayloadResponse.prototype.toObject>;
                 fork_update?: ReturnType<typeof ForkUpdate.prototype.toObject>;
+                message_input?: ReturnType<typeof MessageInput.prototype.toObject>;
             } = {};
             if (this.new_head != null) {
                 data.new_head = this.new_head.toObject();
@@ -200,6 +233,9 @@ export namespace applicationpb {
             if (this.fork_update != null) {
                 data.fork_update = this.fork_update.toObject();
             }
+            if (this.message_input != null) {
+                data.message_input = this.message_input.toObject();
+            }
             return data;
         }
         serialize(): Uint8Array;
@@ -218,6 +254,8 @@ export namespace applicationpb {
                 writer.writeMessage(21, this.payload_response, () => this.payload_response.serialize(writer));
             if (this.has_fork_update)
                 writer.writeMessage(22, this.fork_update, () => this.fork_update.serialize(writer));
+            if (this.has_message_input)
+                writer.writeMessage(30, this.message_input, () => this.message_input.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -231,10 +269,10 @@ export namespace applicationpb {
                         reader.readMessage(message.new_head, () => message.new_head = NewHead.deserialize(reader));
                         break;
                     case 11:
-                        reader.readMessage(message.verify_block_request, () => message.verify_block_request = VerifyBlockRequest.deserialize(reader));
+                        reader.readMessage(message.verify_block_request, () => message.verify_block_request = VerifyBlocksRequest.deserialize(reader));
                         break;
                     case 12:
-                        reader.readMessage(message.verify_block_response, () => message.verify_block_response = VerifyBlockResponse.deserialize(reader));
+                        reader.readMessage(message.verify_block_response, () => message.verify_block_response = VerifyBlocksResponse.deserialize(reader));
                         break;
                     case 20:
                         reader.readMessage(message.payload_request, () => message.payload_request = PayloadRequest.deserialize(reader));
@@ -244,6 +282,9 @@ export namespace applicationpb {
                         break;
                     case 22:
                         reader.readMessage(message.fork_update, () => message.fork_update = ForkUpdate.deserialize(reader));
+                        break;
+                    case 30:
+                        reader.readMessage(message.message_input, () => message.message_input = MessageInput.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -324,61 +365,79 @@ export namespace applicationpb {
             return NewHead.deserialize(bytes);
         }
     }
-    export class VerifyBlockRequest extends pb_1.Message {
+    export class VerifyBlocksRequest extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            request_id?: number;
-            block?: dependency_3.blockchainpb.Block;
+            checkpoint_state?: dependency_3.statepb.State;
+            chain_checkpoint_to_start?: dependency_4.blockchainpb.Block[];
+            chain_to_verify?: dependency_4.blockchainpb.Block[];
         }) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [2, 3], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("request_id" in data && data.request_id != undefined) {
-                    this.request_id = data.request_id;
+                if ("checkpoint_state" in data && data.checkpoint_state != undefined) {
+                    this.checkpoint_state = data.checkpoint_state;
                 }
-                if ("block" in data && data.block != undefined) {
-                    this.block = data.block;
+                if ("chain_checkpoint_to_start" in data && data.chain_checkpoint_to_start != undefined) {
+                    this.chain_checkpoint_to_start = data.chain_checkpoint_to_start;
+                }
+                if ("chain_to_verify" in data && data.chain_to_verify != undefined) {
+                    this.chain_to_verify = data.chain_to_verify;
                 }
             }
         }
-        get request_id() {
-            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        get checkpoint_state() {
+            return pb_1.Message.getWrapperField(this, dependency_3.statepb.State, 1) as dependency_3.statepb.State;
         }
-        set request_id(value: number) {
-            pb_1.Message.setField(this, 1, value);
+        set checkpoint_state(value: dependency_3.statepb.State) {
+            pb_1.Message.setWrapperField(this, 1, value);
         }
-        get block() {
-            return pb_1.Message.getWrapperField(this, dependency_3.blockchainpb.Block, 2) as dependency_3.blockchainpb.Block;
+        get has_checkpoint_state() {
+            return pb_1.Message.getField(this, 1) != null;
         }
-        set block(value: dependency_3.blockchainpb.Block) {
-            pb_1.Message.setWrapperField(this, 2, value);
+        get chain_checkpoint_to_start() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_4.blockchainpb.Block, 2) as dependency_4.blockchainpb.Block[];
         }
-        get has_block() {
-            return pb_1.Message.getField(this, 2) != null;
+        set chain_checkpoint_to_start(value: dependency_4.blockchainpb.Block[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 2, value);
+        }
+        get chain_to_verify() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_4.blockchainpb.Block, 3) as dependency_4.blockchainpb.Block[];
+        }
+        set chain_to_verify(value: dependency_4.blockchainpb.Block[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 3, value);
         }
         static fromObject(data: {
-            request_id?: number;
-            block?: ReturnType<typeof dependency_3.blockchainpb.Block.prototype.toObject>;
-        }): VerifyBlockRequest {
-            const message = new VerifyBlockRequest({});
-            if (data.request_id != null) {
-                message.request_id = data.request_id;
+            checkpoint_state?: ReturnType<typeof dependency_3.statepb.State.prototype.toObject>;
+            chain_checkpoint_to_start?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+            chain_to_verify?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+        }): VerifyBlocksRequest {
+            const message = new VerifyBlocksRequest({});
+            if (data.checkpoint_state != null) {
+                message.checkpoint_state = dependency_3.statepb.State.fromObject(data.checkpoint_state);
             }
-            if (data.block != null) {
-                message.block = dependency_3.blockchainpb.Block.fromObject(data.block);
+            if (data.chain_checkpoint_to_start != null) {
+                message.chain_checkpoint_to_start = data.chain_checkpoint_to_start.map(item => dependency_4.blockchainpb.Block.fromObject(item));
+            }
+            if (data.chain_to_verify != null) {
+                message.chain_to_verify = data.chain_to_verify.map(item => dependency_4.blockchainpb.Block.fromObject(item));
             }
             return message;
         }
         toObject() {
             const data: {
-                request_id?: number;
-                block?: ReturnType<typeof dependency_3.blockchainpb.Block.prototype.toObject>;
+                checkpoint_state?: ReturnType<typeof dependency_3.statepb.State.prototype.toObject>;
+                chain_checkpoint_to_start?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+                chain_to_verify?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
             } = {};
-            if (this.request_id != null) {
-                data.request_id = this.request_id;
+            if (this.checkpoint_state != null) {
+                data.checkpoint_state = this.checkpoint_state.toObject();
             }
-            if (this.block != null) {
-                data.block = this.block.toObject();
+            if (this.chain_checkpoint_to_start != null) {
+                data.chain_checkpoint_to_start = this.chain_checkpoint_to_start.map((item: dependency_4.blockchainpb.Block) => item.toObject());
+            }
+            if (this.chain_to_verify != null) {
+                data.chain_to_verify = this.chain_to_verify.map((item: dependency_4.blockchainpb.Block) => item.toObject());
             }
             return data;
         }
@@ -386,24 +445,29 @@ export namespace applicationpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.request_id != 0)
-                writer.writeUint64(1, this.request_id);
-            if (this.has_block)
-                writer.writeMessage(2, this.block, () => this.block.serialize(writer));
+            if (this.has_checkpoint_state)
+                writer.writeMessage(1, this.checkpoint_state, () => this.checkpoint_state.serialize(writer));
+            if (this.chain_checkpoint_to_start.length)
+                writer.writeRepeatedMessage(2, this.chain_checkpoint_to_start, (item: dependency_4.blockchainpb.Block) => item.serialize(writer));
+            if (this.chain_to_verify.length)
+                writer.writeRepeatedMessage(3, this.chain_to_verify, (item: dependency_4.blockchainpb.Block) => item.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
-        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): VerifyBlockRequest {
-            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new VerifyBlockRequest();
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): VerifyBlocksRequest {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new VerifyBlocksRequest();
             while (reader.nextField()) {
                 if (reader.isEndGroup())
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.request_id = reader.readUint64();
+                        reader.readMessage(message.checkpoint_state, () => message.checkpoint_state = dependency_3.statepb.State.deserialize(reader));
                         break;
                     case 2:
-                        reader.readMessage(message.block, () => message.block = dependency_3.blockchainpb.Block.deserialize(reader));
+                        reader.readMessage(message.chain_checkpoint_to_start, () => pb_1.Message.addToRepeatedWrapperField(message, 2, dependency_4.blockchainpb.Block.deserialize(reader), dependency_4.blockchainpb.Block));
+                        break;
+                    case 3:
+                        reader.readMessage(message.chain_to_verify, () => pb_1.Message.addToRepeatedWrapperField(message, 3, dependency_4.blockchainpb.Block.deserialize(reader), dependency_4.blockchainpb.Block));
                         break;
                     default: reader.skipField();
                 }
@@ -413,62 +477,44 @@ export namespace applicationpb {
         serializeBinary(): Uint8Array {
             return this.serialize();
         }
-        static deserializeBinary(bytes: Uint8Array): VerifyBlockRequest {
-            return VerifyBlockRequest.deserialize(bytes);
+        static deserializeBinary(bytes: Uint8Array): VerifyBlocksRequest {
+            return VerifyBlocksRequest.deserialize(bytes);
         }
     }
-    export class VerifyBlockResponse extends pb_1.Message {
+    export class VerifyBlocksResponse extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            request_id?: number;
-            ok?: boolean;
+            verified_blocks?: dependency_4.blockchainpb.Block[];
         }) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
-                if ("request_id" in data && data.request_id != undefined) {
-                    this.request_id = data.request_id;
-                }
-                if ("ok" in data && data.ok != undefined) {
-                    this.ok = data.ok;
+                if ("verified_blocks" in data && data.verified_blocks != undefined) {
+                    this.verified_blocks = data.verified_blocks;
                 }
             }
         }
-        get request_id() {
-            return pb_1.Message.getFieldWithDefault(this, 1, 0) as number;
+        get verified_blocks() {
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_4.blockchainpb.Block, 1) as dependency_4.blockchainpb.Block[];
         }
-        set request_id(value: number) {
-            pb_1.Message.setField(this, 1, value);
-        }
-        get ok() {
-            return pb_1.Message.getFieldWithDefault(this, 2, false) as boolean;
-        }
-        set ok(value: boolean) {
-            pb_1.Message.setField(this, 2, value);
+        set verified_blocks(value: dependency_4.blockchainpb.Block[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
         }
         static fromObject(data: {
-            request_id?: number;
-            ok?: boolean;
-        }): VerifyBlockResponse {
-            const message = new VerifyBlockResponse({});
-            if (data.request_id != null) {
-                message.request_id = data.request_id;
-            }
-            if (data.ok != null) {
-                message.ok = data.ok;
+            verified_blocks?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+        }): VerifyBlocksResponse {
+            const message = new VerifyBlocksResponse({});
+            if (data.verified_blocks != null) {
+                message.verified_blocks = data.verified_blocks.map(item => dependency_4.blockchainpb.Block.fromObject(item));
             }
             return message;
         }
         toObject() {
             const data: {
-                request_id?: number;
-                ok?: boolean;
+                verified_blocks?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
             } = {};
-            if (this.request_id != null) {
-                data.request_id = this.request_id;
-            }
-            if (this.ok != null) {
-                data.ok = this.ok;
+            if (this.verified_blocks != null) {
+                data.verified_blocks = this.verified_blocks.map((item: dependency_4.blockchainpb.Block) => item.toObject());
             }
             return data;
         }
@@ -476,24 +522,19 @@ export namespace applicationpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.request_id != 0)
-                writer.writeUint64(1, this.request_id);
-            if (this.ok != false)
-                writer.writeBool(2, this.ok);
+            if (this.verified_blocks.length)
+                writer.writeRepeatedMessage(1, this.verified_blocks, (item: dependency_4.blockchainpb.Block) => item.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
-        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): VerifyBlockResponse {
-            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new VerifyBlockResponse();
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): VerifyBlocksResponse {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new VerifyBlocksResponse();
             while (reader.nextField()) {
                 if (reader.isEndGroup())
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        message.request_id = reader.readUint64();
-                        break;
-                    case 2:
-                        message.ok = reader.readBool();
+                        reader.readMessage(message.verified_blocks, () => pb_1.Message.addToRepeatedWrapperField(message, 1, dependency_4.blockchainpb.Block.deserialize(reader), dependency_4.blockchainpb.Block));
                         break;
                     default: reader.skipField();
                 }
@@ -503,15 +544,17 @@ export namespace applicationpb {
         serializeBinary(): Uint8Array {
             return this.serialize();
         }
-        static deserializeBinary(bytes: Uint8Array): VerifyBlockResponse {
-            return VerifyBlockResponse.deserialize(bytes);
+        static deserializeBinary(bytes: Uint8Array): VerifyBlocksResponse {
+            return VerifyBlocksResponse.deserialize(bytes);
         }
     }
     export class ForkUpdate extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            removed_chain?: dependency_3.blockchainpb.Blockchain;
-            added_chain?: dependency_3.blockchainpb.Blockchain;
+            removed_chain?: dependency_4.blockchainpb.Blockchain;
+            added_chain?: dependency_4.blockchainpb.Blockchain;
+            checkpoint_to_fork_root?: dependency_4.blockchainpb.Blockchain;
+            checkpoint_state?: dependency_3.statepb.State;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -522,49 +565,89 @@ export namespace applicationpb {
                 if ("added_chain" in data && data.added_chain != undefined) {
                     this.added_chain = data.added_chain;
                 }
+                if ("checkpoint_to_fork_root" in data && data.checkpoint_to_fork_root != undefined) {
+                    this.checkpoint_to_fork_root = data.checkpoint_to_fork_root;
+                }
+                if ("checkpoint_state" in data && data.checkpoint_state != undefined) {
+                    this.checkpoint_state = data.checkpoint_state;
+                }
             }
         }
         get removed_chain() {
-            return pb_1.Message.getWrapperField(this, dependency_3.blockchainpb.Blockchain, 1) as dependency_3.blockchainpb.Blockchain;
+            return pb_1.Message.getWrapperField(this, dependency_4.blockchainpb.Blockchain, 1) as dependency_4.blockchainpb.Blockchain;
         }
-        set removed_chain(value: dependency_3.blockchainpb.Blockchain) {
+        set removed_chain(value: dependency_4.blockchainpb.Blockchain) {
             pb_1.Message.setWrapperField(this, 1, value);
         }
         get has_removed_chain() {
             return pb_1.Message.getField(this, 1) != null;
         }
         get added_chain() {
-            return pb_1.Message.getWrapperField(this, dependency_3.blockchainpb.Blockchain, 2) as dependency_3.blockchainpb.Blockchain;
+            return pb_1.Message.getWrapperField(this, dependency_4.blockchainpb.Blockchain, 2) as dependency_4.blockchainpb.Blockchain;
         }
-        set added_chain(value: dependency_3.blockchainpb.Blockchain) {
+        set added_chain(value: dependency_4.blockchainpb.Blockchain) {
             pb_1.Message.setWrapperField(this, 2, value);
         }
         get has_added_chain() {
             return pb_1.Message.getField(this, 2) != null;
         }
+        get checkpoint_to_fork_root() {
+            return pb_1.Message.getWrapperField(this, dependency_4.blockchainpb.Blockchain, 3) as dependency_4.blockchainpb.Blockchain;
+        }
+        set checkpoint_to_fork_root(value: dependency_4.blockchainpb.Blockchain) {
+            pb_1.Message.setWrapperField(this, 3, value);
+        }
+        get has_checkpoint_to_fork_root() {
+            return pb_1.Message.getField(this, 3) != null;
+        }
+        get checkpoint_state() {
+            return pb_1.Message.getWrapperField(this, dependency_3.statepb.State, 4) as dependency_3.statepb.State;
+        }
+        set checkpoint_state(value: dependency_3.statepb.State) {
+            pb_1.Message.setWrapperField(this, 4, value);
+        }
+        get has_checkpoint_state() {
+            return pb_1.Message.getField(this, 4) != null;
+        }
         static fromObject(data: {
-            removed_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
-            added_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
+            removed_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+            added_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+            checkpoint_to_fork_root?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+            checkpoint_state?: ReturnType<typeof dependency_3.statepb.State.prototype.toObject>;
         }): ForkUpdate {
             const message = new ForkUpdate({});
             if (data.removed_chain != null) {
-                message.removed_chain = dependency_3.blockchainpb.Blockchain.fromObject(data.removed_chain);
+                message.removed_chain = dependency_4.blockchainpb.Blockchain.fromObject(data.removed_chain);
             }
             if (data.added_chain != null) {
-                message.added_chain = dependency_3.blockchainpb.Blockchain.fromObject(data.added_chain);
+                message.added_chain = dependency_4.blockchainpb.Blockchain.fromObject(data.added_chain);
+            }
+            if (data.checkpoint_to_fork_root != null) {
+                message.checkpoint_to_fork_root = dependency_4.blockchainpb.Blockchain.fromObject(data.checkpoint_to_fork_root);
+            }
+            if (data.checkpoint_state != null) {
+                message.checkpoint_state = dependency_3.statepb.State.fromObject(data.checkpoint_state);
             }
             return message;
         }
         toObject() {
             const data: {
-                removed_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
-                added_chain?: ReturnType<typeof dependency_3.blockchainpb.Blockchain.prototype.toObject>;
+                removed_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+                added_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+                checkpoint_to_fork_root?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+                checkpoint_state?: ReturnType<typeof dependency_3.statepb.State.prototype.toObject>;
             } = {};
             if (this.removed_chain != null) {
                 data.removed_chain = this.removed_chain.toObject();
             }
             if (this.added_chain != null) {
                 data.added_chain = this.added_chain.toObject();
+            }
+            if (this.checkpoint_to_fork_root != null) {
+                data.checkpoint_to_fork_root = this.checkpoint_to_fork_root.toObject();
+            }
+            if (this.checkpoint_state != null) {
+                data.checkpoint_state = this.checkpoint_state.toObject();
             }
             return data;
         }
@@ -576,6 +659,10 @@ export namespace applicationpb {
                 writer.writeMessage(1, this.removed_chain, () => this.removed_chain.serialize(writer));
             if (this.has_added_chain)
                 writer.writeMessage(2, this.added_chain, () => this.added_chain.serialize(writer));
+            if (this.has_checkpoint_to_fork_root)
+                writer.writeMessage(3, this.checkpoint_to_fork_root, () => this.checkpoint_to_fork_root.serialize(writer));
+            if (this.has_checkpoint_state)
+                writer.writeMessage(4, this.checkpoint_state, () => this.checkpoint_state.serialize(writer));
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -586,10 +673,16 @@ export namespace applicationpb {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        reader.readMessage(message.removed_chain, () => message.removed_chain = dependency_3.blockchainpb.Blockchain.deserialize(reader));
+                        reader.readMessage(message.removed_chain, () => message.removed_chain = dependency_4.blockchainpb.Blockchain.deserialize(reader));
                         break;
                     case 2:
-                        reader.readMessage(message.added_chain, () => message.added_chain = dependency_3.blockchainpb.Blockchain.deserialize(reader));
+                        reader.readMessage(message.added_chain, () => message.added_chain = dependency_4.blockchainpb.Blockchain.deserialize(reader));
+                        break;
+                    case 3:
+                        reader.readMessage(message.checkpoint_to_fork_root, () => message.checkpoint_to_fork_root = dependency_4.blockchainpb.Blockchain.deserialize(reader));
+                        break;
+                    case 4:
+                        reader.readMessage(message.checkpoint_state, () => message.checkpoint_state = dependency_3.statepb.State.deserialize(reader));
                         break;
                     default: reader.skipField();
                 }
@@ -761,6 +854,73 @@ export namespace applicationpb {
         }
         static deserializeBinary(bytes: Uint8Array): PayloadResponse {
             return PayloadResponse.deserialize(bytes);
+        }
+    }
+    export class MessageInput extends pb_1.Message {
+        #one_of_decls: number[][] = [];
+        constructor(data?: any[] | {
+            text?: string;
+        }) {
+            super();
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            if (!Array.isArray(data) && typeof data == "object") {
+                if ("text" in data && data.text != undefined) {
+                    this.text = data.text;
+                }
+            }
+        }
+        get text() {
+            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
+        }
+        set text(value: string) {
+            pb_1.Message.setField(this, 1, value);
+        }
+        static fromObject(data: {
+            text?: string;
+        }): MessageInput {
+            const message = new MessageInput({});
+            if (data.text != null) {
+                message.text = data.text;
+            }
+            return message;
+        }
+        toObject() {
+            const data: {
+                text?: string;
+            } = {};
+            if (this.text != null) {
+                data.text = this.text;
+            }
+            return data;
+        }
+        serialize(): Uint8Array;
+        serialize(w: pb_1.BinaryWriter): void;
+        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
+            const writer = w || new pb_1.BinaryWriter();
+            if (this.text.length)
+                writer.writeString(1, this.text);
+            if (!w)
+                return writer.getResultBuffer();
+        }
+        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): MessageInput {
+            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new MessageInput();
+            while (reader.nextField()) {
+                if (reader.isEndGroup())
+                    break;
+                switch (reader.getFieldNumber()) {
+                    case 1:
+                        message.text = reader.readString();
+                        break;
+                    default: reader.skipField();
+                }
+            }
+            return message;
+        }
+        serializeBinary(): Uint8Array {
+            return this.serialize();
+        }
+        static deserializeBinary(bytes: Uint8Array): MessageInput {
+            return MessageInput.deserialize(bytes);
         }
     }
 }

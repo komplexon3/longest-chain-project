@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import ReactFlow, { Node, NodeProps } from "reactflow";
+import ReactFlow, { Handle, Node, NodeProps, Position } from "reactflow";
 import "reactflow/dist/style.css";
 import dagre from "@dagrejs/dagre";
 import { useWebsocketListener } from "./hooks/useWebsocketListener";
@@ -7,15 +7,14 @@ import { interceptorpb } from "./gen/blockchainpb/interceptorpb/interceptorpb";
 import { blockchainpb } from "./gen/blockchainpb/blockchainpb";
 
 const nodeWidth = 160;
-const nodeHeight = 50;
+const nodeHeight = 60;
 
 type Block = ReturnType<typeof blockchainpb.Block.prototype.toObject>;
 
 // from their docs
 const dagreGraph = new dagre.graphlib.Graph().setDefaultEdgeLabel(() => ({}));
-const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
-  const isHorizontal = direction === "LR";
-  dagreGraph.setGraph({ rankdir: direction });
+const getLayoutedElements = (nodes: any, edges: any) => {
+  dagreGraph.setGraph({ rankdir: "TB" });
 
   nodes.forEach((node: any) => {
     dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
@@ -29,8 +28,6 @@ const getLayoutedElements = (nodes: any, edges: any, direction = "TB") => {
 
   nodes.forEach((node: any) => {
     const nodeWithPosition = dagreGraph.node(node.id);
-    node.targetPosition = isHorizontal ? "left" : "top";
-    node.sourcePosition = isHorizontal ? "right" : "bottom";
 
     // We are shifting the dagre node position (anchor=center center) to the top left
     // so it matches the React Flow node anchor point (top left).
@@ -61,52 +58,71 @@ const nodeIdToColor = (nodeId: string) => {
   return c;
 };
 
-function BlockNode(props: NodeProps<Block>) {
-  const { block_id, payload } = props.data;
-  let bgColor = "transparent";
-  switch (payload?.sender) {
-    case "0":
-      bgColor = "red";
-      break;
-    case "1":
-      bgColor = "green";
-      break;
-    case "2":
-      bgColor = "yellow";
-      break;
-    case "3":
-      bgColor = "orange";
-      break;
-  }
-
+function BlockNode(props: NodeProps<Block & { isHead: boolean }>) {
+  const { id } = props;
+  const { isHead, block_id, payload, miner_id } = props.data;
+  const bgColorForId = (id?: string) => {
+    switch (id) {
+      case "0":
+        return "red";
+      case "1":
+        return "green";
+      case "2":
+        return "yellow";
+      case "3":
+        return "orange";
+      default:
+        "transparent";
+    }
+  };
   return (
-    <div className="flex font-mono " key={block_id}>
-      {payload?.sender && (
-        <div
-          className="px-3 items-center flex text-xl font-bold"
-          style={{ backgroundColor: bgColor }}
-        >
-          {payload?.sender}
+    <>
+      <Handle type="target" position={Position.Top} />
+      <Handle type="source" position={Position.Bottom} />
+      <div
+        className={`flex font-mono border-4 ${
+          isHead ? "border-red-800" : "border-gray-600"
+        } ${(!payload || !payload.message) && "opacity-50"}`}
+        style={{ backgroundColor: nodeIdToColor(id) }}
+        key={block_id}
+      >
+        <div className="">
+          <div
+            className="px-3 items-center flex text-xl font-bold h-1/2"
+            style={{ backgroundColor: bgColorForId(miner_id) }}
+          >
+            {miner_id}
+          </div>
+          <div
+            className="px-3 items-center flex text-xl font-bold h-1/2"
+            style={{ backgroundColor: bgColorForId(payload?.sender) }}
+          >
+            {payload?.sender}
+          </div>
         </div>
-      )}
-      <div className="text-center px-3">
-        <h1 className="text-xl">{block_id?.toString().substring(0, 6)}</h1>
-        <p className="text-lg">
-          {payload && payload.timestamp
-            ? new Date(
-                payload.timestamp!.seconds! * 1000 +
-                  payload.timestamp!.nanos! / 1000000
-              )
-                .toISOString()
-                .split("T")[1]
-                .split("Z")[0]
-            : "---"}
-        </p>
-        <p className="text-lg">{payload?.message || "---"}</p>
+        <div className="text-center px-3">
+          <h1 className="text-xl">{block_id?.toString().substring(0, 6)}</h1>
+          <p className="text-lg">
+            {payload && payload.timestamp
+              ? new Date(
+                  payload.timestamp!.seconds! * 1000 +
+                    payload.timestamp!.nanos! / 1000000
+                )
+                  .toISOString()
+                  .split("T")[1]
+                  .split("Z")[0]
+              : "---"}
+          </p>
+          <p className="text-lg">{payload?.message || "---"}</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
+
+const nodeTypes = {
+  blockNode: BlockNode,
+};
 
 export default function TreeViewer(props: { port: string }) {
   const { port } = props;
@@ -114,7 +130,6 @@ export default function TreeViewer(props: { port: string }) {
     ReturnType<typeof interceptorpb.TreeUpdate.prototype.toObject> | undefined
   >(undefined);
 
-  const [orphans, setOrphans] = useState<number[]>([]);
   const [state, setState] = useState<string[]>([]);
 
   const { status } = useWebsocketListener(
@@ -127,17 +142,10 @@ export default function TreeViewer(props: { port: string }) {
       switch (event.bcinterceptor?.type) {
         case "tree_update":
           setTreeState(event.bcinterceptor.tree_update);
-          // remove orphans that are now part of the tree
-          setOrphans((old) =>
-            old.filter(
-              (orphan) => !(orphan in event.bcinterceptor.tree_update.blocks)
-            )
-          );
           break;
         case "state_update":
           setState(event.bcinterceptor.state_update.state.message_history);
           break;
-
         default:
           break;
       }
@@ -155,22 +163,30 @@ export default function TreeViewer(props: { port: string }) {
     return acc;
   }, {} as { [key: string]: Block });
 
-  const nodes: Node<Block>[] = useMemo(
+  const nodes: Node<Block & { isHead: boolean }>[] = useMemo(
     () =>
-      treeState?.blocks?.map((block) => ({
-        id: block.block_id!.toString(), // should always be defined
-        type: "blockNode",
-        data: block,
-        position: { x: 0, y: 0 },
-      })) ?? [],
+      treeState?.blocks
+        ?.map((block) => {
+          const data = { ...block, isHead: true };
+          return {
+            id: block.block_id!.toString(), // should always be defined
+            type: "blockNode",
+            data: block,
+            position: { x: 0, y: 0 },
+          } as Node<Block & { isHead?: boolean }>;
+        })
+        .map((n) => {
+          n.data.isHead = n.data.block_id === head_id;
+          return n;
+        }) ?? [],
     [treeState]
   );
 
   const edges = useMemo(() => {
     return treeState?.blocks?.map((block) => ({
       id: `${block.block_id}-${block.previous_block_id}`,
-      source: block.block_id?.toString(),
-      target: block.previous_block_id?.toString(),
+      source: block.block_id!.toString(),
+      target: block.previous_block_id!.toString(),
     }));
   }, [treeState]);
 
@@ -178,17 +194,7 @@ export default function TreeViewer(props: { port: string }) {
     if (nodes?.length === 0 || edges?.length === 0) {
       return { nodes: [], edges: [] };
     }
-    const layouted = getLayoutedElements(nodes, edges);
-    layouted.nodes = layouted.nodes.map((n: Node<Block>) => ({
-      ...n,
-      style: {
-        backgroundColor: nodeIdToColor(n.id),
-        borderColor: n.data.block_id === head_id ? "red" : "gray",
-        borderWidth: "0.250rem",
-      },
-    }));
-
-    return layouted;
+    return getLayoutedElements(nodes, edges);
   }, [nodes, edges]);
 
   return (
@@ -209,14 +215,11 @@ export default function TreeViewer(props: { port: string }) {
           </span>
         )}
       </h3>
-      <p>
-        Orphans: {orphans.map((o) => o.toString().substring(0, 6)).join(", ")}
-      </p>
       <div className="h-full w-full">
         <ReactFlow
           nodes={layoutedNodes}
           edges={layoutedEdges}
-          nodeTypes={{ blockNode: BlockNode }}
+          nodeTypes={nodeTypes}
         />
       </div>
     </div>

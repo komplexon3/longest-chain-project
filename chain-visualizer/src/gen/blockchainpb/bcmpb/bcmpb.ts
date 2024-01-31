@@ -9,12 +9,10 @@ import * as dependency_3 from "./../../mir/codegen_extensions";
 import * as pb_1 from "google-protobuf";
 export namespace bcmpb {
     export class Event extends pb_1.Message {
-        #one_of_decls: number[][] = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 100]];
+        #one_of_decls: number[][] = [[1, 2, 5, 6, 7, 8, 9, 100]];
         constructor(data?: any[] | ({} & (({
             new_block?: NewBlock;
             new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: never;
             get_chain_response?: never;
             get_head_to_checkpoint_chain_request?: never;
@@ -24,8 +22,6 @@ export namespace bcmpb {
         } | {
             new_block?: never;
             new_chain?: NewChain;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: never;
             get_chain_response?: never;
             get_head_to_checkpoint_chain_request?: never;
@@ -35,30 +31,6 @@ export namespace bcmpb {
         } | {
             new_block?: never;
             new_chain?: never;
-            get_block_request?: GetBlockRequest;
-            get_block_response?: never;
-            get_chain_request?: never;
-            get_chain_response?: never;
-            get_head_to_checkpoint_chain_request?: never;
-            get_head_to_checkpoint_chain_response?: never;
-            register_checkpoint?: never;
-            init_blockchain?: never;
-        } | {
-            new_block?: never;
-            new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: GetBlockResponse;
-            get_chain_request?: never;
-            get_chain_response?: never;
-            get_head_to_checkpoint_chain_request?: never;
-            get_head_to_checkpoint_chain_response?: never;
-            register_checkpoint?: never;
-            init_blockchain?: never;
-        } | {
-            new_block?: never;
-            new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: GetChainRequest;
             get_chain_response?: never;
             get_head_to_checkpoint_chain_request?: never;
@@ -68,8 +40,6 @@ export namespace bcmpb {
         } | {
             new_block?: never;
             new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: never;
             get_chain_response?: GetChainResponse;
             get_head_to_checkpoint_chain_request?: never;
@@ -79,8 +49,6 @@ export namespace bcmpb {
         } | {
             new_block?: never;
             new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: never;
             get_chain_response?: never;
             get_head_to_checkpoint_chain_request?: GetHeadToCheckpointChainRequest;
@@ -90,8 +58,6 @@ export namespace bcmpb {
         } | {
             new_block?: never;
             new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: never;
             get_chain_response?: never;
             get_head_to_checkpoint_chain_request?: never;
@@ -101,8 +67,6 @@ export namespace bcmpb {
         } | {
             new_block?: never;
             new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: never;
             get_chain_response?: never;
             get_head_to_checkpoint_chain_request?: never;
@@ -112,8 +76,6 @@ export namespace bcmpb {
         } | {
             new_block?: never;
             new_chain?: never;
-            get_block_request?: never;
-            get_block_response?: never;
             get_chain_request?: never;
             get_chain_response?: never;
             get_head_to_checkpoint_chain_request?: never;
@@ -129,12 +91,6 @@ export namespace bcmpb {
                 }
                 if ("new_chain" in data && data.new_chain != undefined) {
                     this.new_chain = data.new_chain;
-                }
-                if ("get_block_request" in data && data.get_block_request != undefined) {
-                    this.get_block_request = data.get_block_request;
-                }
-                if ("get_block_response" in data && data.get_block_response != undefined) {
-                    this.get_block_response = data.get_block_response;
                 }
                 if ("get_chain_request" in data && data.get_chain_request != undefined) {
                     this.get_chain_request = data.get_chain_request;
@@ -173,24 +129,6 @@ export namespace bcmpb {
         }
         get has_new_chain() {
             return pb_1.Message.getField(this, 2) != null;
-        }
-        get get_block_request() {
-            return pb_1.Message.getWrapperField(this, GetBlockRequest, 3) as GetBlockRequest;
-        }
-        set get_block_request(value: GetBlockRequest) {
-            pb_1.Message.setOneofWrapperField(this, 3, this.#one_of_decls[0], value);
-        }
-        get has_get_block_request() {
-            return pb_1.Message.getField(this, 3) != null;
-        }
-        get get_block_response() {
-            return pb_1.Message.getWrapperField(this, GetBlockResponse, 4) as GetBlockResponse;
-        }
-        set get_block_response(value: GetBlockResponse) {
-            pb_1.Message.setOneofWrapperField(this, 4, this.#one_of_decls[0], value);
-        }
-        get has_get_block_response() {
-            return pb_1.Message.getField(this, 4) != null;
         }
         get get_chain_request() {
             return pb_1.Message.getWrapperField(this, GetChainRequest, 5) as GetChainRequest;
@@ -248,13 +186,11 @@ export namespace bcmpb {
         }
         get type() {
             const cases: {
-                [index: number]: "none" | "new_block" | "new_chain" | "get_block_request" | "get_block_response" | "get_chain_request" | "get_chain_response" | "get_head_to_checkpoint_chain_request" | "get_head_to_checkpoint_chain_response" | "register_checkpoint" | "init_blockchain";
+                [index: number]: "none" | "new_block" | "new_chain" | "get_chain_request" | "get_chain_response" | "get_head_to_checkpoint_chain_request" | "get_head_to_checkpoint_chain_response" | "register_checkpoint" | "init_blockchain";
             } = {
                 0: "none",
                 1: "new_block",
                 2: "new_chain",
-                3: "get_block_request",
-                4: "get_block_response",
                 5: "get_chain_request",
                 6: "get_chain_response",
                 7: "get_head_to_checkpoint_chain_request",
@@ -262,13 +198,11 @@ export namespace bcmpb {
                 9: "register_checkpoint",
                 100: "init_blockchain"
             };
-            return cases[pb_1.Message.computeOneofCase(this, [1, 2, 3, 4, 5, 6, 7, 8, 9, 100])];
+            return cases[pb_1.Message.computeOneofCase(this, [1, 2, 5, 6, 7, 8, 9, 100])];
         }
         static fromObject(data: {
             new_block?: ReturnType<typeof NewBlock.prototype.toObject>;
             new_chain?: ReturnType<typeof NewChain.prototype.toObject>;
-            get_block_request?: ReturnType<typeof GetBlockRequest.prototype.toObject>;
-            get_block_response?: ReturnType<typeof GetBlockResponse.prototype.toObject>;
             get_chain_request?: ReturnType<typeof GetChainRequest.prototype.toObject>;
             get_chain_response?: ReturnType<typeof GetChainResponse.prototype.toObject>;
             get_head_to_checkpoint_chain_request?: ReturnType<typeof GetHeadToCheckpointChainRequest.prototype.toObject>;
@@ -282,12 +216,6 @@ export namespace bcmpb {
             }
             if (data.new_chain != null) {
                 message.new_chain = NewChain.fromObject(data.new_chain);
-            }
-            if (data.get_block_request != null) {
-                message.get_block_request = GetBlockRequest.fromObject(data.get_block_request);
-            }
-            if (data.get_block_response != null) {
-                message.get_block_response = GetBlockResponse.fromObject(data.get_block_response);
             }
             if (data.get_chain_request != null) {
                 message.get_chain_request = GetChainRequest.fromObject(data.get_chain_request);
@@ -313,8 +241,6 @@ export namespace bcmpb {
             const data: {
                 new_block?: ReturnType<typeof NewBlock.prototype.toObject>;
                 new_chain?: ReturnType<typeof NewChain.prototype.toObject>;
-                get_block_request?: ReturnType<typeof GetBlockRequest.prototype.toObject>;
-                get_block_response?: ReturnType<typeof GetBlockResponse.prototype.toObject>;
                 get_chain_request?: ReturnType<typeof GetChainRequest.prototype.toObject>;
                 get_chain_response?: ReturnType<typeof GetChainResponse.prototype.toObject>;
                 get_head_to_checkpoint_chain_request?: ReturnType<typeof GetHeadToCheckpointChainRequest.prototype.toObject>;
@@ -327,12 +253,6 @@ export namespace bcmpb {
             }
             if (this.new_chain != null) {
                 data.new_chain = this.new_chain.toObject();
-            }
-            if (this.get_block_request != null) {
-                data.get_block_request = this.get_block_request.toObject();
-            }
-            if (this.get_block_response != null) {
-                data.get_block_response = this.get_block_response.toObject();
             }
             if (this.get_chain_request != null) {
                 data.get_chain_request = this.get_chain_request.toObject();
@@ -362,10 +282,6 @@ export namespace bcmpb {
                 writer.writeMessage(1, this.new_block, () => this.new_block.serialize(writer));
             if (this.has_new_chain)
                 writer.writeMessage(2, this.new_chain, () => this.new_chain.serialize(writer));
-            if (this.has_get_block_request)
-                writer.writeMessage(3, this.get_block_request, () => this.get_block_request.serialize(writer));
-            if (this.has_get_block_response)
-                writer.writeMessage(4, this.get_block_response, () => this.get_block_response.serialize(writer));
             if (this.has_get_chain_request)
                 writer.writeMessage(5, this.get_chain_request, () => this.get_chain_request.serialize(writer));
             if (this.has_get_chain_response)
@@ -392,12 +308,6 @@ export namespace bcmpb {
                         break;
                     case 2:
                         reader.readMessage(message.new_chain, () => message.new_chain = NewChain.deserialize(reader));
-                        break;
-                    case 3:
-                        reader.readMessage(message.get_block_request, () => message.get_block_request = GetBlockRequest.deserialize(reader));
-                        break;
-                    case 4:
-                        reader.readMessage(message.get_block_response, () => message.get_block_response = GetBlockResponse.deserialize(reader));
                         break;
                     case 5:
                         reader.readMessage(message.get_chain_request, () => message.get_chain_request = GetChainRequest.deserialize(reader));
@@ -564,235 +474,6 @@ export namespace bcmpb {
         }
         static deserializeBinary(bytes: Uint8Array): NewChain {
             return NewChain.deserialize(bytes);
-        }
-    }
-    export class GetBlockRequest extends pb_1.Message {
-        #one_of_decls: number[][] = [];
-        constructor(data?: any[] | {
-            request_id?: string;
-            source_module?: string;
-            block_id?: number;
-        }) {
-            super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
-            if (!Array.isArray(data) && typeof data == "object") {
-                if ("request_id" in data && data.request_id != undefined) {
-                    this.request_id = data.request_id;
-                }
-                if ("source_module" in data && data.source_module != undefined) {
-                    this.source_module = data.source_module;
-                }
-                if ("block_id" in data && data.block_id != undefined) {
-                    this.block_id = data.block_id;
-                }
-            }
-        }
-        get request_id() {
-            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
-        }
-        set request_id(value: string) {
-            pb_1.Message.setField(this, 1, value);
-        }
-        get source_module() {
-            return pb_1.Message.getFieldWithDefault(this, 2, "") as string;
-        }
-        set source_module(value: string) {
-            pb_1.Message.setField(this, 2, value);
-        }
-        get block_id() {
-            return pb_1.Message.getFieldWithDefault(this, 3, 0) as number;
-        }
-        set block_id(value: number) {
-            pb_1.Message.setField(this, 3, value);
-        }
-        static fromObject(data: {
-            request_id?: string;
-            source_module?: string;
-            block_id?: number;
-        }): GetBlockRequest {
-            const message = new GetBlockRequest({});
-            if (data.request_id != null) {
-                message.request_id = data.request_id;
-            }
-            if (data.source_module != null) {
-                message.source_module = data.source_module;
-            }
-            if (data.block_id != null) {
-                message.block_id = data.block_id;
-            }
-            return message;
-        }
-        toObject() {
-            const data: {
-                request_id?: string;
-                source_module?: string;
-                block_id?: number;
-            } = {};
-            if (this.request_id != null) {
-                data.request_id = this.request_id;
-            }
-            if (this.source_module != null) {
-                data.source_module = this.source_module;
-            }
-            if (this.block_id != null) {
-                data.block_id = this.block_id;
-            }
-            return data;
-        }
-        serialize(): Uint8Array;
-        serialize(w: pb_1.BinaryWriter): void;
-        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
-            const writer = w || new pb_1.BinaryWriter();
-            if (this.request_id.length)
-                writer.writeString(1, this.request_id);
-            if (this.source_module.length)
-                writer.writeString(2, this.source_module);
-            if (this.block_id != 0)
-                writer.writeUint64(3, this.block_id);
-            if (!w)
-                return writer.getResultBuffer();
-        }
-        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): GetBlockRequest {
-            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new GetBlockRequest();
-            while (reader.nextField()) {
-                if (reader.isEndGroup())
-                    break;
-                switch (reader.getFieldNumber()) {
-                    case 1:
-                        message.request_id = reader.readString();
-                        break;
-                    case 2:
-                        message.source_module = reader.readString();
-                        break;
-                    case 3:
-                        message.block_id = reader.readUint64();
-                        break;
-                    default: reader.skipField();
-                }
-            }
-            return message;
-        }
-        serializeBinary(): Uint8Array {
-            return this.serialize();
-        }
-        static deserializeBinary(bytes: Uint8Array): GetBlockRequest {
-            return GetBlockRequest.deserialize(bytes);
-        }
-    }
-    export class GetBlockResponse extends pb_1.Message {
-        #one_of_decls: number[][] = [];
-        constructor(data?: any[] | {
-            request_id?: string;
-            found?: boolean;
-            block?: dependency_1.blockchainpb.Block;
-        }) {
-            super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
-            if (!Array.isArray(data) && typeof data == "object") {
-                if ("request_id" in data && data.request_id != undefined) {
-                    this.request_id = data.request_id;
-                }
-                if ("found" in data && data.found != undefined) {
-                    this.found = data.found;
-                }
-                if ("block" in data && data.block != undefined) {
-                    this.block = data.block;
-                }
-            }
-        }
-        get request_id() {
-            return pb_1.Message.getFieldWithDefault(this, 1, "") as string;
-        }
-        set request_id(value: string) {
-            pb_1.Message.setField(this, 1, value);
-        }
-        get found() {
-            return pb_1.Message.getFieldWithDefault(this, 2, false) as boolean;
-        }
-        set found(value: boolean) {
-            pb_1.Message.setField(this, 2, value);
-        }
-        get block() {
-            return pb_1.Message.getWrapperField(this, dependency_1.blockchainpb.Block, 3) as dependency_1.blockchainpb.Block;
-        }
-        set block(value: dependency_1.blockchainpb.Block) {
-            pb_1.Message.setWrapperField(this, 3, value);
-        }
-        get has_block() {
-            return pb_1.Message.getField(this, 3) != null;
-        }
-        static fromObject(data: {
-            request_id?: string;
-            found?: boolean;
-            block?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>;
-        }): GetBlockResponse {
-            const message = new GetBlockResponse({});
-            if (data.request_id != null) {
-                message.request_id = data.request_id;
-            }
-            if (data.found != null) {
-                message.found = data.found;
-            }
-            if (data.block != null) {
-                message.block = dependency_1.blockchainpb.Block.fromObject(data.block);
-            }
-            return message;
-        }
-        toObject() {
-            const data: {
-                request_id?: string;
-                found?: boolean;
-                block?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>;
-            } = {};
-            if (this.request_id != null) {
-                data.request_id = this.request_id;
-            }
-            if (this.found != null) {
-                data.found = this.found;
-            }
-            if (this.block != null) {
-                data.block = this.block.toObject();
-            }
-            return data;
-        }
-        serialize(): Uint8Array;
-        serialize(w: pb_1.BinaryWriter): void;
-        serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
-            const writer = w || new pb_1.BinaryWriter();
-            if (this.request_id.length)
-                writer.writeString(1, this.request_id);
-            if (this.found != false)
-                writer.writeBool(2, this.found);
-            if (this.has_block)
-                writer.writeMessage(3, this.block, () => this.block.serialize(writer));
-            if (!w)
-                return writer.getResultBuffer();
-        }
-        static deserialize(bytes: Uint8Array | pb_1.BinaryReader): GetBlockResponse {
-            const reader = bytes instanceof pb_1.BinaryReader ? bytes : new pb_1.BinaryReader(bytes), message = new GetBlockResponse();
-            while (reader.nextField()) {
-                if (reader.isEndGroup())
-                    break;
-                switch (reader.getFieldNumber()) {
-                    case 1:
-                        message.request_id = reader.readString();
-                        break;
-                    case 2:
-                        message.found = reader.readBool();
-                        break;
-                    case 3:
-                        reader.readMessage(message.block, () => message.block = dependency_1.blockchainpb.Block.deserialize(reader));
-                        break;
-                    default: reader.skipField();
-                }
-            }
-            return message;
-        }
-        serializeBinary(): Uint8Array {
-            return this.serialize();
-        }
-        static deserializeBinary(bytes: Uint8Array): GetBlockResponse {
-            return GetBlockResponse.deserialize(bytes);
         }
     }
     export class GetChainRequest extends pb_1.Message {

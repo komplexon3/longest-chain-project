@@ -105,6 +105,7 @@ export namespace blockchainpb {
             previous_block_id?: number;
             payload?: dependency_2.payloadpb.Payload;
             timestamp?: dependency_3.google.protobuf.Timestamp;
+            miner_id?: string;
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
@@ -120,6 +121,9 @@ export namespace blockchainpb {
                 }
                 if ("timestamp" in data && data.timestamp != undefined) {
                     this.timestamp = data.timestamp;
+                }
+                if ("miner_id" in data && data.miner_id != undefined) {
+                    this.miner_id = data.miner_id;
                 }
             }
         }
@@ -153,11 +157,18 @@ export namespace blockchainpb {
         get has_timestamp() {
             return pb_1.Message.getField(this, 4) != null;
         }
+        get miner_id() {
+            return pb_1.Message.getFieldWithDefault(this, 5, "") as string;
+        }
+        set miner_id(value: string) {
+            pb_1.Message.setField(this, 5, value);
+        }
         static fromObject(data: {
             block_id?: number;
             previous_block_id?: number;
             payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
             timestamp?: ReturnType<typeof dependency_3.google.protobuf.Timestamp.prototype.toObject>;
+            miner_id?: string;
         }): Block {
             const message = new Block({});
             if (data.block_id != null) {
@@ -172,6 +183,9 @@ export namespace blockchainpb {
             if (data.timestamp != null) {
                 message.timestamp = dependency_3.google.protobuf.Timestamp.fromObject(data.timestamp);
             }
+            if (data.miner_id != null) {
+                message.miner_id = data.miner_id;
+            }
             return message;
         }
         toObject() {
@@ -180,6 +194,7 @@ export namespace blockchainpb {
                 previous_block_id?: number;
                 payload?: ReturnType<typeof dependency_2.payloadpb.Payload.prototype.toObject>;
                 timestamp?: ReturnType<typeof dependency_3.google.protobuf.Timestamp.prototype.toObject>;
+                miner_id?: string;
             } = {};
             if (this.block_id != null) {
                 data.block_id = this.block_id;
@@ -192,6 +207,9 @@ export namespace blockchainpb {
             }
             if (this.timestamp != null) {
                 data.timestamp = this.timestamp.toObject();
+            }
+            if (this.miner_id != null) {
+                data.miner_id = this.miner_id;
             }
             return data;
         }
@@ -207,6 +225,8 @@ export namespace blockchainpb {
                 writer.writeMessage(3, this.payload, () => this.payload.serialize(writer));
             if (this.has_timestamp)
                 writer.writeMessage(4, this.timestamp, () => this.timestamp.serialize(writer));
+            if (this.miner_id.length)
+                writer.writeString(5, this.miner_id);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -227,6 +247,9 @@ export namespace blockchainpb {
                         break;
                     case 4:
                         reader.readMessage(message.timestamp, () => message.timestamp = dependency_3.google.protobuf.Timestamp.deserialize(reader));
+                        break;
+                    case 5:
+                        message.miner_id = reader.readString();
                         break;
                     default: reader.skipField();
                 }

@@ -163,18 +163,18 @@ export default function TreeViewer(props: { port: string }) {
     return acc;
   }, {} as { [key: string]: Block });
 
-  const nodes: Node<Block & { isHead: boolean }>[] = useMemo(
+  const nodes = useMemo(
     () =>
       treeState?.blocks
-        ?.map((block) => {
-          const data = { ...block, isHead: true };
-          return {
-            id: block.block_id!.toString(), // should always be defined
-            type: "blockNode",
-            data: block,
-            position: { x: 0, y: 0 },
-          } as Node<Block & { isHead?: boolean }>;
-        })
+        ?.map(
+          (block) =>
+            ({
+              id: block.block_id!.toString(), // should always be defined
+              type: "blockNode",
+              data: block,
+              position: { x: 0, y: 0 },
+            } as Node<Block & { isHead?: boolean }>)
+        )
         .map((n) => {
           n.data.isHead = n.data.block_id === head_id;
           return n;

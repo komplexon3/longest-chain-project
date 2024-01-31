@@ -130,22 +130,14 @@ export default function TreeViewer(props: { port: string }) {
           // remove orphans that are now part of the tree
           setOrphans((old) =>
             old.filter(
-              (orphan) =>
-                !(orphan in event.bcinterceptor.tree_update.tree.blocks)
+              (orphan) => !(orphan in event.bcinterceptor.tree_update.blocks)
             )
           );
           break;
-        case "app_update":
-          setState(event.bcinterceptor.app_update.state.message_history);
+        case "state_update":
+          setState(event.bcinterceptor.state_update.state.message_history);
           break;
 
-        case "new_orphan":
-          setOrphans((old) =>
-            [...old, event.bcinterceptor.new_orphan.orphan.block_id].filter(
-              (value, index, self) => self.indexOf(value) === index
-            )
-          );
-          break;
         default:
           break;
       }
@@ -153,10 +145,8 @@ export default function TreeViewer(props: { port: string }) {
     "arraybuffer"
   );
 
-  const blockTree = treeState?.tree;
-  const head = treeState?.head_id;
-
-  const blocks = (blockTree?.blocks ?? []).reduce((acc, node) => {
+  const head_id = treeState?.head_id;
+  const blocksMap = (treeState?.blocks ?? []).reduce((acc, node) => {
     if (!node.block_id) {
       // should never happen
       return acc;
@@ -165,30 +155,24 @@ export default function TreeViewer(props: { port: string }) {
     return acc;
   }, {} as { [key: string]: Block });
 
-  const nodes: Node<Block>[] = useMemo(() => {
-    if (!blockTree || !blockTree.blocks) {
-      return [];
-    }
-
-    return blockTree.blocks.map((block) => ({
-      id: block.block_id!.toString(), // should always be defined
-      type: "blockNode",
-      data: block,
-      position: { x: 0, y: 0 },
-    }));
-  }, [blockTree]);
+  const nodes: Node<Block>[] = useMemo(
+    () =>
+      treeState?.blocks?.map((block) => ({
+        id: block.block_id!.toString(), // should always be defined
+        type: "blockNode",
+        data: block,
+        position: { x: 0, y: 0 },
+      })) ?? [],
+    [treeState]
+  );
 
   const edges = useMemo(() => {
-    if (!blockTree || !blockTree.blocks) {
-      return [];
-    }
-
-    return blockTree.blocks.map((block) => ({
+    return treeState?.blocks?.map((block) => ({
       id: `${block.block_id}-${block.previous_block_id}`,
       source: block.block_id?.toString(),
       target: block.previous_block_id?.toString(),
     }));
-  }, [blockTree]);
+  }, [treeState]);
 
   const { nodes: layoutedNodes, edges: layoutedEdges } = useMemo(() => {
     if (nodes?.length === 0 || edges?.length === 0) {
@@ -199,7 +183,7 @@ export default function TreeViewer(props: { port: string }) {
       ...n,
       style: {
         backgroundColor: nodeIdToColor(n.id),
-        borderColor: n.data.block_id === head ? "red" : "gray",
+        borderColor: n.data.block_id === head_id ? "red" : "gray",
         borderWidth: "0.250rem",
       },
     }));
@@ -218,10 +202,10 @@ export default function TreeViewer(props: { port: string }) {
         ))}
       </div>
       <h3>
-        {head && (
+        {head_id && (
           <span>
-            HEAD: {head.toString().substring(0, 6)}, Payload:{" "}
-            {blocks[head]?.payload?.message}
+            HEAD: {head_id.toString().substring(0, 6)}, Payload:{" "}
+            {blocksMap[head_id]?.payload?.message}
           </span>
         )}
       </h3>

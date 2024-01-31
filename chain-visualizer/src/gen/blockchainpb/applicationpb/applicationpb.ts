@@ -551,13 +551,13 @@ export namespace applicationpb {
     export class ForkUpdate extends pb_1.Message {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
-            removed_chain?: dependency_4.blockchainpb.Blockchain;
-            added_chain?: dependency_4.blockchainpb.Blockchain;
-            checkpoint_to_fork_root?: dependency_4.blockchainpb.Blockchain;
+            removed_chain?: dependency_4.blockchainpb.Block[];
+            added_chain?: dependency_4.blockchainpb.Block[];
+            checkpoint_to_fork_root?: dependency_4.blockchainpb.Block[];
             checkpoint_state?: dependency_3.statepb.State;
         }) {
             super();
-            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [], this.#one_of_decls);
+            pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [1, 2, 3], this.#one_of_decls);
             if (!Array.isArray(data) && typeof data == "object") {
                 if ("removed_chain" in data && data.removed_chain != undefined) {
                     this.removed_chain = data.removed_chain;
@@ -574,31 +574,22 @@ export namespace applicationpb {
             }
         }
         get removed_chain() {
-            return pb_1.Message.getWrapperField(this, dependency_4.blockchainpb.Blockchain, 1) as dependency_4.blockchainpb.Blockchain;
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_4.blockchainpb.Block, 1) as dependency_4.blockchainpb.Block[];
         }
-        set removed_chain(value: dependency_4.blockchainpb.Blockchain) {
-            pb_1.Message.setWrapperField(this, 1, value);
-        }
-        get has_removed_chain() {
-            return pb_1.Message.getField(this, 1) != null;
+        set removed_chain(value: dependency_4.blockchainpb.Block[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 1, value);
         }
         get added_chain() {
-            return pb_1.Message.getWrapperField(this, dependency_4.blockchainpb.Blockchain, 2) as dependency_4.blockchainpb.Blockchain;
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_4.blockchainpb.Block, 2) as dependency_4.blockchainpb.Block[];
         }
-        set added_chain(value: dependency_4.blockchainpb.Blockchain) {
-            pb_1.Message.setWrapperField(this, 2, value);
-        }
-        get has_added_chain() {
-            return pb_1.Message.getField(this, 2) != null;
+        set added_chain(value: dependency_4.blockchainpb.Block[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 2, value);
         }
         get checkpoint_to_fork_root() {
-            return pb_1.Message.getWrapperField(this, dependency_4.blockchainpb.Blockchain, 3) as dependency_4.blockchainpb.Blockchain;
+            return pb_1.Message.getRepeatedWrapperField(this, dependency_4.blockchainpb.Block, 3) as dependency_4.blockchainpb.Block[];
         }
-        set checkpoint_to_fork_root(value: dependency_4.blockchainpb.Blockchain) {
-            pb_1.Message.setWrapperField(this, 3, value);
-        }
-        get has_checkpoint_to_fork_root() {
-            return pb_1.Message.getField(this, 3) != null;
+        set checkpoint_to_fork_root(value: dependency_4.blockchainpb.Block[]) {
+            pb_1.Message.setRepeatedWrapperField(this, 3, value);
         }
         get checkpoint_state() {
             return pb_1.Message.getWrapperField(this, dependency_3.statepb.State, 4) as dependency_3.statepb.State;
@@ -610,20 +601,20 @@ export namespace applicationpb {
             return pb_1.Message.getField(this, 4) != null;
         }
         static fromObject(data: {
-            removed_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
-            added_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
-            checkpoint_to_fork_root?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+            removed_chain?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+            added_chain?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+            checkpoint_to_fork_root?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
             checkpoint_state?: ReturnType<typeof dependency_3.statepb.State.prototype.toObject>;
         }): ForkUpdate {
             const message = new ForkUpdate({});
             if (data.removed_chain != null) {
-                message.removed_chain = dependency_4.blockchainpb.Blockchain.fromObject(data.removed_chain);
+                message.removed_chain = data.removed_chain.map(item => dependency_4.blockchainpb.Block.fromObject(item));
             }
             if (data.added_chain != null) {
-                message.added_chain = dependency_4.blockchainpb.Blockchain.fromObject(data.added_chain);
+                message.added_chain = data.added_chain.map(item => dependency_4.blockchainpb.Block.fromObject(item));
             }
             if (data.checkpoint_to_fork_root != null) {
-                message.checkpoint_to_fork_root = dependency_4.blockchainpb.Blockchain.fromObject(data.checkpoint_to_fork_root);
+                message.checkpoint_to_fork_root = data.checkpoint_to_fork_root.map(item => dependency_4.blockchainpb.Block.fromObject(item));
             }
             if (data.checkpoint_state != null) {
                 message.checkpoint_state = dependency_3.statepb.State.fromObject(data.checkpoint_state);
@@ -632,19 +623,19 @@ export namespace applicationpb {
         }
         toObject() {
             const data: {
-                removed_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
-                added_chain?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
-                checkpoint_to_fork_root?: ReturnType<typeof dependency_4.blockchainpb.Blockchain.prototype.toObject>;
+                removed_chain?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+                added_chain?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
+                checkpoint_to_fork_root?: ReturnType<typeof dependency_4.blockchainpb.Block.prototype.toObject>[];
                 checkpoint_state?: ReturnType<typeof dependency_3.statepb.State.prototype.toObject>;
             } = {};
             if (this.removed_chain != null) {
-                data.removed_chain = this.removed_chain.toObject();
+                data.removed_chain = this.removed_chain.map((item: dependency_4.blockchainpb.Block) => item.toObject());
             }
             if (this.added_chain != null) {
-                data.added_chain = this.added_chain.toObject();
+                data.added_chain = this.added_chain.map((item: dependency_4.blockchainpb.Block) => item.toObject());
             }
             if (this.checkpoint_to_fork_root != null) {
-                data.checkpoint_to_fork_root = this.checkpoint_to_fork_root.toObject();
+                data.checkpoint_to_fork_root = this.checkpoint_to_fork_root.map((item: dependency_4.blockchainpb.Block) => item.toObject());
             }
             if (this.checkpoint_state != null) {
                 data.checkpoint_state = this.checkpoint_state.toObject();
@@ -655,12 +646,12 @@ export namespace applicationpb {
         serialize(w: pb_1.BinaryWriter): void;
         serialize(w?: pb_1.BinaryWriter): Uint8Array | void {
             const writer = w || new pb_1.BinaryWriter();
-            if (this.has_removed_chain)
-                writer.writeMessage(1, this.removed_chain, () => this.removed_chain.serialize(writer));
-            if (this.has_added_chain)
-                writer.writeMessage(2, this.added_chain, () => this.added_chain.serialize(writer));
-            if (this.has_checkpoint_to_fork_root)
-                writer.writeMessage(3, this.checkpoint_to_fork_root, () => this.checkpoint_to_fork_root.serialize(writer));
+            if (this.removed_chain.length)
+                writer.writeRepeatedMessage(1, this.removed_chain, (item: dependency_4.blockchainpb.Block) => item.serialize(writer));
+            if (this.added_chain.length)
+                writer.writeRepeatedMessage(2, this.added_chain, (item: dependency_4.blockchainpb.Block) => item.serialize(writer));
+            if (this.checkpoint_to_fork_root.length)
+                writer.writeRepeatedMessage(3, this.checkpoint_to_fork_root, (item: dependency_4.blockchainpb.Block) => item.serialize(writer));
             if (this.has_checkpoint_state)
                 writer.writeMessage(4, this.checkpoint_state, () => this.checkpoint_state.serialize(writer));
             if (!w)
@@ -673,13 +664,13 @@ export namespace applicationpb {
                     break;
                 switch (reader.getFieldNumber()) {
                     case 1:
-                        reader.readMessage(message.removed_chain, () => message.removed_chain = dependency_4.blockchainpb.Blockchain.deserialize(reader));
+                        reader.readMessage(message.removed_chain, () => pb_1.Message.addToRepeatedWrapperField(message, 1, dependency_4.blockchainpb.Block.deserialize(reader), dependency_4.blockchainpb.Block));
                         break;
                     case 2:
-                        reader.readMessage(message.added_chain, () => message.added_chain = dependency_4.blockchainpb.Blockchain.deserialize(reader));
+                        reader.readMessage(message.added_chain, () => pb_1.Message.addToRepeatedWrapperField(message, 2, dependency_4.blockchainpb.Block.deserialize(reader), dependency_4.blockchainpb.Block));
                         break;
                     case 3:
-                        reader.readMessage(message.checkpoint_to_fork_root, () => message.checkpoint_to_fork_root = dependency_4.blockchainpb.Blockchain.deserialize(reader));
+                        reader.readMessage(message.checkpoint_to_fork_root, () => pb_1.Message.addToRepeatedWrapperField(message, 3, dependency_4.blockchainpb.Block.deserialize(reader), dependency_4.blockchainpb.Block));
                         break;
                     case 4:
                         reader.readMessage(message.checkpoint_state, () => message.checkpoint_state = dependency_3.statepb.State.deserialize(reader));

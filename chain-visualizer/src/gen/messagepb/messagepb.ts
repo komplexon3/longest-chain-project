@@ -9,7 +9,7 @@ import * as dependency_3 from "./../availabilitypb/mscpb/mscpb";
 import * as dependency_4 from "./../pingpongpb/pingpongpb";
 import * as dependency_5 from "./../checkpointpb/checkpointpb";
 import * as dependency_6 from "./../ordererpb/ordererpb";
-import * as dependency_7 from "./../blockchainpb/communicationpb/communicationpb";
+import * as dependency_7 from "./../blockchainpb/broadcastpb/broadcastpb";
 import * as dependency_8 from "./../blockchainpb/synchronizerpb/synchronizerpb";
 import * as dependency_9 from "./../mir/codegen_extensions";
 import * as dependency_10 from "./../net/codegen_extensions";
@@ -26,7 +26,7 @@ export namespace messagepb {
             pingpong?: never;
             checkpoint?: never;
             orderer?: never;
-            communicationpb?: never;
+            broadcast?: never;
             synchronizer?: never;
         } | {
             iss?: never;
@@ -35,7 +35,7 @@ export namespace messagepb {
             pingpong?: never;
             checkpoint?: never;
             orderer?: never;
-            communicationpb?: never;
+            broadcast?: never;
             synchronizer?: never;
         } | {
             iss?: never;
@@ -44,7 +44,7 @@ export namespace messagepb {
             pingpong?: never;
             checkpoint?: never;
             orderer?: never;
-            communicationpb?: never;
+            broadcast?: never;
             synchronizer?: never;
         } | {
             iss?: never;
@@ -53,7 +53,7 @@ export namespace messagepb {
             pingpong?: dependency_4.pingpongpb.Message;
             checkpoint?: never;
             orderer?: never;
-            communicationpb?: never;
+            broadcast?: never;
             synchronizer?: never;
         } | {
             iss?: never;
@@ -62,7 +62,7 @@ export namespace messagepb {
             pingpong?: never;
             checkpoint?: dependency_5.checkpointpb.Message;
             orderer?: never;
-            communicationpb?: never;
+            broadcast?: never;
             synchronizer?: never;
         } | {
             iss?: never;
@@ -71,7 +71,7 @@ export namespace messagepb {
             pingpong?: never;
             checkpoint?: never;
             orderer?: dependency_6.ordererpb.Message;
-            communicationpb?: never;
+            broadcast?: never;
             synchronizer?: never;
         } | {
             iss?: never;
@@ -80,7 +80,7 @@ export namespace messagepb {
             pingpong?: never;
             checkpoint?: never;
             orderer?: never;
-            communicationpb?: dependency_7.communicationpb.Message;
+            broadcast?: dependency_7.broadcastpb.Message;
             synchronizer?: never;
         } | {
             iss?: never;
@@ -89,7 +89,7 @@ export namespace messagepb {
             pingpong?: never;
             checkpoint?: never;
             orderer?: never;
-            communicationpb?: never;
+            broadcast?: never;
             synchronizer?: dependency_8.synchronizerpb.Message;
         })))) {
             super();
@@ -116,8 +116,8 @@ export namespace messagepb {
                 if ("orderer" in data && data.orderer != undefined) {
                     this.orderer = data.orderer;
                 }
-                if ("communicationpb" in data && data.communicationpb != undefined) {
-                    this.communicationpb = data.communicationpb;
+                if ("broadcast" in data && data.broadcast != undefined) {
+                    this.broadcast = data.broadcast;
                 }
                 if ("synchronizer" in data && data.synchronizer != undefined) {
                     this.synchronizer = data.synchronizer;
@@ -184,13 +184,13 @@ export namespace messagepb {
         get has_orderer() {
             return pb_1.Message.getField(this, 7) != null;
         }
-        get communicationpb() {
-            return pb_1.Message.getWrapperField(this, dependency_7.communicationpb.Message, 8) as dependency_7.communicationpb.Message;
+        get broadcast() {
+            return pb_1.Message.getWrapperField(this, dependency_7.broadcastpb.Message, 8) as dependency_7.broadcastpb.Message;
         }
-        set communicationpb(value: dependency_7.communicationpb.Message) {
+        set broadcast(value: dependency_7.broadcastpb.Message) {
             pb_1.Message.setOneofWrapperField(this, 8, this.#one_of_decls[0], value);
         }
-        get has_communicationpb() {
+        get has_broadcast() {
             return pb_1.Message.getField(this, 8) != null;
         }
         get synchronizer() {
@@ -204,7 +204,7 @@ export namespace messagepb {
         }
         get type() {
             const cases: {
-                [index: number]: "none" | "iss" | "bcb" | "multisig_collector" | "pingpong" | "checkpoint" | "orderer" | "communicationpb" | "synchronizer";
+                [index: number]: "none" | "iss" | "bcb" | "multisig_collector" | "pingpong" | "checkpoint" | "orderer" | "broadcast" | "synchronizer";
             } = {
                 0: "none",
                 2: "iss",
@@ -213,7 +213,7 @@ export namespace messagepb {
                 5: "pingpong",
                 6: "checkpoint",
                 7: "orderer",
-                8: "communicationpb",
+                8: "broadcast",
                 9: "synchronizer"
             };
             return cases[pb_1.Message.computeOneofCase(this, [2, 3, 4, 5, 6, 7, 8, 9])];
@@ -226,7 +226,7 @@ export namespace messagepb {
             pingpong?: ReturnType<typeof dependency_4.pingpongpb.Message.prototype.toObject>;
             checkpoint?: ReturnType<typeof dependency_5.checkpointpb.Message.prototype.toObject>;
             orderer?: ReturnType<typeof dependency_6.ordererpb.Message.prototype.toObject>;
-            communicationpb?: ReturnType<typeof dependency_7.communicationpb.Message.prototype.toObject>;
+            broadcast?: ReturnType<typeof dependency_7.broadcastpb.Message.prototype.toObject>;
             synchronizer?: ReturnType<typeof dependency_8.synchronizerpb.Message.prototype.toObject>;
         }): Message {
             const message = new Message({});
@@ -251,8 +251,8 @@ export namespace messagepb {
             if (data.orderer != null) {
                 message.orderer = dependency_6.ordererpb.Message.fromObject(data.orderer);
             }
-            if (data.communicationpb != null) {
-                message.communicationpb = dependency_7.communicationpb.Message.fromObject(data.communicationpb);
+            if (data.broadcast != null) {
+                message.broadcast = dependency_7.broadcastpb.Message.fromObject(data.broadcast);
             }
             if (data.synchronizer != null) {
                 message.synchronizer = dependency_8.synchronizerpb.Message.fromObject(data.synchronizer);
@@ -268,7 +268,7 @@ export namespace messagepb {
                 pingpong?: ReturnType<typeof dependency_4.pingpongpb.Message.prototype.toObject>;
                 checkpoint?: ReturnType<typeof dependency_5.checkpointpb.Message.prototype.toObject>;
                 orderer?: ReturnType<typeof dependency_6.ordererpb.Message.prototype.toObject>;
-                communicationpb?: ReturnType<typeof dependency_7.communicationpb.Message.prototype.toObject>;
+                broadcast?: ReturnType<typeof dependency_7.broadcastpb.Message.prototype.toObject>;
                 synchronizer?: ReturnType<typeof dependency_8.synchronizerpb.Message.prototype.toObject>;
             } = {};
             if (this.dest_module != null) {
@@ -292,8 +292,8 @@ export namespace messagepb {
             if (this.orderer != null) {
                 data.orderer = this.orderer.toObject();
             }
-            if (this.communicationpb != null) {
-                data.communicationpb = this.communicationpb.toObject();
+            if (this.broadcast != null) {
+                data.broadcast = this.broadcast.toObject();
             }
             if (this.synchronizer != null) {
                 data.synchronizer = this.synchronizer.toObject();
@@ -318,8 +318,8 @@ export namespace messagepb {
                 writer.writeMessage(6, this.checkpoint, () => this.checkpoint.serialize(writer));
             if (this.has_orderer)
                 writer.writeMessage(7, this.orderer, () => this.orderer.serialize(writer));
-            if (this.has_communicationpb)
-                writer.writeMessage(8, this.communicationpb, () => this.communicationpb.serialize(writer));
+            if (this.has_broadcast)
+                writer.writeMessage(8, this.broadcast, () => this.broadcast.serialize(writer));
             if (this.has_synchronizer)
                 writer.writeMessage(9, this.synchronizer, () => this.synchronizer.serialize(writer));
             if (!w)
@@ -353,7 +353,7 @@ export namespace messagepb {
                         reader.readMessage(message.orderer, () => message.orderer = dependency_6.ordererpb.Message.deserialize(reader));
                         break;
                     case 8:
-                        reader.readMessage(message.communicationpb, () => message.communicationpb = dependency_7.communicationpb.Message.deserialize(reader));
+                        reader.readMessage(message.broadcast, () => message.broadcast = dependency_7.broadcastpb.Message.deserialize(reader));
                         break;
                     case 9:
                         reader.readMessage(message.synchronizer, () => message.synchronizer = dependency_8.synchronizerpb.Message.deserialize(reader));

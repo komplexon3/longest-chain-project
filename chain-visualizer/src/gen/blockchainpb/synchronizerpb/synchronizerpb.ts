@@ -91,7 +91,7 @@ export namespace synchronizerpb {
         #one_of_decls: number[][] = [];
         constructor(data?: any[] | {
             orphan_block?: dependency_1.blockchainpb.Block;
-            leave_ids?: number[];
+            leave_node_ids?: number[];
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [2], this.#one_of_decls);
@@ -99,8 +99,8 @@ export namespace synchronizerpb {
                 if ("orphan_block" in data && data.orphan_block != undefined) {
                     this.orphan_block = data.orphan_block;
                 }
-                if ("leave_ids" in data && data.leave_ids != undefined) {
-                    this.leave_ids = data.leave_ids;
+                if ("leave_node_ids" in data && data.leave_node_ids != undefined) {
+                    this.leave_node_ids = data.leave_node_ids;
                 }
             }
         }
@@ -113,35 +113,35 @@ export namespace synchronizerpb {
         get has_orphan_block() {
             return pb_1.Message.getField(this, 1) != null;
         }
-        get leave_ids() {
+        get leave_node_ids() {
             return pb_1.Message.getFieldWithDefault(this, 2, []) as number[];
         }
-        set leave_ids(value: number[]) {
+        set leave_node_ids(value: number[]) {
             pb_1.Message.setField(this, 2, value);
         }
         static fromObject(data: {
             orphan_block?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>;
-            leave_ids?: number[];
+            leave_node_ids?: number[];
         }): SyncRequest {
             const message = new SyncRequest({});
             if (data.orphan_block != null) {
                 message.orphan_block = dependency_1.blockchainpb.Block.fromObject(data.orphan_block);
             }
-            if (data.leave_ids != null) {
-                message.leave_ids = data.leave_ids;
+            if (data.leave_node_ids != null) {
+                message.leave_node_ids = data.leave_node_ids;
             }
             return message;
         }
         toObject() {
             const data: {
                 orphan_block?: ReturnType<typeof dependency_1.blockchainpb.Block.prototype.toObject>;
-                leave_ids?: number[];
+                leave_node_ids?: number[];
             } = {};
             if (this.orphan_block != null) {
                 data.orphan_block = this.orphan_block.toObject();
             }
-            if (this.leave_ids != null) {
-                data.leave_ids = this.leave_ids;
+            if (this.leave_node_ids != null) {
+                data.leave_node_ids = this.leave_node_ids;
             }
             return data;
         }
@@ -151,8 +151,8 @@ export namespace synchronizerpb {
             const writer = w || new pb_1.BinaryWriter();
             if (this.has_orphan_block)
                 writer.writeMessage(1, this.orphan_block, () => this.orphan_block.serialize(writer));
-            if (this.leave_ids.length)
-                writer.writePackedUint64(2, this.leave_ids);
+            if (this.leave_node_ids.length)
+                writer.writePackedUint64(2, this.leave_node_ids);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -166,7 +166,7 @@ export namespace synchronizerpb {
                         reader.readMessage(message.orphan_block, () => message.orphan_block = dependency_1.blockchainpb.Block.deserialize(reader));
                         break;
                     case 2:
-                        message.leave_ids = reader.readPackedUint64();
+                        message.leave_node_ids = reader.readPackedUint64();
                         break;
                     default: reader.skipField();
                 }
@@ -294,7 +294,7 @@ export namespace synchronizerpb {
         constructor(data?: any[] | {
             request_id?: string;
             block_id?: number;
-            leave_ids?: number[];
+            leave_node_ids?: number[];
         }) {
             super();
             pb_1.Message.initialize(this, Array.isArray(data) ? data : [], 0, -1, [3], this.#one_of_decls);
@@ -305,8 +305,8 @@ export namespace synchronizerpb {
                 if ("block_id" in data && data.block_id != undefined) {
                     this.block_id = data.block_id;
                 }
-                if ("leave_ids" in data && data.leave_ids != undefined) {
-                    this.leave_ids = data.leave_ids;
+                if ("leave_node_ids" in data && data.leave_node_ids != undefined) {
+                    this.leave_node_ids = data.leave_node_ids;
                 }
             }
         }
@@ -322,16 +322,16 @@ export namespace synchronizerpb {
         set block_id(value: number) {
             pb_1.Message.setField(this, 2, value);
         }
-        get leave_ids() {
+        get leave_node_ids() {
             return pb_1.Message.getFieldWithDefault(this, 3, []) as number[];
         }
-        set leave_ids(value: number[]) {
+        set leave_node_ids(value: number[]) {
             pb_1.Message.setField(this, 3, value);
         }
         static fromObject(data: {
             request_id?: string;
             block_id?: number;
-            leave_ids?: number[];
+            leave_node_ids?: number[];
         }): ChainRequest {
             const message = new ChainRequest({});
             if (data.request_id != null) {
@@ -340,8 +340,8 @@ export namespace synchronizerpb {
             if (data.block_id != null) {
                 message.block_id = data.block_id;
             }
-            if (data.leave_ids != null) {
-                message.leave_ids = data.leave_ids;
+            if (data.leave_node_ids != null) {
+                message.leave_node_ids = data.leave_node_ids;
             }
             return message;
         }
@@ -349,7 +349,7 @@ export namespace synchronizerpb {
             const data: {
                 request_id?: string;
                 block_id?: number;
-                leave_ids?: number[];
+                leave_node_ids?: number[];
             } = {};
             if (this.request_id != null) {
                 data.request_id = this.request_id;
@@ -357,8 +357,8 @@ export namespace synchronizerpb {
             if (this.block_id != null) {
                 data.block_id = this.block_id;
             }
-            if (this.leave_ids != null) {
-                data.leave_ids = this.leave_ids;
+            if (this.leave_node_ids != null) {
+                data.leave_node_ids = this.leave_node_ids;
             }
             return data;
         }
@@ -370,8 +370,8 @@ export namespace synchronizerpb {
                 writer.writeString(1, this.request_id);
             if (this.block_id != 0)
                 writer.writeUint64(2, this.block_id);
-            if (this.leave_ids.length)
-                writer.writePackedUint64(3, this.leave_ids);
+            if (this.leave_node_ids.length)
+                writer.writePackedUint64(3, this.leave_node_ids);
             if (!w)
                 return writer.getResultBuffer();
         }
@@ -388,7 +388,7 @@ export namespace synchronizerpb {
                         message.block_id = reader.readUint64();
                         break;
                     case 3:
-                        message.leave_ids = reader.readPackedUint64();
+                        message.leave_node_ids = reader.readPackedUint64();
                         break;
                     default: reader.skipField();
                 }

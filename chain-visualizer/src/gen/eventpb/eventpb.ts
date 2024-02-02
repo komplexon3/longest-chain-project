@@ -24,7 +24,7 @@ import * as dependency_18 from "./../transportpb/transportpb";
 import * as dependency_19 from "./../testerpb/testerpb";
 import * as dependency_20 from "./../blockchainpb/bcmpb/bcmpb";
 import * as dependency_21 from "./../blockchainpb/minerpb/minerpb";
-import * as dependency_22 from "./../blockchainpb/communicationpb/communicationpb";
+import * as dependency_22 from "./../blockchainpb/broadcastpb/broadcastpb";
 import * as dependency_23 from "./../blockchainpb/synchronizerpb/synchronizerpb";
 import * as dependency_24 from "./../blockchainpb/applicationpb/applicationpb";
 import * as dependency_25 from "./../blockchainpb/interceptorpb/interceptorpb";
@@ -58,7 +58,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -87,7 +87,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -116,7 +116,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -145,7 +145,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -174,7 +174,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -203,7 +203,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -232,7 +232,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -261,7 +261,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -290,7 +290,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -319,7 +319,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -348,7 +348,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -377,7 +377,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -406,7 +406,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -435,7 +435,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -464,7 +464,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -493,7 +493,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -522,7 +522,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -551,7 +551,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -580,7 +580,7 @@ export namespace eventpb {
             ping_pong?: dependency_11.pingpongpb.Event;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -609,7 +609,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: dependency_20.bcmpb.Event;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -638,7 +638,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: dependency_21.minerpb.Event;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -667,7 +667,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: dependency_22.communicationpb.Event;
+            broadcast?: dependency_22.broadcastpb.Event;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -696,7 +696,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: dependency_23.synchronizerpb.Event;
             application?: never;
             bcinterceptor?: never;
@@ -725,7 +725,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: dependency_24.applicationpb.Event;
             bcinterceptor?: never;
@@ -754,7 +754,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: dependency_25.interceptorpb.Event;
@@ -783,7 +783,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -812,7 +812,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -841,7 +841,7 @@ export namespace eventpb {
             ping_pong?: never;
             bcm?: never;
             miner?: never;
-            communication?: never;
+            broadcast?: never;
             synchronizer?: never;
             application?: never;
             bcinterceptor?: never;
@@ -918,8 +918,8 @@ export namespace eventpb {
                 if ("miner" in data && data.miner != undefined) {
                     this.miner = data.miner;
                 }
-                if ("communication" in data && data.communication != undefined) {
-                    this.communication = data.communication;
+                if ("broadcast" in data && data.broadcast != undefined) {
+                    this.broadcast = data.broadcast;
                 }
                 if ("synchronizer" in data && data.synchronizer != undefined) {
                     this.synchronizer = data.synchronizer;
@@ -1139,13 +1139,13 @@ export namespace eventpb {
         get has_miner() {
             return pb_1.Message.getField(this, 202) != null;
         }
-        get communication() {
-            return pb_1.Message.getWrapperField(this, dependency_22.communicationpb.Event, 203) as dependency_22.communicationpb.Event;
+        get broadcast() {
+            return pb_1.Message.getWrapperField(this, dependency_22.broadcastpb.Event, 203) as dependency_22.broadcastpb.Event;
         }
-        set communication(value: dependency_22.communicationpb.Event) {
+        set broadcast(value: dependency_22.broadcastpb.Event) {
             pb_1.Message.setOneofWrapperField(this, 203, this.#one_of_decls[0], value);
         }
-        get has_communication() {
+        get has_broadcast() {
             return pb_1.Message.getField(this, 203) != null;
         }
         get synchronizer() {
@@ -1210,7 +1210,7 @@ export namespace eventpb {
         }
         get type() {
             const cases: {
-                [index: number]: "none" | "init" | "timer" | "hasher" | "bcb" | "mempool" | "availability" | "batch_db" | "batch_fetcher" | "thresh_crypto" | "checkpoint" | "factory" | "iss" | "orderer" | "crypto" | "app" | "transport" | "chkp_validator" | "pprep_valiadtor" | "ping_pong" | "bcm" | "miner" | "communication" | "synchronizer" | "application" | "bcinterceptor" | "testingString" | "testingUint" | "tester";
+                [index: number]: "none" | "init" | "timer" | "hasher" | "bcb" | "mempool" | "availability" | "batch_db" | "batch_fetcher" | "thresh_crypto" | "checkpoint" | "factory" | "iss" | "orderer" | "crypto" | "app" | "transport" | "chkp_validator" | "pprep_valiadtor" | "ping_pong" | "bcm" | "miner" | "broadcast" | "synchronizer" | "application" | "bcinterceptor" | "testingString" | "testingUint" | "tester";
             } = {
                 0: "none",
                 2: "init",
@@ -1234,7 +1234,7 @@ export namespace eventpb {
                 200: "ping_pong",
                 201: "bcm",
                 202: "miner",
-                203: "communication",
+                203: "broadcast",
                 204: "synchronizer",
                 205: "application",
                 210: "bcinterceptor",
@@ -1267,7 +1267,7 @@ export namespace eventpb {
             ping_pong?: ReturnType<typeof dependency_11.pingpongpb.Event.prototype.toObject>;
             bcm?: ReturnType<typeof dependency_20.bcmpb.Event.prototype.toObject>;
             miner?: ReturnType<typeof dependency_21.minerpb.Event.prototype.toObject>;
-            communication?: ReturnType<typeof dependency_22.communicationpb.Event.prototype.toObject>;
+            broadcast?: ReturnType<typeof dependency_22.broadcastpb.Event.prototype.toObject>;
             synchronizer?: ReturnType<typeof dependency_23.synchronizerpb.Event.prototype.toObject>;
             application?: ReturnType<typeof dependency_24.applicationpb.Event.prototype.toObject>;
             bcinterceptor?: ReturnType<typeof dependency_25.interceptorpb.Event.prototype.toObject>;
@@ -1343,8 +1343,8 @@ export namespace eventpb {
             if (data.miner != null) {
                 message.miner = dependency_21.minerpb.Event.fromObject(data.miner);
             }
-            if (data.communication != null) {
-                message.communication = dependency_22.communicationpb.Event.fromObject(data.communication);
+            if (data.broadcast != null) {
+                message.broadcast = dependency_22.broadcastpb.Event.fromObject(data.broadcast);
             }
             if (data.synchronizer != null) {
                 message.synchronizer = dependency_23.synchronizerpb.Event.fromObject(data.synchronizer);
@@ -1393,7 +1393,7 @@ export namespace eventpb {
                 ping_pong?: ReturnType<typeof dependency_11.pingpongpb.Event.prototype.toObject>;
                 bcm?: ReturnType<typeof dependency_20.bcmpb.Event.prototype.toObject>;
                 miner?: ReturnType<typeof dependency_21.minerpb.Event.prototype.toObject>;
-                communication?: ReturnType<typeof dependency_22.communicationpb.Event.prototype.toObject>;
+                broadcast?: ReturnType<typeof dependency_22.broadcastpb.Event.prototype.toObject>;
                 synchronizer?: ReturnType<typeof dependency_23.synchronizerpb.Event.prototype.toObject>;
                 application?: ReturnType<typeof dependency_24.applicationpb.Event.prototype.toObject>;
                 bcinterceptor?: ReturnType<typeof dependency_25.interceptorpb.Event.prototype.toObject>;
@@ -1468,8 +1468,8 @@ export namespace eventpb {
             if (this.miner != null) {
                 data.miner = this.miner.toObject();
             }
-            if (this.communication != null) {
-                data.communication = this.communication.toObject();
+            if (this.broadcast != null) {
+                data.broadcast = this.broadcast.toObject();
             }
             if (this.synchronizer != null) {
                 data.synchronizer = this.synchronizer.toObject();
@@ -1542,8 +1542,8 @@ export namespace eventpb {
                 writer.writeMessage(201, this.bcm, () => this.bcm.serialize(writer));
             if (this.has_miner)
                 writer.writeMessage(202, this.miner, () => this.miner.serialize(writer));
-            if (this.has_communication)
-                writer.writeMessage(203, this.communication, () => this.communication.serialize(writer));
+            if (this.has_broadcast)
+                writer.writeMessage(203, this.broadcast, () => this.broadcast.serialize(writer));
             if (this.has_synchronizer)
                 writer.writeMessage(204, this.synchronizer, () => this.synchronizer.serialize(writer));
             if (this.has_application)
@@ -1634,7 +1634,7 @@ export namespace eventpb {
                         reader.readMessage(message.miner, () => message.miner = dependency_21.minerpb.Event.deserialize(reader));
                         break;
                     case 203:
-                        reader.readMessage(message.communication, () => message.communication = dependency_22.communicationpb.Event.deserialize(reader));
+                        reader.readMessage(message.broadcast, () => message.broadcast = dependency_22.broadcastpb.Event.deserialize(reader));
                         break;
                     case 204:
                         reader.readMessage(message.synchronizer, () => message.synchronizer = dependency_23.synchronizerpb.Event.deserialize(reader));

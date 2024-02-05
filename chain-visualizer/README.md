@@ -4,7 +4,7 @@
 
 This project uses pnpm as a package manager. Follow the instructions [here](https://pnpm.io/) to install it.
 
-After installing pnpm, you can setup the project and get all of its dependencies by running
+After installing pnpm, you can set the project up and get all of its dependencies by running
 
 ```
 pnpm install

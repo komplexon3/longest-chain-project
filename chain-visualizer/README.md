@@ -1,27 +1,29 @@
-# React + TypeScript + Vite
+# Chain Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup
 
-Currently, two official plugins are available:
+This project uses pnpm as a package manager. Follow the instructions [here](https://pnpm.io/) to install it.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+After installing pnpm, you can setup the project and get all of its dependencies by running
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+pnpm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Running the Visualizer
+
+To run the visualizer, simply execute
+
+```
+pnpm dev
+```
+
+by default, this should expose the application on `http://localhost:5173`.
+To display multiple nodes, simply add the query parameter `count` and set it to the number of nodes to display.
+For example, to display 4 nodes, go to `http://localhost:5173/?count=4`.
+
+> **NOTE**
+>
+> The wsinterceptor that this visualizer connects to crashes when subscribers disconnect from it.
+> This happens, for example, when the visualizer is reloaded.
+> To prevent this from happening, I recommend starting the mir nodes, waiting for a couple of seconds, and then (re)loading the visualizer.

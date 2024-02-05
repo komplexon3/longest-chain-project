@@ -10,6 +10,8 @@ After installing pnpm, you can set the project up and get all of its dependencie
 pnpm install
 ```
 
+If the proto specifications have been modified, run `./protos.sh` to regenerate the stubs.
+
 ## Running the Visualizer
 
 To run the visualizer, simply execute
